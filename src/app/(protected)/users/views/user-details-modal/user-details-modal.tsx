@@ -72,7 +72,7 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
                 disabled={!user?.email}
               />
 
-              <Text color="contentDarkSecondary">{formatMessage({ id: 'users.detailModal.mail' })}</Text>
+              <Text color="contentDarkSecondary">{formatMessage({ id: 'users.detailModal.email' })}</Text>
             </div>
 
             <div className="user-details-modal__action-item">
