@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => ({
   },
   define: {
     'import.meta.env.USE_MOCKS': mode === 'mock',
+    'import.meta.env.USE_MOCKS_PROD': mode === 'mock-prod',
   },
   resolve: {
     alias: {

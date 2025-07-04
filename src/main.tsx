@@ -5,7 +5,7 @@ import App from './app/app';
 import './index.scss';
 
 async function enableMocking() {
-  if (!import.meta.env.USE_MOCKS) return;
+  if (!import.meta.env.USE_MOCKS || !import.meta.env.USE_MOCKS_PROD) return;
 
   const { worker } = await import('./mocks/worker');
 
