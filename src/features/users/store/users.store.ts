@@ -39,10 +39,7 @@ export const useUsersStore = create<UsersStore>()(
       changePage: (page) => set((state) => ({ pagination: { ...state.pagination, page } })),
       changeLimit: (limit) => set((state) => ({ pagination: { ...state.pagination, limit } })),
       changeSortBy: (sortBy: SortBy | undefined) => set({ sortBy }),
-      changeFilters: (filters) => {
-        console.log({ filters });
-        set((state) => ({ filter: { ...state.filter, ...filters } }));
-      },
+      changeFilters: (filters) => set((state) => ({ filter: { ...state.filter, ...filters } })),
     }),
     {
       name: 'rbt-users',
