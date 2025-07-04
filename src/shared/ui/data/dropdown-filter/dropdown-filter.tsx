@@ -57,11 +57,7 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
   const dropdownRight = useMemo(() => (width ? '0' : 'unset'), [width]);
   const dropdownWidth = useMemo(() => (isGreaterThan('md') ? width || '100%' : undefined), [width, isGreaterThan]);
 
-  const handleOnApply = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  const { control, onClear, onSubmit } = useDropdownFilterForm({ items, onApply: handleOnApply });
+  const { control, onClear, onSubmit } = useDropdownFilterForm({ items, onApply });
 
   const renderItemByType = useCallback(
     (item: Item) => {
