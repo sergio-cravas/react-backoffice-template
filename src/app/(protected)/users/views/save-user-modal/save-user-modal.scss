@@ -1,0 +1,33 @@
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.save-user-modal {
+  @include mixins.responsive('sm') {
+    min-width: 640px;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    & > * {
+      flex: 1;
+    }
+
+    &:last-child {
+      margin-top: 8px;
+      flex-direction: row;
+    }
+
+    @include mixins.responsive('sm') {
+      flex-direction: row;
+    }
+  }
+}

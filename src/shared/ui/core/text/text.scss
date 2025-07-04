@@ -1,0 +1,59 @@
+@use '@/shared/styles/fonts.module.scss' as fonts;
+
+.text {
+  &--h1 {
+    @include fonts.font-h1;
+  }
+
+  &--h2 {
+    @include fonts.font-h2;
+  }
+
+  &--h3 {
+    @include fonts.font-h3;
+  }
+
+  &--h4 {
+    @include fonts.font-h4;
+  }
+
+  &--h5 {
+    @include fonts.font-h5;
+  }
+
+  &--h6 {
+    @include fonts.font-h6;
+  }
+
+  &--body-xl {
+    @include fonts.font-body-xl;
+  }
+
+  &--body-l {
+    @include fonts.font-body-l;
+  }
+
+  &--body-m {
+    @include fonts.font-body-m;
+  }
+
+  &--body-s {
+    @include fonts.font-body-s;
+  }
+
+  &--weight-bold {
+    font-weight: 700;
+  }
+
+  &--weight-semi-bold {
+    font-weight: 600;
+  }
+
+  &--weight-medium {
+    font-weight: 500;
+  }
+
+  &--weight-regular {
+    font-weight: 400;
+  }
+}

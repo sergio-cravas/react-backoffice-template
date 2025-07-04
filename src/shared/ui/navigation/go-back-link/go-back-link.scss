@@ -1,0 +1,15 @@
+@use '@/shared/styles/mixins.module.scss' as mixins;
+@use '@/shared/styles/variables.module.scss' as variables;
+
+.go-back-link {
+  color: colors.$dark;
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+  padding: variables.$spacing2 0 0 variables.$spacing2;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

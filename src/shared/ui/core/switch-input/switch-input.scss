@@ -1,0 +1,81 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.switch-input {
+  display: flex;
+  flex-direction: column;
+
+  &__input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+
+  &__switch {
+    position: relative;
+    display: inline-block;
+    width: 58px;
+    min-width: 58px;
+    height: 28px;
+  }
+
+  &__text {
+    margin-right: 16px;
+  }
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: colors.$action-secondary-base;
+    border: 1px solid colors.$primary;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 17px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      left: 4px;
+      bottom: 3px;
+      background-color: colors.$primary;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+
+  &__input:checked + &__slider {
+    background-color: colors.$primary;
+  }
+
+  &__input:focus + &__slider {
+    box-shadow: 0 0 1px $primary;
+  }
+
+  &__input:checked + &__slider:before {
+    background-color: colors.$action-secondary-base;
+
+    -webkit-transform: translateX(28px);
+    -ms-transform: translateX(28px);
+    transform: translateX(28px);
+  }
+
+  &__error {
+    color: colors.$interaction-red-base;
+  }
+}

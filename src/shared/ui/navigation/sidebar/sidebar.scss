@@ -1,0 +1,42 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.sidebar {
+  width: 64px;
+  min-width: 64px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: colors.$background-secondary;
+
+  &__logo {
+    height: 69px;
+    padding: 22px 18px;
+  }
+
+  &--horizontal {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  @include mixins.responsive('md') {
+    width: 248px;
+    min-width: 248px;
+
+    &--collapsed {
+      width: 64px;
+      min-width: 64px;
+    }
+
+    &--collapsed &__logo {
+      padding: 22px 18px;
+    }
+
+    &__logo {
+      position: relative;
+
+      height: 69px;
+      padding: 22px 28px;
+    }
+  }
+}

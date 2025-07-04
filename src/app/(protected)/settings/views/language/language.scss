@@ -1,0 +1,11 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.language {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+  padding: 32px;
+}

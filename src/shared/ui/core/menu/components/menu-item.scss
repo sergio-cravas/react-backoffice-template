@@ -1,0 +1,58 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.menu-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    cursor: pointer;
+
+    &__label {
+      display: flex;
+      align-items: center;
+      color: colors.$content-light-primary;
+      gap: 4px;
+
+      transition: all 0.125s ease-in-out;
+
+      &:hover,
+      &--active {
+        text-decoration: underline;
+      }
+    }
+
+    &__expand-icon {
+      color: colors.$content-light-primary;
+      cursor: pointer;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      padding: 8px 0 8px 24px;
+
+      &__label {
+        color: colors.$content-light-primary;
+        cursor: pointer;
+        transition: all 0.125s ease-in-out;
+
+        &:hover,
+        &--active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

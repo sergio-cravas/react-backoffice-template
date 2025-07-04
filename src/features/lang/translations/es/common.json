@@ -1,0 +1,15 @@
+{
+  "common.feedback.error": "Ha ocurrido un error. Por favor, inténtalo de nuevo más tarde.",
+  "common.feedback.success": "¡Operación completada con éxito!",
+  "common.form.cancel": "Cancelar",
+  "common.form.fileTooLarge": "El archivo es demasiado grande. El tamaño máximo es {maxSize}.",
+  "common.form.invalid": "Este campo es inválido.",
+  "common.form.invalidEmail": "Por favor, introduce una dirección de correo electrónico válida.",
+  "common.form.required": "Este campo es obligatorio.",
+  "common.form.save": "Guardar",
+  "common.language.en": "Inglés",
+  "common.form.close": "Cerrar",
+  "common.form.apply": "Aplicar",
+  "common.language.es": "Español",
+  "common.loading": "Cargando"
+}

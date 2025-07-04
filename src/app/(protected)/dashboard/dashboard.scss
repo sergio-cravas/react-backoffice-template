@@ -1,0 +1,37 @@
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.dashboard-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    @include mixins.layout__protected-page__content;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  &__kpi-cards {
+    display: grid;
+
+    gap: 20px;
+
+    grid-template-columns: repeat(1, 1fr);
+
+    @include mixins.responsive('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mixins.responsive('lg') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mixins.responsive('xl') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

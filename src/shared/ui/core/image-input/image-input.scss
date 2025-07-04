@@ -1,0 +1,51 @@
+@use '@/shared/styles/fonts.module.scss' as fonts;
+@use '@/shared/styles/colors.module.scss' as colors;
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.image-input {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 4px;
+
+  &__label {
+    @include fonts.font-body-m;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.responsive('sm') {
+      flex-direction: row;
+    }
+
+    gap: 16px;
+
+    & > img {
+      width: 76px;
+      height: 76px;
+      aspect-ratio: 1;
+      border-radius: 100%;
+
+      background-color: colors.$background-secondary;
+    }
+
+    &__image-controls {
+      display: flex;
+      flex-direction: column;
+
+      gap: 12px;
+    }
+
+    &__image-controls-buttons {
+      display: flex;
+
+      gap: 16px;
+    }
+  }
+
+  &__field-input {
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "signIn.error.invalidCredentials": "Invalid email or password. Please try again.",
+  "signIn.form.email.label": "Email Address",
+  "signIn.form.email.placeholder": "Enter your email here",
+  "signIn.form.forgotPassword.link": "Forgot your password?",
+  "signIn.form.password.label": "Password",
+  "signIn.form.password.placeholder": "Enter your password here",
+  "signIn.form.remember.label": "Remember me",
+  "signIn.form.signUp.link": "Sign Up",
+  "signIn.form.signUp.text": "Don't you have an account?",
+  "signIn.form.submit": "Sign In",
+  "signIn.subtitle": "Please Login to Continue",
+  "signIn.title": "Welcome back!"
+}

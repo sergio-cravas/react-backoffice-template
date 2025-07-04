@@ -1,0 +1,6 @@
+{
+  "dashboard.title": "Dashboard",
+  "dashboard.welcome": "Welcome, {name}",
+  "dashboard.kpis.users.label": "Total users",
+  "dashboard.kpis.users.title": "{num} Users"
+}

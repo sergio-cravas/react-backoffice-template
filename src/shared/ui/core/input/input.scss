@@ -1,0 +1,89 @@
+@use '@/shared/styles/fonts.module.scss' as fonts;
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 4px;
+
+  &__label {
+    @include fonts.font-body-m;
+  }
+
+  &__field {
+    position: relative;
+
+    display: flex;
+
+    &__content {
+      @include fonts.font-body-m;
+
+      width: 100%;
+      height: 41px;
+      padding: 10px 12px;
+      color: colors.$content-dark-primary;
+      border: 1px solid colors.$interaction-outline-base;
+      background-color: colors.$interaction-secondary-base;
+      border-radius: 4px;
+
+      &::placeholder {
+        color: colors.$content-dark-tertiary;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: colors.$interaction-outline-hover;
+      }
+
+      &:active {
+        border-color: colors.$interaction-outline-active;
+      }
+
+      &--invalid {
+        border-color: colors.$interaction-red-base;
+      }
+
+      &--disabled {
+        pointer-events: none;
+
+        color: colors.$content-dark-disabled;
+        border-color: colors.$interaction-outline-disabled;
+        background-color: colors.$interaction-secondary-disabled;
+
+        &::placeholder {
+          color: colors.$content-dark-disabled;
+        }
+      }
+
+      &--number-input {
+        &[type='number'] {
+          -moz-appearance: textfield;
+          appearance: textfield;
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        &[type='number']::-webkit-outer-spin-button,
+        &[type='number']::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    &__right-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 12px;
+      margin-block: auto;
+      z-index: 1;
+
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+
+      color: colors.$content-dark-primary;
+    }
+  }
+}

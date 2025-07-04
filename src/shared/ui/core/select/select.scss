@@ -1,0 +1,12 @@
+@use '@/shared/styles/fonts.module.scss' as fonts;
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.select {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  &__label {
+    @include fonts.font-body-m;
+  }
+}

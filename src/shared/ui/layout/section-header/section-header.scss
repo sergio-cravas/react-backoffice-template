@@ -1,0 +1,41 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.section-header {
+  height: 70px;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+
+  padding-inline: 16px;
+  border-bottom: 1px solid colors.$border-primary;
+
+  @include mixins.responsive('sm') {
+    padding-inline: 32px;
+  }
+
+  &__title {
+    padding: 20px 16px 20px 0;
+
+    @include mixins.responsive('md') {
+      padding: 20px 36px 20px 0;
+    }
+  }
+
+  &__tabs {
+    flex: 1;
+  }
+
+  &__actions {
+    padding: 20px 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+  }
+
+  &__divider {
+    padding: 20px 0;
+  }
+}

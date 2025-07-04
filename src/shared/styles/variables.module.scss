@@ -1,0 +1,43 @@
+$spacing1: 8px;
+$spacing2: 16px;
+$spacing3: 24px;
+$spacing4: 32px;
+$spacing5: 48px;
+$spacing6: 64px;
+$spacing7: 80px;
+
+$modal-zindex: 4001;
+$modal-zindex-overlay: 4000;
+$menu-zindex: 1000;
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+$breakpoints: (
+  'sm': (
+    min-width: $breakpoint-sm,
+  ),
+  'md': (
+    min-width: $breakpoint-md,
+  ),
+  'lg': (
+    min-width: $breakpoint-lg,
+  ),
+  'xl': (
+    min-width: $breakpoint-xl,
+  ),
+  'xxl': (
+    min-width: $breakpoint-xxl,
+  ),
+);
+
+:export {
+  breakpointSm: $breakpoint-sm;
+  breakpointMd: $breakpoint-md;
+  breakpointLg: $breakpoint-lg;
+  breakpointXl: $breakpoint-xl;
+  breakpointXxl: $breakpoint-xxl;
+}

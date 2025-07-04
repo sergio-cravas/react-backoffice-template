@@ -1,0 +1,42 @@
+import { MdContactPage } from 'react-icons/md';
+import { useIntl } from 'react-intl';
+
+import { Routes } from '@/app/router';
+import { useProfile } from '@/features/auth/hooks/use-profile';
+import { useGetUsers } from '@/features/users/hooks/use-get-users';
+import { Text } from '@/shared/ui/core/text';
+import { SectionHeader } from '@/shared/ui/layout/section-header';
+
+import { KpiCard } from './components/kpi-card';
+
+import './dashboard.scss';
+
+function Dashboard() {
+  const { formatMessage } = useIntl();
+
+  const { me } = useProfile();
+  const { users } = useGetUsers({ page: 1, limit: 10 });
+
+  return (
+    <div className="dashboard-page">
+      <SectionHeader title={formatMessage({ id: 'dashboard.title' })} />
+
+      <div className="dashboard-page__content">
+        <Text as="h2" variant="h6">
+          {formatMessage({ id: 'dashboard.welcome' }, { name: me?.firstName })}
+        </Text>
+
+        <div className="dashboard-page__kpi-cards">
+          <KpiCard
+            to={Routes.USERS}
+            label={formatMessage({ id: 'dashboard.kpis.users.label' })}
+            title={formatMessage({ id: 'dashboard.kpis.users.title' }, { num: users?.totalCount || 0 })}
+            icon={MdContactPage}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Dashboard;

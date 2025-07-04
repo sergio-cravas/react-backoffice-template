@@ -1,0 +1,70 @@
+@use '@/shared/styles/fonts.module.scss' as fonts;
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+
+  cursor: pointer;
+
+  &__label {
+    @include fonts.font-body-m;
+
+    margin-left: 12px;
+
+    cursor: pointer;
+  }
+
+  &--disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &__input {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+
+    border-radius: 4px;
+    border: 1px solid colors.$interaction-outline-base;
+    background-color: colors.$interaction-secondary-base;
+
+    transition: all 0.2s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > i {
+      color: colors.$content-light-primary;
+      font-size: 1rem;
+    }
+
+    &--disabled {
+      border: 1px solid colors.$interaction-outline-disabled;
+      background-color: colors.$interaction-secondary-disabled;
+    }
+
+    &--read-only {
+      pointer-events: none;
+    }
+
+    &:hover {
+      border: 1px solid colors.$interaction-outline-hover;
+    }
+
+    &--checked {
+      background-color: colors.$interaction-primary-base;
+
+      &:hover {
+        border: 1px solid colors.$interaction-primary-hover;
+        background-color: colors.$interaction-primary-hover;
+      }
+
+      &.checkbox__input--disabled {
+        background-color: colors.$interaction-secondary-disabled;
+      }
+    }
+  }
+}

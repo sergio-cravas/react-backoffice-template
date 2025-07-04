@@ -1,0 +1,29 @@
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.sign-in-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    @include mixins.responsive('md') {
+      flex-direction: row;
+    }
+  }
+
+  &__sign-up {
+    text-align: center;
+  }
+
+  &__submit {
+    margin-top: 16px;
+  }
+}

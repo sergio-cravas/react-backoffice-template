@@ -1,0 +1,26 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+@use '@/shared/styles/variables.module.scss' as variables;
+
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  &__dropdown {
+    z-index: variables.$menu-zindex;
+    position: absolute;
+    top: calc(100% + 8px);
+
+    width: 100%;
+    padding: variables.$spacing1 variables.$spacing2;
+
+    border-radius: 8px;
+    border: 1px solid #e4e4e4;
+    background-color: colors.$action-secondary-base;
+    box-shadow: 23px 0px 36px rgba(150, 150, 150, 0.16);
+
+    transform-origin: 50% -30px;
+  }
+}

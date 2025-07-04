@@ -1,0 +1,33 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.tab-item {
+  position: relative;
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+  padding: 24px 16px;
+  transition: color 0.125s ease-in-out;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: colors.$content-dark-primary;
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+
+  &--active,
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}

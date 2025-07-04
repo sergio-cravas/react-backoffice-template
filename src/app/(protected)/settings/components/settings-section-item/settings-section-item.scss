@@ -1,0 +1,36 @@
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.settings-section-item {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  @include mixins.responsive('md') {
+    flex-direction: row;
+    align-items: center;
+
+    &--align-start {
+      align-items: flex-start;
+    }
+
+    &--align-end {
+      align-items: flex-end;
+    }
+  }
+
+  &__head {
+    min-width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+  &--has-node-subtitle &__head {
+    gap: 8px;
+  }
+}

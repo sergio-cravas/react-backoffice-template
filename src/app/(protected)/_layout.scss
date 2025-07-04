@@ -1,0 +1,11 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.protected-page {
+  width: 100%;
+  min-height: 100dvh;
+
+  display: flex;
+
+  overflow: auto;
+  background-color: colors.$background-primary;
+}

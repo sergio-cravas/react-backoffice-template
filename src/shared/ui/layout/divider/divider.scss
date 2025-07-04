@@ -1,0 +1,12 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: colors.$border-primary;
+
+  &--vertical {
+    width: 1px;
+    height: 100%;
+  }
+}

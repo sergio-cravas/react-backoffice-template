@@ -1,0 +1,20 @@
+{
+  "app.features.auth.authHeader.signIn": "Sign In",
+  "app.features.auth.authHeader.signUp": "Get started",
+  "app.features.users.categories.admin": "Admin",
+  "app.features.users.categories.guest": "Guest",
+  "app.features.users.categories.user": "User",
+  "app.features.users.views.grid": "Grid",
+  "app.features.users.views.list": "List",
+  "app.ui.layout.sectionHeader.sortBy": "Sort by",
+  "app.ui.layout.sectionHeader.filter": "Filter",
+  "app.ui.data.dropdownFilter.title": "Filters",
+  "app.ui.data.dropdownFilter.clearAll": "Clear all",
+  "app.footer": "© 2025 Laelia Tech. All rights reserved.",
+  "app.name": "COMPANY NAME",
+  "app.sidebar.dashboard": "Dashboard",
+  "app.sidebar.database": "Database",
+  "app.sidebar.database.users": "Users",
+  "app.sidebar.settings": "Settings",
+  "app.ui.layout.sectionCategories.addCategory": "Add Category"
+}

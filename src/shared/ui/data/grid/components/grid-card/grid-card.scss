@@ -1,0 +1,18 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.grid-card {
+  padding: 20px;
+
+  border-radius: 4px;
+  border: 1px solid colors.$border-primary;
+  background-color: colors.$background-primary;
+
+  &--clickable {
+    cursor: pointer;
+    transition: all 0.125s ease-in-out;
+
+    &:hover {
+      background-color: colors.$interaction-secondary-hover;
+    }
+  }
+}

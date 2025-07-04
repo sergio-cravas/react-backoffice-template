@@ -1,0 +1,59 @@
+@use 'sass:map';
+@use './colors.module.scss' as colors;
+@use './variables.module.scss' as variables;
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin force-scrollbar {
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/**
+  * Responsive mixin
+  * @param {String} $size - breakpoint size
+  * @example @include responsive('sm') { ... } // This will apply to all sizes above sm breakpoint.
+*/
+@mixin responsive($size) {
+  $query-map: map.get(variables.$breakpoints, $size);
+  $query: map.get($query-map, min-width);
+
+  @media (min-width: #{$query}) {
+    @content;
+  }
+}
+
+@mixin layout__public-page {
+  width: 100%;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: colors.$background-secondary;
+}
+
+@mixin layout__protected-page__content {
+  flex: 1;
+  min-width: 100%;
+  padding: 0 16px 16px;
+
+  @include responsive('sm') {
+    padding: 0 32px 32px;
+  }
+}

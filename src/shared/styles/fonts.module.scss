@@ -1,0 +1,85 @@
+@use './colors.module.scss' as colors;
+
+@mixin font-common {
+  color: colors.$content-dark-primary;
+
+  font-family: 'Inter', sans-serif;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+@mixin font-h1 {
+  @include font-common;
+
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@mixin font-h2 {
+  @include font-common;
+
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@mixin font-h3 {
+  @include font-common;
+
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@mixin font-h4 {
+  @include font-common;
+
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@mixin font-h5 {
+  @include font-common;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@mixin font-h6 {
+  @include font-common;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@mixin font-body-xl {
+  @include font-common;
+
+  font-size: 1.125rem;
+  line-height: 150%;
+}
+
+@mixin font-body-l {
+  @include font-common;
+
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+@mixin font-body-m {
+  @include font-common;
+
+  font-size: 0.875rem;
+  line-height: 140%;
+}
+
+@mixin font-body-s {
+  @include font-common;
+
+  font-size: 0.75rem;
+  line-height: 140%;
+}

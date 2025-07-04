@@ -1,0 +1,85 @@
+@use '@/shared/styles/fonts.module.scss' as fonts;
+@use '@/shared/styles/colors.module.scss' as colors;
+@use '@/shared/styles/variables.module.scss' as variables;
+
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 4px;
+
+  &__label {
+    @include fonts.font-body-m;
+  }
+
+  &__field {
+    position: relative;
+
+    display: flex;
+
+    &__content {
+      @include fonts.font-body-m;
+      resize: vertical;
+
+      width: 100%;
+      min-height: 41px;
+      max-height: 410px;
+      padding: 10px 12px;
+      color: colors.$content-dark-primary;
+      border: 1px solid colors.$interaction-outline-base;
+      background-color: colors.$interaction-secondary-base;
+      border-radius: 4px;
+
+      transition: all 0.125s ease;
+
+      &::placeholder {
+        color: colors.$content-dark-tertiary;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: colors.$interaction-outline-hover;
+      }
+
+      &:active {
+        border-color: colors.$interaction-outline-active;
+      }
+
+      &--invalid {
+        border-color: #ff00004d;
+        background-color: #ff00001a;
+      }
+
+      &--disabled {
+        color: colors.$content-dark-disabled;
+        border-color: colors.$interaction-outline-disabled;
+        background-color: colors.$interaction-secondary-disabled;
+
+        &::placeholder {
+          color: colors.$content-dark-disabled;
+        }
+      }
+    }
+
+    &__right-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 12px;
+      margin-block: auto;
+      z-index: 1;
+
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+
+      color: colors.$content-dark-primary;
+    }
+
+    &:has(.textarea-container__field__right-icon) {
+      .textarea-container__field__content {
+        padding-right: 40px;
+      }
+    }
+  }
+}

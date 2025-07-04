@@ -1,0 +1,14 @@
+{
+  "signIn.error.invalidCredentials": "Correo electrónico o contraseña inválidos. Por favor, inténtalo de nuevo.",
+  "signIn.form.email.label": "Correo electrónico",
+  "signIn.form.email.placeholder": "Ingresa tu correo electrónico aquí",
+  "signIn.form.forgotPassword.link": "¿Olvidaste tu contraseña?",
+  "signIn.form.password.label": "Contraseña",
+  "signIn.form.password.placeholder": "Ingresa tu contraseña aquí",
+  "signIn.form.remember.label": "Recuérdame",
+  "signIn.form.signUp.link": "Regístrate",
+  "signIn.form.signUp.text": "¿No tienes una cuenta?",
+  "signIn.form.submit": "Iniciar sesión",
+  "signIn.subtitle": "Por favor, inicia sesión para continuar",
+  "signIn.title": "¡Bienvenido de nuevo!"
+}

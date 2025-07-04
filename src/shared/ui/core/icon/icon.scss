@@ -1,0 +1,68 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.icon-button-wrapper {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  width: fit-content;
+  height: fit-content;
+}
+
+.icon {
+  &--primary {
+    color: colors.$interaction-primary-base;
+    transition: all 0.125s ease-in-out;
+
+    button.icon-button-wrapper > &:hover {
+      color: colors.$interaction-primary-hover;
+    }
+  }
+
+  &--secondary {
+    color: colors.$interaction-secondary-base;
+
+    button.icon-button-wrapper > &:hover {
+      color: colors.$interaction-secondary-hover;
+    }
+  }
+
+  &--tertiary {
+    color: colors.$content-dark-tertiary;
+
+    button &:hover {
+      color: colors.$interaction-secondary-hover;
+    }
+  }
+
+  &--outline {
+    color: colors.$action-outline-active;
+
+    button.icon-button-wrapper > &:hover {
+      color: colors.$action-outline-hover;
+    }
+  }
+
+  &--disabled {
+    cursor: initial;
+    color: colors.$content-dark-disabled;
+
+    button.icon-button-wrapper > &:hover {
+      color: colors.$content-dark-disabled;
+    }
+  }
+
+  &--spin {
+    animation: spin 1.25s infinite ease-in-out;
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(720deg);
+      }
+    }
+  }
+}

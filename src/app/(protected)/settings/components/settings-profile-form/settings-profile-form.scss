@@ -1,0 +1,61 @@
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.settings-profile-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.responsive('sm') {
+      flex-direction: row;
+    }
+
+    gap: 16px;
+
+    & > img {
+      width: 76px;
+      height: 76px;
+      border-radius: 100%;
+    }
+  }
+
+  &__image-controls {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  &__image-controls-buttons {
+    display: flex;
+
+    gap: 16px;
+  }
+
+  &__full-name {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    @include mixins.responsive('md') {
+      flex-direction: row;
+
+      & > * {
+        flex: 1;
+      }
+    }
+  }
+
+  &__save {
+    width: 100%;
+
+    @include mixins.responsive('md') {
+      max-width: 200px;
+    }
+  }
+}

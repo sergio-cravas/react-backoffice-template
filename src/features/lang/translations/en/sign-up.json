@@ -1,0 +1,21 @@
+{
+  "signUp.form.confirmPassword.error": "Passwords do not match",
+  "signUp.form.confirmPassword.label": "Confirm Password",
+  "signUp.form.confirmPassword.placeholder": "Password",
+  "signUp.form.email.label": "Email",
+  "signUp.form.email.placeholder": "Enter your email here",
+  "signUp.form.firstName.label": "First Name",
+  "signUp.form.firstName.placeholder": "First Name",
+  "signUp.form.lastName.label": "Last Name",
+  "signUp.form.lastName.placeholder": "Last Name",
+  "signUp.form.password.label": "Password",
+  "signUp.form.password.placeholder": "Password",
+  "signUp.form.signIn.link": "Sign in",
+  "signUp.form.signIn.text": "Already have an account?",
+  "signUp.form.submit": "Sign Up",
+  "signUp.form.termsAndConditions.label": "I accept the {terms} and {privacy}",
+  "signUp.form.termsAndConditions.privacy": "Privacy Policy",
+  "signUp.form.termsAndConditions.terms": "Terms of Service",
+  "signUp.subtitle": "Please create an account to continue",
+  "signUp.title": "Create your account"
+}

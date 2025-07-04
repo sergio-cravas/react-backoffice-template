@@ -1,0 +1,22 @@
+@use '@/shared/styles/colors.module.scss' as colors;
+
+.list-header {
+  width: fit-content;
+  min-width: 100%;
+
+  display: flex;
+
+  border-radius: 4px;
+  border: 1px solid colors.$border-primary;
+  background-color: colors.$background-secondary;
+
+  &__cell {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+    padding: 12px;
+  }
+}
