@@ -77,7 +77,12 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
 
   return (
     <div className={cn('dropdown-filter', className)}>
-      <Button label={label} variant="outline" icon={<Icon as={icon} size={16} />} onClick={onToggle} />
+      <Button
+        variant="outline"
+        label={isGreaterThan('sm') ? label : undefined}
+        icon={<Icon as={icon} size={16} />}
+        onClick={onToggle}
+      />
 
       <motion.div
         className="dropdown-filter__dropdown"
