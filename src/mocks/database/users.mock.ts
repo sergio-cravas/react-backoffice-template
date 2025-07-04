@@ -18,10 +18,10 @@ const usersListMock: (User & { permissions: string[] })[] = [
   // 5 ADMINS - @laeilatech.com
   {
     id: 'a1b2c3d4-1111-1111-1111-111111111111',
-    firstName: 'Carlos',
-    lastName: 'Rodriguez',
-    email: 'carlos.rodriguez@laeilatech.com',
-    imageUrl: 'https://picsum.photos/seed/carlos/200',
+    firstName: 'Mario',
+    lastName: 'Mariez',
+    email: 'mario.mariez@laeilatech.com',
+    imageUrl: 'https://picsum.photos/seed/mario/200',
     role: UserRole.ADMIN,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
