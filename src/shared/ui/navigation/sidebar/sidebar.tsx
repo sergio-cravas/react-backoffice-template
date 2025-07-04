@@ -21,9 +21,17 @@ type SidebarProps = {
   withLogo?: boolean;
   isCollapsed?: boolean;
   allowsCollapse?: boolean;
+  orientation?: 'vertical' | 'horizontal';
 };
 
-function Sidebar({ className, links, withLogo = false, isCollapsed = false, allowsCollapse = false }: SidebarProps) {
+function Sidebar({
+  className,
+  links,
+  withLogo = false,
+  isCollapsed = false,
+  allowsCollapse = false,
+  orientation = 'vertical',
+}: SidebarProps) {
   const { me } = useProfile();
   const { sidebarLinks } = useSidebarLinks();
   const { isLessOrEqualThan } = useScreenSize();
@@ -53,8 +61,12 @@ function Sidebar({ className, links, withLogo = false, isCollapsed = false, allo
 
   return (
     <motion.div
-      className={classNames('sidebar', { 'sidebar--collapsed': collapsed }, className)}
-      animate={{ width: collapsed || isMobile ? 64 : 240 }}
+      className={classNames(
+        'sidebar',
+        { 'sidebar--collapsed': collapsed, 'sidebar--horizontal': orientation === 'horizontal' },
+        className
+      )}
+      animate={{ width: orientation === 'horizontal' ? '100%' : collapsed || isMobile ? 64 : 240 }}
       transition={{ duration: 0.3 }}
     >
       {(withLogo || allowsCollapse) && (
@@ -68,7 +80,7 @@ function Sidebar({ className, links, withLogo = false, isCollapsed = false, allo
       )}
 
       {filteredLinksByPerm.map((group, index) => (
-        <SidebarNav key={index} isCollapsed={collapsed} {...group} />
+        <SidebarNav key={index} isCollapsed={collapsed} orientation={orientation} {...group} />
       ))}
     </motion.div>
   );

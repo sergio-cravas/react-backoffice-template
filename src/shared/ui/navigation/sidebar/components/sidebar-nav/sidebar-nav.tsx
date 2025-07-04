@@ -13,6 +13,7 @@ export type SidebarNavProps = PropsWithChildren<{
   isCollapsed?: boolean;
   withTopBorder?: boolean;
   links?: SidebarLinkProps[];
+  orientation?: 'vertical' | 'horizontal';
 }>;
 
 function SidebarNav({
@@ -21,6 +22,7 @@ function SidebarNav({
   fullHeight = false,
   isCollapsed = false,
   withTopBorder = false,
+  orientation = 'vertical',
   children,
 }: SidebarNavProps) {
   return (
@@ -28,6 +30,7 @@ function SidebarNav({
       className={classNames('sidebar-nav', {
         'sidebar-nav--full-height': fullHeight,
         'sidebar-nav--with-top-border': withTopBorder,
+        'sidebar-nav--horizontal': orientation === 'horizontal',
       })}
     >
       {!!title && !isCollapsed && (
@@ -38,7 +41,7 @@ function SidebarNav({
 
       <ul className="sidebar-nav__links">
         {links.map((link) => (
-          <SidebarLink key={link.to} isCollapsed={isCollapsed} {...link} />
+          <SidebarLink key={link.to} isCollapsed={orientation === 'vertical' && isCollapsed} {...link} />
         ))}
       </ul>
 

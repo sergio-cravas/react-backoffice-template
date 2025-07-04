@@ -16,7 +16,7 @@
 
   &--horizontal {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   @include mixins.responsive('md') {
@@ -26,6 +26,11 @@
     &--collapsed {
       width: 64px;
       min-width: 64px;
+    }
+
+    &--horizontal {
+      width: 100%;
+      flex-direction: row;
     }
 
     &--collapsed &__logo {
