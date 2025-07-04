@@ -9,6 +9,7 @@ import { useYupValidationResolver } from '@/shared/hooks/use-yup-validation-reso
 type FormData = {
   email: string;
   password: string;
+  remember: boolean;
 };
 
 type Props = {
