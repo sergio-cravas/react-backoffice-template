@@ -51,6 +51,7 @@ function SignInForm() {
         control={control}
         inputProps={{
           type: 'email',
+          autoComplete: 'email',
           label: formatMessage({ id: 'signIn.form.email.label' }),
           placeholder: formatMessage({ id: 'signIn.form.email.placeholder' }),
         }}
@@ -61,6 +62,7 @@ function SignInForm() {
         control={control}
         inputProps={{
           type: 'password',
+          autoComplete: 'current-password',
           label: formatMessage({ id: 'signIn.form.password.label' }),
           placeholder: formatMessage({ id: 'signIn.form.password.placeholder' }),
         }}

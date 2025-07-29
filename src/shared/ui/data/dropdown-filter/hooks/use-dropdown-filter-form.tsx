@@ -1,8 +1,10 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { useForm } from 'react-hook-form';
 
 export const useDropdownFilterForm = ({ items, onApply }) => {
+  const [activeFilters, setActiveFilters] = useState<number>(0);
+
   const defaultValues = useMemo(
     () =>
       items.reduce((acc, item) => {
@@ -21,12 +23,15 @@ export const useDropdownFilterForm = ({ items, onApply }) => {
 
   const onClear = useCallback(() => {
     reset();
+    setActiveFilters(0);
 
     onApply?.({});
   }, [reset, onApply]);
 
   const onSubmit = useCallback(
     (data) => {
+      setActiveFilters(Object.values(data).filter((value) => value).length);
+
       onApply?.({ ...data });
     },
     [onApply]
@@ -34,6 +39,7 @@ export const useDropdownFilterForm = ({ items, onApply }) => {
 
   return {
     control,
+    activeFilters,
     onClear,
     onSubmit: handleSubmit(onSubmit),
   };

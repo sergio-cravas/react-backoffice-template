@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useIntl } from 'react-intl';
 import * as yup from 'yup';
 
+import regex from '@/shared/constants/regex';
 import { useYupValidationResolver } from '@/shared/hooks/use-yup-validation-resolver';
 
 type FormData = {
@@ -24,15 +25,21 @@ export const useSignUpForm = ({ onSubmit }: Props) => {
 
   const resolver = useYupValidationResolver(
     yup.object({
-      firstName: yup.string().required(formatMessage({ id: 'common.form.required' })),
-      lastName: yup.string().required(formatMessage({ id: 'common.form.required' })),
-      email: yup.string().required(formatMessage({ id: 'common.form.required' })),
-      password: yup.string().required(formatMessage({ id: 'common.form.required' })),
+      firstName: yup
+        .string()
+        .required(formatMessage({ id: 'common.form.validations.required' }))
+        .matches(regex.onlyLettersAndSpaces, formatMessage({ id: 'common.form.validations.onlyLettersAndSpaces' })),
+      lastName: yup
+        .string()
+        .required(formatMessage({ id: 'common.form.validations.required' }))
+        .matches(regex.onlyLettersAndSpaces, formatMessage({ id: 'common.form.validations.onlyLettersAndSpaces' })),
+      email: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
+      password: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
       confirmPassword: yup
         .string()
         .oneOf([yup.ref('password')], formatMessage({ id: 'signUp.form.confirmPassword.error' }))
-        .required(formatMessage({ id: 'common.form.required' })),
-      termsAndConditions: yup.boolean().oneOf([true], formatMessage({ id: 'common.form.required' })),
+        .required(formatMessage({ id: 'common.form.validations.required' })),
+      termsAndConditions: yup.boolean().oneOf([true], formatMessage({ id: 'common.form.validations.required' })),
     })
   );
 

@@ -20,6 +20,8 @@
   "users.list.headers.phone": "Phone",
   "users.list.headers.role": "Role",
   "users.list.headers.updatedAt": "Updated At",
+  "users.emptyState.title": "No users found",
+  "users.emptyState.message": "It looks like your contact list is off to a quiet start. Add your contacts now to stay connected and stay organized.",
   "users.saveModal.createTitle": "Create New User",
   "users.saveModal.editTitle": "Edit User",
   "users.saveModal.form.email.label": "Email",

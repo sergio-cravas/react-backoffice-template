@@ -21,8 +21,8 @@ export const useSignInForm = ({ onSubmit }: Props) => {
 
   const resolver = useYupValidationResolver(
     yup.object({
-      email: yup.string().required(formatMessage({ id: 'common.form.required' })),
-      password: yup.string().required(formatMessage({ id: 'common.form.required' })),
+      email: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
+      password: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
       remember: yup.boolean(),
     })
   );

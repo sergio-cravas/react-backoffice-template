@@ -9,6 +9,26 @@
 
   width: 100%;
 
+  &__button-wrapper {
+    position: relative;
+  }
+
+  &__active-filters-dot {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+    background-color: colors.$interaction-red-base;
+  }
+
   &__dropdown {
     z-index: variables.$menu-zindex;
     position: fixed;
@@ -20,7 +40,7 @@
     width: calc(100% - 32px);
     height: calc(100% - 32px);
 
-    padding: variables.$spacing1 variables.$spacing2;
+    padding: variables.$spacing1 variables.$spacing2 variables.$spacing2;
 
     border-radius: 8px;
     border: 1px solid #e4e4e4;

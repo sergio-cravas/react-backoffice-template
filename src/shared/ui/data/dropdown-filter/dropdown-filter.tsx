@@ -57,7 +57,7 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
   const dropdownRight = useMemo(() => (width ? '0' : 'unset'), [width]);
   const dropdownWidth = useMemo(() => (isGreaterThan('md') ? width || '100%' : undefined), [width, isGreaterThan]);
 
-  const { control, onClear, onSubmit } = useDropdownFilterForm({ items, onApply });
+  const { control, activeFilters, onClear, onSubmit } = useDropdownFilterForm({ items, onApply });
 
   const renderItemByType = useCallback(
     (item: Item) => {
@@ -77,12 +77,16 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
 
   return (
     <div className={cn('dropdown-filter', className)}>
-      <Button
-        variant="outline"
-        label={isGreaterThan('sm') ? label : undefined}
-        icon={<Icon as={icon} size={16} />}
-        onClick={onToggle}
-      />
+      <div className="dropdown-filter__button-wrapper">
+        <Button
+          variant="outline"
+          label={isGreaterThan('sm') ? label : undefined}
+          icon={<Icon as={icon} size={16} />}
+          onClick={onToggle}
+        />
+
+        {!!activeFilters && <div className="dropdown-filter__active-filters-dot" />}
+      </div>
 
       <motion.div
         className="dropdown-filter__dropdown"

@@ -6,6 +6,7 @@ import * as yup from 'yup';
 
 import { User, UserRole } from '@/features/auth/models/user';
 import { MAX_FILE_SIZE } from '@/shared/constants/constants';
+import regex from '@/shared/constants/regex';
 import { useYupValidationResolver } from '@/shared/hooks/use-yup-validation-resolver';
 
 type FormData = {
@@ -54,27 +55,37 @@ export const useSaveUserForm = ({ user, onSubmit }: Props) => {
       imageUrl: yup
         .mixed<undefined | string | { base64: string | ArrayBuffer | null; name: string; file: File }>()
         .nullable()
-        .test('fileSize', formatMessage({ id: 'common.form.fileTooLarge' }, { maxSize: '2MB' }), (value) => {
-          if (value && typeof value === 'object' && 'file' in value && value.file instanceof File) {
-            return value.file.size <= MAX_FILE_SIZE;
+        .test(
+          'fileSize',
+          formatMessage({ id: 'common.form.validations.fileTooLarge' }, { maxSize: '2MB' }),
+          (value) => {
+            if (value && typeof value === 'object' && 'file' in value && value.file instanceof File) {
+              return value.file.size <= MAX_FILE_SIZE;
+            }
+            return true;
           }
-          return true;
-        }),
-      firstName: yup.string().required(formatMessage({ id: 'common.form.required' })),
-      lastName: yup.string().required(formatMessage({ id: 'common.form.required' })),
+        ),
+      firstName: yup
+        .string()
+        .required(formatMessage({ id: 'common.form.validations.required' }))
+        .matches(regex.onlyLettersAndSpaces, formatMessage({ id: 'common.form.validations.onlyLettersAndSpaces' })),
+      lastName: yup
+        .string()
+        .required(formatMessage({ id: 'common.form.validations.required' }))
+        .matches(regex.onlyLettersAndSpaces, formatMessage({ id: 'common.form.validations.onlyLettersAndSpaces' })),
       email: yup
         .string()
-        .email(formatMessage({ id: 'common.form.invalidEmail' }))
-        .required(formatMessage({ id: 'common.form.required' })),
-      phone: yup.string().required(formatMessage({ id: 'common.form.required' })),
+        .email(formatMessage({ id: 'common.form.validations.invalidEmail' }))
+        .required(formatMessage({ id: 'common.form.validations.required' })),
+      phone: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
       role: yup
         .mixed<UserRole | { label: string; value: UserRole }>()
-        .test('roleType', formatMessage({ id: 'common.form.invalid' }), (value) =>
+        .test('roleType', formatMessage({ id: 'common.form.validations.invalid' }), (value) =>
           typeof value === 'string'
             ? Object.values(UserRole).includes(value as UserRole)
             : value && typeof value === 'object' && 'value' in value && Object.values(UserRole).includes(value.value)
         )
-        .required(formatMessage({ id: 'common.form.required' })),
+        .required(formatMessage({ id: 'common.form.validations.required' })),
     })
   );
 

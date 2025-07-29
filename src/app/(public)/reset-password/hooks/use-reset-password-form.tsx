@@ -19,7 +19,7 @@ export const useResetPasswordForm = ({ onSubmit }: Props) => {
 
   const resolver = useYupValidationResolver(
     yup.object({
-      email: yup.string().required(formatMessage({ id: 'common.form.required' })),
+      email: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
     })
   );
 

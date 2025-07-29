@@ -2,6 +2,7 @@ import React, { forwardRef, Ref, useCallback, useEffect, useState } from 'react'
 
 import cn from 'classnames';
 import { MdOutlineVisibility, MdOutlineVisibilityOff } from 'react-icons/md';
+import { useIntl } from 'react-intl';
 
 import { Text } from '../text';
 
@@ -23,10 +24,28 @@ export type InputProps = {
 
 export const Input = forwardRef(
   (
-    { name, label, value, className, invalid, errorMessage, rightElement, style, onChange, ...props }: InputProps,
+    {
+      name,
+      label,
+      value,
+      className,
+      invalid,
+      errorMessage,
+      rightElement,
+      style,
+      type,
+      required,
+      disabled,
+      pattern,
+      min,
+      max,
+      step,
+      onChange,
+      ...props
+    }: InputProps,
     ref: Ref<HTMLInputElement>
   ) => {
-    const { type, required, disabled, pattern, min, max, step } = props;
+    const { formatMessage } = useIntl();
 
     const [inputValue, setInputValue] = useState<string>(value || '');
     const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
@@ -52,7 +71,11 @@ export const Input = forwardRef(
       if (type === 'password' && !disabled && !props.readOnly) {
         return (
           <div className="input-container__field__right-icon" onClick={() => setIsPasswordVisible((prev) => !prev)}>
-            {isPasswordVisible ? <MdOutlineVisibilityOff size={24} /> : <MdOutlineVisibility size={24} />}
+            {isPasswordVisible ? (
+              <MdOutlineVisibilityOff size={24} aria-label={formatMessage({ id: 'app.ui.core.input.hidePassword' })} />
+            ) : (
+              <MdOutlineVisibility size={24} aria-label={formatMessage({ id: 'app.ui.core.input.showPassword' })} />
+            )}
           </div>
         );
       }

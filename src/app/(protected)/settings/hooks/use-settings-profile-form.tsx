@@ -27,15 +27,15 @@ export const useSettingsProfileForm = ({ defaultValues = { firstName: '', lastNa
       imageUrl: yup
         .mixed<undefined | string | { base64: string | ArrayBuffer | null; name: string; file: File }>()
         .nullable()
-        .test('fileSize', formatMessage({ id: 'common.form.fileTooLarge' }, { maxSize: '2MB' }), (value) => {
+        .test('fileSize', formatMessage({ id: 'common.form.validations.fileTooLarge' }, { maxSize: '2MB' }), (value) => {
           if (value && typeof value === 'object' && 'file' in value && value.file instanceof File) {
             return value.file.size <= MAX_FILE_SIZE;
           }
 
           return true;
         }),
-      firstName: yup.string().required(formatMessage({ id: 'common.form.required' })),
-      lastName: yup.string().required(formatMessage({ id: 'common.form.required' })),
+      firstName: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
+      lastName: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
     })
   );
 
