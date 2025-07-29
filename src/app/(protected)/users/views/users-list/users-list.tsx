@@ -3,23 +3,27 @@ import { useNavigate } from 'react-router-dom';
 
 import { useIntl } from 'react-intl';
 
+import { Routes } from '@/app/router';
 import { User } from '@/features/auth/models/user';
 import { useGetUsers } from '@/features/users/hooks/use-get-users';
 import { useUsersStore } from '@/features/users/store';
 import { SortBy } from '@/shared/types/common.types';
 import { List } from '@/shared/ui/data/list';
 import { Column } from '@/shared/ui/data/list/types/list.types';
+import { EmptyListIndicator } from '@/shared/ui/layout/empty-list-indicator';
 
 import { UserNameListCell } from '../../components/user-name-list-cell';
 import { UserRoleBadge } from '../../components/user-role-badge';
 
+import './users-list.scss';
+
 function UsersList() {
+  const navigate = useNavigate();
   const { formatMessage } = useIntl();
 
-  const navigate = useNavigate();
   const { sortBy, filter, category, pagination, changeSortBy, changePage } = useUsersStore();
 
-  const { users } = useGetUsers({
+  const { users, isLoading } = useGetUsers({
     page: pagination.page,
     limit: pagination.limit,
     sortBy,
@@ -81,6 +85,21 @@ function UsersList() {
     ],
     [formatMessage]
   );
+
+  if (!isLoading && users?.totalCount === 0) {
+    return (
+      <div className="users-list__empty-state">
+        <EmptyListIndicator
+          title={formatMessage({ id: 'users.emptyState.title' })}
+          message={formatMessage({ id: 'users.emptyState.message' })}
+          addButton={{
+            label: formatMessage({ id: 'users.add' }),
+            onClick: () => navigate(`${Routes.USERS}/new`),
+          }}
+        />
+      </div>
+    );
+  }
 
   return (
     <List<User>

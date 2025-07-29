@@ -19,6 +19,8 @@
   "users.list.headers.name": "Nombre",
   "users.list.headers.phone": "Teléfono",
   "users.list.headers.role": "Rol",
+  "users.emptyState.title": "No se encontraron usuarios",
+  "users.emptyState.message": "Parece que tu lista de contactos está vacía. Agrega tus contactos ahora para mantenerte conectado y organizado.",
   "users.list.headers.updatedAt": "Actualizado el",
   "users.saveModal.createTitle": "Crear nuevo usuario",
   "users.saveModal.editTitle": "Editar usuario",

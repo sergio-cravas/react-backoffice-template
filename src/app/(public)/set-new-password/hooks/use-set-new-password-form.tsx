@@ -21,11 +21,11 @@ export const useSetNewPasswordForm = ({ onSubmit }: Props) => {
 
   const resolver = useYupValidationResolver(
     yup.object({
-      password: yup.string().required(formatMessage({ id: 'common.form.required' })),
+      password: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
       confirmPassword: yup
         .string()
         .oneOf([yup.ref('password')], formatMessage({ id: 'signUp.form.confirmPassword.error' }))
-        .required(formatMessage({ id: 'common.form.required' })),
+        .required(formatMessage({ id: 'common.form.validations.required' })),
     })
   );
 

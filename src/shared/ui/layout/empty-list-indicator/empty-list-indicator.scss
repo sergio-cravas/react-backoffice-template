@@ -1,0 +1,31 @@
+@use '@/shared/styles/mixins.module.scss' as mixins;
+
+.empty-list-indicator {
+  max-width: 344px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  align-items: center;
+
+  &__image {
+    height: auto;
+    max-width: 156px;
+
+    object-fit: cover;
+    margin-bottom: 36px;
+
+    @include mixins.responsive('sm') {
+      max-width: 224px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__message {
+    margin-bottom: 24px;
+  }
+}
