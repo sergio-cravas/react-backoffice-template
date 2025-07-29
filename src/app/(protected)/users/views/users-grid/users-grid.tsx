@@ -31,7 +31,7 @@ function UsersGrid() {
   const getRowKey = useCallback((user: User) => user.id, []);
   const handleRowClick = useCallback((user: User) => navigate(`/users/${user.id}`), [navigate]);
 
-  if (!isLoading && users?.totalCount === 0) {
+  if (!isLoading && !users?.totalCount) {
     return (
       <div className="users-grid__empty-state">
         <EmptyListIndicator
