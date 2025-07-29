@@ -34,6 +34,7 @@ function SignUpForm() {
           name="firstName"
           control={control}
           inputProps={{
+            autoComplete: 'given-name',
             label: formatMessage({ id: 'signUp.form.firstName.label' }),
             placeholder: formatMessage({ id: 'signUp.form.firstName.placeholder' }),
           }}
@@ -43,6 +44,7 @@ function SignUpForm() {
           name="lastName"
           control={control}
           inputProps={{
+            autoComplete: 'family-name',
             label: formatMessage({ id: 'signUp.form.lastName.label' }),
             placeholder: formatMessage({ id: 'signUp.form.lastName.placeholder' }),
           }}
@@ -54,6 +56,7 @@ function SignUpForm() {
         control={control}
         inputProps={{
           type: 'email',
+          autoComplete: 'email',
           label: formatMessage({ id: 'signUp.form.email.label' }),
           placeholder: formatMessage({ id: 'signUp.form.email.placeholder' }),
         }}
@@ -65,6 +68,7 @@ function SignUpForm() {
           control={control}
           inputProps={{
             type: 'password',
+            autoComplete: 'new-password',
             label: formatMessage({ id: 'signUp.form.password.label' }),
             placeholder: formatMessage({ id: 'signUp.form.password.placeholder' }),
           }}
@@ -75,6 +79,7 @@ function SignUpForm() {
           control={control}
           inputProps={{
             type: 'password',
+            autoComplete: 'new-password',
             label: formatMessage({ id: 'signUp.form.confirmPassword.label' }),
             placeholder: formatMessage({ id: 'signUp.form.confirmPassword.placeholder' }),
           }}

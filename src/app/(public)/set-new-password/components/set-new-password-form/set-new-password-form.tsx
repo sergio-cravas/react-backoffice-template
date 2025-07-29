@@ -41,6 +41,7 @@ function SetNewPasswordForm({ token, onSuccess }: SetNewPasswordFormProps) {
         control={control}
         inputProps={{
           type: 'password',
+          autoComplete: 'new-password',
           label: formatMessage({ id: 'setNewPassword.form.password.label' }),
           placeholder: formatMessage({ id: 'setNewPassword.form.password.placeholder' }),
         }}
@@ -51,6 +52,7 @@ function SetNewPasswordForm({ token, onSuccess }: SetNewPasswordFormProps) {
         control={control}
         inputProps={{
           type: 'password',
+          autoComplete: 'new-password',
           label: formatMessage({ id: 'setNewPassword.form.confirmPassword.label' }),
           placeholder: formatMessage({ id: 'setNewPassword.form.confirmPassword.placeholder' }),
         }}

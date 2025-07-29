@@ -6,16 +6,17 @@
   "app.features.users.categories.user": "Usuario",
   "app.features.users.views.grid": "Grid",
   "app.features.users.views.list": "Lista",
-  "app.ui.layout.sectionHeader.sortBy": "Ordenar por",
-  "app.ui.layout.sectionHeader.filter": "Filtrar",
-  "app.ui.data.dropdownFilter.title": "Filtros",
-  "app.ui.data.dropdownFilter.clearAll": "Borrar todos",
-
   "app.footer": "© 2025 Laelia Tech. Todos los derechos reservados.",
   "app.name": "NOMBRE DE LA EMPRESA",
   "app.sidebar.dashboard": "Dashboard",
   "app.sidebar.database": "Base de datos",
   "app.sidebar.database.users": "Usuarios",
   "app.sidebar.settings": "Configuración",
-  "app.ui.layout.sectionCategories.addCategory": "Añadir categoría"
+  "app.ui.core.input.hidePassword": "Ocultar contraseña",
+  "app.ui.core.input.showPassword": "Mostrar contraseña",
+  "app.ui.data.dropdownFilter.clearAll": "Borrar todos",
+  "app.ui.data.dropdownFilter.title": "Filtros",
+  "app.ui.layout.sectionCategories.addCategory": "Añadir categoría",
+  "app.ui.layout.sectionHeader.filter": "Filtrar",
+  "app.ui.layout.sectionHeader.sortBy": "Ordenar por"
 }

@@ -35,6 +35,7 @@ function ResetPasswordForm({ onSuccess }: ResetPasswordFormProps) {
         control={control}
         inputProps={{
           type: 'email',
+          autoComplete: 'email',
           label: formatMessage({ id: 'resetPassword.form.email.label' }),
           placeholder: formatMessage({ id: 'resetPassword.form.email.placeholder' }),
         }}
