@@ -86,7 +86,7 @@ function UsersList() {
     [formatMessage]
   );
 
-  if (!isLoading && users?.totalCount === 0) {
+  if (!isLoading && !users?.totalCount) {
     return (
       <div className="users-list__empty-state">
         <EmptyListIndicator
