@@ -12,14 +12,14 @@
   border: 0;
   gap: variables.$spacing1;
   padding: variables.$spacing2;
-  border-radius: 4px;
+  border-radius: variables.$border-radius;
 
   transition: all 0.125s ease-in-out;
 
   cursor: pointer;
 
   &--shape-square {
-    border-radius: 4px;
+    border-radius: variables.$border-radius;
   }
 
   &--shape-circle {

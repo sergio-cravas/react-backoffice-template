@@ -1,4 +1,5 @@
 @use '@/shared/styles/colors.module.scss' as colors;
+@use '@/shared/styles/variables.module.scss' as variables;
 
 .list-header {
   width: fit-content;
@@ -6,7 +7,7 @@
 
   display: flex;
 
-  border-radius: 4px;
+  border-radius: variables.$border-radius;
   border: 1px solid colors.$border-primary;
   background-color: colors.$background-secondary;
 
