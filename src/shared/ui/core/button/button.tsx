@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import cn from 'classnames';
@@ -16,6 +16,7 @@ type ButtonSize = 's' | 'm' | 'l' | 'xl';
 type ButtonProps = PropsWithChildren<{
   to?: string;
   icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
   type?: ButtonType;
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -25,11 +26,13 @@ type ButtonProps = PropsWithChildren<{
   className?: string;
   label?: string;
   onClick?: (event: React.MouseEvent) => void;
-}>;
+}> &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
   to,
   icon,
+  iconPosition = 'left',
   fullWidth,
   type = 'button',
   variant = 'primary',
@@ -40,6 +43,7 @@ export const Button = ({
   children,
   label,
   onClick,
+  ...props
 }: ButtonProps) => {
   const { formatMessage } = useIntl();
 
@@ -51,6 +55,18 @@ export const Button = ({
     ) : (
       children
     );
+
+  const renderedIcon = useMemo(() => {
+    if (isLoading) return <Icon spin as={AiOutlineLoading3Quarters} />;
+
+    return icon;
+  }, [isLoading, icon]);
+
+  const renderedLabel = useMemo(() => {
+    if (isLoading) return formatMessage({ id: 'common.loading' });
+
+    return label;
+  }, [isLoading, label, formatMessage]);
 
   return (
     <LinkWrapper>
@@ -68,12 +84,14 @@ export const Button = ({
         type={type}
         disabled={disabled || isLoading}
         onClick={onClick}
+        {...props}
       >
-        {isLoading ? <Icon spin as={AiOutlineLoading3Quarters} /> : icon}
+        {iconPosition === 'left' && renderedIcon}
 
-        {isLoading ? formatMessage({ id: 'common.loading' }) : label}
-
+        {renderedLabel}
         {children}
+
+        {iconPosition === 'right' && renderedIcon}
       </button>
     </LinkWrapper>
   );
