@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useIntl } from 'react-intl';
 import * as yup from 'yup';
 
-import { User, UserRole } from '@/features/auth/models/user';
+import { User, UserRole } from '@/api/users/models/user';
 import { MAX_FILE_SIZE } from '@/shared/constants/constants';
 import regex from '@/shared/constants/regex';
 import { useYupValidationResolver } from '@/shared/hooks/use-yup-validation-resolver';

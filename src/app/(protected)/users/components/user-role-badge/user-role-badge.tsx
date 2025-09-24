@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import classNames from 'classnames';
 import { useIntl } from 'react-intl';
 
-import { UserRole } from '@/features/auth/models/user';
+import { UserRole } from '@/api/users/models/user';
 import colors from '@/shared/styles/colors.module.scss';
 import { Text } from '@/shared/ui/core/text';
 

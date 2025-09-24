@@ -3,10 +3,10 @@ import { useMemo } from 'react';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
-import { useProfile } from '@/features/auth/hooks/use-profile';
-import { hasPerm } from '@/features/auth/utils/has-perm';
+import { useProfile } from '@/api/auth/hooks/use-profile';
 import useScreenSize from '@/shared/hooks/use-screen-size';
 import { Logo } from '@/shared/ui/core/logo';
+import { hasPerm } from '@/shared/utils/auth.utils';
 
 import { SidebarNav, type SidebarNavProps } from './components/sidebar-nav';
 import { SidebarToggleButton } from './components/sidebar-toggle-button';

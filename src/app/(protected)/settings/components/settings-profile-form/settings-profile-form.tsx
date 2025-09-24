@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 import { toast } from 'sonner';
 
-import { useProfile } from '@/features/auth/hooks/use-profile';
-import { useUpdateProfile } from '@/features/auth/hooks/use-update-profile';
+import { useProfile } from '@/api/auth/hooks/use-profile';
+import { useUpdateProfile } from '@/api/auth/hooks/use-update-profile';
 import { Button } from '@/shared/ui/core/button';
 import { ImageInputField } from '@/shared/ui/forms/image-input-field';
 import { InputField } from '@/shared/ui/forms/input-field';

@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 import { Routes } from '@/app/router';
 import LogoSVG from '@/assets/logo.svg';
-import { useAuthStore } from '@/features/auth/store';
+import { useAuthStore } from '@/shared/store/auth';
 
 import './logo.scss';
 

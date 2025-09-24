@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 
 import { useIntl } from 'react-intl';
 
+import { UserPageView } from '@/api/users/models/user';
+import { useUserPageCategories } from '@/app/(protected)/users/hooks/use-user-page-categories';
+import { useUserPageView } from '@/app/(protected)/users/hooks/use-user-page-views';
 import { Routes } from '@/app/router';
-import { UserPageView } from '@/features/auth/models/user';
-import { useUserPageCategories } from '@/features/users/hooks/use-user-page-categories';
-import { useUserPageView } from '@/features/users/hooks/use-user-page-views';
-import { useUsersStore } from '@/features/users/store';
 import { useSaveModalController } from '@/shared/hooks/use-save-modal-controller';
+import { useUsersStore } from '@/shared/store/users';
 import { SectionCategories } from '@/shared/ui/layout/section-categories';
 import { SectionHeader } from '@/shared/ui/layout/section-header';
 

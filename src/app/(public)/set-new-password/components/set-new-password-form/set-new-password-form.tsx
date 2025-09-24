@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import { toast } from 'sonner';
 
-import { useSetNewPassword } from '@/features/auth/hooks/use-set-new-password';
+import { useSetNewPassword } from '@/api/auth/hooks/use-set-new-password';
 import { Button } from '@/shared/ui/core/button';
 import { InputField } from '@/shared/ui/forms/input-field';
 

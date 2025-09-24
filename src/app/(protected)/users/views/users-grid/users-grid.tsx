@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { useIntl } from 'react-intl';
 
+import { useGetUsers } from '@/api/users/hooks/use-get-users';
+import { User } from '@/api/users/models/user';
 import { Routes } from '@/app/router';
-import { User } from '@/features/auth/models/user';
-import { useGetUsers } from '@/features/users/hooks/use-get-users';
-import { useUsersStore } from '@/features/users/store';
+import { useUsersStore } from '@/shared/store/users';
 import Grid from '@/shared/ui/data/grid/grid';
 import { EmptyListIndicator } from '@/shared/ui/layout/empty-list-indicator';
 

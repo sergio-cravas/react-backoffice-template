@@ -1,7 +1,7 @@
 import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
-import { UserRole } from '@/features/auth/models/user';
+import { UserRole } from '@/api/users/models/user';
 import { Avatar } from '@/shared/ui/core/avatar';
 import { Button } from '@/shared/ui/core/button';
 import { Icon } from '@/shared/ui/core/icon';

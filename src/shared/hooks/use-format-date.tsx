@@ -1,12 +1,12 @@
-import { useCallback, useContext, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { format as formatDFNS, FormatOptions } from 'date-fns';
 import { enUS, es } from 'date-fns/locale';
 
-import { LangContext } from '@/features/lang/context/lang.context';
+import { useLangStore } from '../store/lang';
 
 export const useDateFns = () => {
-  const { locale } = useContext(LangContext);
+  const { locale } = useLangStore();
 
   const dateFnsLocale = useMemo(() => {
     const value = { ['en']: enUS, ['es']: es }[locale];

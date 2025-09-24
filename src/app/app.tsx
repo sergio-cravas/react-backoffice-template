@@ -3,7 +3,7 @@ import { RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'sonner';
 
-import { LangContextProvider } from '@/features/lang/context/lang.context';
+import { LanguageProvider } from '@/shared/ui/features/lang/language-provider';
 
 import { router } from './router';
 
@@ -12,11 +12,11 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <LangContextProvider>
+      <LanguageProvider>
         <Toaster />
 
         <RouterProvider router={router} />
-      </LangContextProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
