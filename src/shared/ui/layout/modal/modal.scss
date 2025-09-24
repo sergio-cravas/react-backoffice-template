@@ -52,6 +52,7 @@
   &__body {
     @include mixins.force-scrollbar;
 
+    flex: 1;
     height: 100%;
     padding: 24px;
   }
