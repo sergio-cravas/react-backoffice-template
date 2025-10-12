@@ -113,9 +113,11 @@ function SaveUserModal({ userId, onClose }: SaveUserModalProps) {
         </div>
 
         <div className="save-user-modal__row">
-          <Button variant="secondary" label={formatMessage({ id: 'common.form.cancel' })} onClick={onCancel} />
+          <Button variant="secondary" onClick={onCancel}>
+            {formatMessage({ id: 'common.form.cancel' })}
+          </Button>
 
-          <Button type="submit" label={formatMessage({ id: 'common.form.save' })} />
+          <Button type="submit">{formatMessage({ id: 'common.form.save' })}</Button>
         </div>
       </form>
     </Modal>

@@ -51,7 +51,10 @@ function Menu({ icon, label, items, width, className }: MenuProps) {
 
   return (
     <div className={cn('menu', className)}>
-      <Button label={label} variant="outline" icon={<Icon as={icon} size={16} />} onClick={onExpand} />
+      <Button variant="outline" onClick={onExpand}>
+        {icon && <Icon as={icon} size={16} />}
+        {label}
+      </Button>
 
       <motion.div
         className="menu__dropdown"

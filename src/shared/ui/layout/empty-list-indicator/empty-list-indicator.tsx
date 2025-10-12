@@ -31,12 +31,11 @@ function EmptyListIndicator({ title, message, imageSrc = Image, addButton }: Emp
         {message}
       </Text>
 
-      {addButton && (
-        <Button
-          className="empty-list-indicator__button"
-          icon={<Icon variant="secondary" as={MdAdd} size={16} />}
-          {...addButton}
-        />
+      {!!addButton && (
+        <Button className="empty-list-indicator__button" onClick={addButton.onClick}>
+          <Icon variant="secondary" as={MdAdd} size={16} />
+          {addButton.label}
+        </Button>
       )}
     </div>
   );

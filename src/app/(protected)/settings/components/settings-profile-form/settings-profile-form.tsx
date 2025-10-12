@@ -55,7 +55,7 @@ function SettingsProfileForm() {
       </div>
 
       <div className="settings-profile-form__save">
-        <Button fullWidth type="submit" variant="primary" label={formatMessage({ id: 'common.form.save' })} />
+        <Button type="submit">{formatMessage({ id: 'common.form.save' })}</Button>
       </div>
     </form>
   );

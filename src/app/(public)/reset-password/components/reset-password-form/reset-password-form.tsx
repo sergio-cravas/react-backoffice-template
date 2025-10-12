@@ -41,14 +41,9 @@ function ResetPasswordForm({ onSuccess }: ResetPasswordFormProps) {
         }}
       />
 
-      <Button
-        fullWidth
-        size="l"
-        type="submit"
-        variant="primary"
-        className="reset-password-form__submit"
-        label={formatMessage({ id: 'resetPassword.form.submit' })}
-      />
+      <Button type="submit" size="lg" className="reset-password-form__submit">
+        {formatMessage({ id: 'resetPassword.form.submit' })}
+      </Button>
 
       <Text className="reset-password-form__go-back">
         {formatMessage({ id: 'resetPassword.form.signIn.text' })}{' '}

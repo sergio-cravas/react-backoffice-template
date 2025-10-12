@@ -15,12 +15,15 @@ type Props = {
 function SidebarToggleButton({ disabled, isCollapsed, onClick }: Props) {
   return (
     <Button
-      variant="tertiary"
+      size="icon"
+      variant="secondary"
       disabled={disabled}
+      aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
       className={classNames('sidebar-toggle-button', { 'sidebar-toggle-button--collapsed': isCollapsed })}
-      icon={<Icon as={isCollapsed ? LuChevronsRightLeft : LuChevronsLeftRight} size={20} variant="tertiary" />}
       onClick={onClick}
-    />
+    >
+      <Icon as={isCollapsed ? LuChevronsRightLeft : LuChevronsLeftRight} size={20} variant="tertiary" />
+    </Button>
   );
 }
 

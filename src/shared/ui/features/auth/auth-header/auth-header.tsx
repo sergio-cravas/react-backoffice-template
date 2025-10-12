@@ -30,12 +30,7 @@ function AuthHeader() {
           </Text>
         </Link>
 
-        <Button
-          type="button"
-          variant="primary"
-          label={formatMessage({ id: 'app.features.auth.authHeader.signUp' })}
-          onClick={handleRedirect}
-        />
+        <Button onClick={handleRedirect}>{formatMessage({ id: 'app.features.auth.authHeader.signUp' })}</Button>
       </div>
     </header>
   );
