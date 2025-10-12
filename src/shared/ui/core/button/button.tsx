@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { useIntl } from 'react-intl';
 

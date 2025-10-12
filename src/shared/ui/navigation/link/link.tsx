@@ -1,6 +1,6 @@
 import * as RouterDom from 'react-router-dom';
 
-import cn from 'classnames';
+import cn from 'clsx';
 
 import './link.scss';
 

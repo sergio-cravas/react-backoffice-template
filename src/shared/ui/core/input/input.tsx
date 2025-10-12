@@ -1,6 +1,6 @@
 import React, { forwardRef, Ref, useCallback, useEffect, useState } from 'react';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { MdOutlineVisibility, MdOutlineVisibilityOff } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 

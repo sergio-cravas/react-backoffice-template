@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 import { IconType } from 'react-icons';
 
 import { RoutePath } from '@/app/router';

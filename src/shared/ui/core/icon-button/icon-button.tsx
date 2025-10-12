@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { Link } from 'react-router-dom';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { IconType } from 'react-icons';
 
 import Icon from '../icon/icon';

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { MdArrowBack } from 'react-icons/md';
 
 import colors from '@/shared/styles/colors.module.scss';

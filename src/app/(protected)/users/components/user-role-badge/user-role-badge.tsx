@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 import { useIntl } from 'react-intl';
 
 import { UserRole } from '@/api/users/models/user';

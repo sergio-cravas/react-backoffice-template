@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
 

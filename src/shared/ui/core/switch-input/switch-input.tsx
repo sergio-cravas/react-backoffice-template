@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import cn from 'classnames';
+import cn from 'clsx';
 
 import { Text } from '@/shared/ui/core/text';
 

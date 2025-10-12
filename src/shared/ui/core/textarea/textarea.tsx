@@ -1,6 +1,6 @@
 import React, { forwardRef, Ref, useCallback, useEffect, useState } from 'react';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { MdErrorOutline } from 'react-icons/md';
 
 import { Text } from '../text';

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { motion } from 'framer-motion';
 import { MdExpandLess, MdExpandMore } from 'react-icons/md';
 

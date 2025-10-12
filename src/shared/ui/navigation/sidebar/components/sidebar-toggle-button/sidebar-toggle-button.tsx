@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classNames from 'clsx';
 import { LuChevronsLeftRight, LuChevronsRightLeft } from 'react-icons/lu';
 
 import { Button } from '@/shared/ui/core/button';

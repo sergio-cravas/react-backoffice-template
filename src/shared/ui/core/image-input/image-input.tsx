@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 import { MdAdd } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 

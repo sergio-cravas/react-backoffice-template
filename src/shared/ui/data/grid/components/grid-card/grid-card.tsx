@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, memo, PropsWithChildren } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 
 import './grid-card.scss';
 

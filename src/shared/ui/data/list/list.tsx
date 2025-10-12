@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, JSX, memo } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 
 import { SortBy } from '@/shared/types/common.types';
 import { Pagination } from '@/shared/ui/layout/pagination';
