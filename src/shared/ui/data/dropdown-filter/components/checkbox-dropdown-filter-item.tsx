@@ -8,6 +8,7 @@ type Props = { control: Control<any, any>; item: CheckboxItem };
 
 function CheckboxDropdownFilterItem({ control, item }: Props) {
   const { type, value, ...inputProps } = item;
+
   return <CheckboxField control={control} name={item.name} inputProps={inputProps} />;
 }
 
