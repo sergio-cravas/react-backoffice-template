@@ -1,73 +1,37 @@
-import { useCallback, useEffect, useState } from 'react';
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import { CheckIcon } from 'lucide-react';
 
-import cn from 'clsx';
-import { MdCheck } from 'react-icons/md';
+import { cn } from '@/shared/utils/style.utils';
 
-import { Icon } from '../icon';
+import { Label } from '../label';
 
 import './checkbox.scss';
 
 export type CheckboxProps = {
   name: string;
   label?: React.ReactNode;
-  readOnly?: boolean;
-  disabled?: boolean;
-  value?: boolean;
-  className?: string;
-  onChange?: (value: any) => void;
-};
+} & React.ComponentProps<typeof CheckboxPrimitive.Root>;
 
-export function Checkbox({
-  name,
-  label,
-  disabled,
-  readOnly,
-  className,
-  value = false,
-  onChange,
-  ...props
-}: CheckboxProps) {
-  const [checked, setChecked] = useState<boolean>(value);
-
-  useEffect(() => {
-    if (value !== undefined) setChecked(value);
-  }, [value]);
-
-  const handleOnCheck = useCallback(
-    (event) => {
-      if (readOnly) return;
-      event.stopPropagation();
-      const newValue = !checked;
-
-      setChecked(newValue);
-      onChange && onChange(newValue);
-    },
-    [checked, onChange, readOnly]
-  );
-
+export function Checkbox({ name, label, className, ...props }: CheckboxProps) {
   return (
-    <div
-      className={`checkbox ${disabled ? 'checkbox--disabled' : ''} ${className || ''}`}
-      onClick={disabled ? () => undefined : handleOnCheck}
-    >
-      <div
-        id={name}
-        tabIndex={0}
-        className={cn('checkbox__input', {
-          'checkbox__input--disabled': disabled,
-          'checkbox__input--read-only': readOnly,
-          'checkbox__input--checked': checked,
-        })}
+    <div className="flex items-center gap-3">
+      <CheckboxPrimitive.Root
+        data-slot="checkbox"
+        className={cn(
+          'peer border-input dark:bg-input/30 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-primary data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[4px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50',
+          className
+        )}
         {...props}
       >
-        {checked && <Icon as={MdCheck} color="white" />}
-      </div>
+        <CheckboxPrimitive.Indicator
+          data-slot="checkbox-indicator"
+          className="grid place-content-center text-current transition-none"
+        >
+          <CheckIcon className="size-3.5" />
+        </CheckboxPrimitive.Indicator>
+      </CheckboxPrimitive.Root>
 
-      {!!label && (
-        <label htmlFor={name} className="checkbox__label">
-          {label}
-        </label>
-      )}
+      {!!label && <Label htmlFor={name}>{label}</Label>}
     </div>
   );
 }
