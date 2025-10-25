@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { MdArrowBack } from 'react-icons/md';
 
-import colors from '@/shared/styles/colors.module.scss';
 import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
+import colors from '@/styles/exports/colors.module.scss';
 
 import './go-back-link.scss';
 

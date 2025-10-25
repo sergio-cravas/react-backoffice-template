@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { MdOutlineCases, MdOutlineEdit, MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
 import { useGetUserById } from '@/api/users/hooks/use-get-user-by-id';
 import { Avatar } from '@/shared/ui/core/avatar';
+import { Button } from '@/shared/ui/core/button';
 import { Icon } from '@/shared/ui/core/icon';
-import { IconButton } from '@/shared/ui/core/icon-button';
 import { Text } from '@/shared/ui/core/text';
 import { Modal } from '@/shared/ui/layout/modal';
 
@@ -50,33 +50,29 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
 
           <div className="user-details-modal__actions">
             <div className="user-details-modal__action-item">
-              <IconButton
-                icon={MdOutlinePhone}
-                size="l"
-                variant="outline"
-                shape="circle"
-                to={`tel:${user?.phone}`}
-                disabled={!user?.phone}
-              />
+              <Button asChild size="icon-lg" variant="outline" aria-label="Open user phone" disabled={!user?.phone}>
+                <Link to={`tel:${user?.phone}`}>
+                  <Icon as={MdOutlinePhone} size={20} variant="outline" />
+                </Link>
+              </Button>
 
               <Text color="contentDarkSecondary">{formatMessage({ id: 'users.detailModal.call' })}</Text>
             </div>
 
             <div className="user-details-modal__action-item">
-              <IconButton
-                icon={MdOutlineEmail}
-                size="l"
-                variant="outline"
-                shape="circle"
-                to={`mailto:${user?.email}`}
-                disabled={!user?.email}
-              />
+              <Button asChild size="icon-lg" variant="outline" aria-label="Open user email" disabled={!user?.email}>
+                <Link to={`mailto:${user?.email}`}>
+                  <Icon as={MdOutlineEmail} size={20} variant="outline" />
+                </Link>
+              </Button>
 
               <Text color="contentDarkSecondary">{formatMessage({ id: 'users.detailModal.email' })}</Text>
             </div>
 
             <div className="user-details-modal__action-item">
-              <IconButton icon={MdOutlineEdit} size="l" variant="outline" shape="circle" onClick={handleOnEdit} />
+              <Button size="icon-lg" variant="outline" onClick={handleOnEdit}>
+                <Icon as={MdOutlineEdit} size={20} variant="outline" />
+              </Button>
 
               <Text color="contentDarkSecondary">{formatMessage({ id: 'users.detailModal.edit' })}</Text>
             </div>

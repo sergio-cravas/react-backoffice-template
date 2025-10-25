@@ -1,5 +1,5 @@
-@use '@/shared/styles/fonts.module.scss' as fonts;
-@use '@/shared/styles/colors.module.scss' as colors;
+@use '@/styles/fonts.module.scss' as fonts;
+@use '@/styles/exports/colors.module.scss' as colors;
 
 .link {
   @include fonts.font-body-m;

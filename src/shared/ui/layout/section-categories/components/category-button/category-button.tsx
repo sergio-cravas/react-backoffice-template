@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import cn from 'classnames';
+import cn from 'clsx';
 
 import { Option } from '@/shared/types/form.types';
 import { Text } from '@/shared/ui/core/text';

@@ -80,14 +80,9 @@ function SignInForm() {
         <Link to={Routes.RESET_PASSWORD}>{formatMessage({ id: 'signIn.form.forgotPassword.link' })}</Link>
       </div>
 
-      <Button
-        fullWidth
-        size="l"
-        type="submit"
-        variant="primary"
-        className="sign-in-form__submit"
-        label={formatMessage({ id: 'signIn.form.submit' })}
-      />
+      <Button type="submit" size="lg" className="sign-in-form__submit">
+        {formatMessage({ id: 'signIn.form.submit' })}
+      </Button>
 
       <Text className="sign-in-form__sign-up">
         {formatMessage({ id: 'signIn.form.signUp.text' })}{' '}

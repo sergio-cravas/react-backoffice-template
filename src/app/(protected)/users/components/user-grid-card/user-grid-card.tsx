@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
@@ -51,21 +53,19 @@ function UserGridCard({ imageUrl, fullName, email, phone, role }: UserGridCardPr
       </section>
 
       <section className="user-grid-card__actions">
-        <Button
-          fullWidth
-          to={'tel:' + phone}
-          variant="outline"
-          label={formatMessage({ id: 'users.grid.card.actions.call' })}
-          icon={<Icon as={MdOutlinePhone} size={16} />}
-        />
+        <Button asChild variant="outline">
+          <Link to={'tel:' + phone}>
+            <Icon as={MdOutlinePhone} size={16} />
+            {formatMessage({ id: 'users.grid.card.actions.call' })}
+          </Link>
+        </Button>
 
-        <Button
-          fullWidth
-          to={'mailto:' + email}
-          variant="outline"
-          label={formatMessage({ id: 'users.grid.card.actions.mail' })}
-          icon={<Icon as={MdOutlineMail} size={16} />}
-        />
+        <Button asChild variant="outline">
+          <Link to={'mailto:' + email}>
+            <Icon as={MdOutlineMail} size={16} />
+            {formatMessage({ id: 'users.grid.card.actions.mail' })}
+          </Link>
+        </Button>
       </section>
     </article>
   );

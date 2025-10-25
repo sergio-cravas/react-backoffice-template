@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 import { MdAdd } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
@@ -98,18 +98,14 @@ function ImageInput({
 
         <div className="image-input__field__image-controls">
           <div className="image-input__field__image-controls-buttons">
-            <Button
-              variant="primary"
-              label={formatMessage({ id: 'settings.account.profile.imageUrl.changeImage' })}
-              icon={<Icon as={MdAdd} size={16} variant="secondary" />}
-              onClick={handleOnClick}
-            />
+            <Button size="lg" className="sign-in-form__submit" onClick={handleOnClick}>
+              <Icon as={MdAdd} size={16} variant="secondary" />
+              {formatMessage({ id: 'settings.account.profile.imageUrl.changeImage' })}
+            </Button>
 
-            <Button
-              variant="secondary"
-              label={formatMessage({ id: 'settings.account.profile.imageUrl.removeImage' })}
-              onClick={handleOnRemove}
-            />
+            <Button variant="secondary" onClick={handleOnRemove}>
+              {formatMessage({ id: 'settings.account.profile.imageUrl.removeImage' })}
+            </Button>
 
             <input
               ref={inputElement}

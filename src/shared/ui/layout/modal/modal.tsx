@@ -1,6 +1,6 @@
 import { PropsWithChildren, useEffect } from 'react';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { AnimatePresence, motion } from 'motion/react';
 import { MdClose } from 'react-icons/md';
 

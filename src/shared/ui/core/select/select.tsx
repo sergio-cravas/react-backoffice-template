@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import cn from 'clsx';
 import ReactSelect, { Options } from 'react-select';
 
 import { Option } from '@/shared/types/form.types';
@@ -18,6 +19,7 @@ export type SelectProps<T = string> = {
   invalid?: boolean;
   errorMessage?: string;
   placeholder?: string;
+  className?: string;
   onChange: (value: Option<T>) => void;
 };
 
@@ -30,6 +32,7 @@ function Select<T = string>({
   required,
   placeholder,
   errorMessage,
+  className,
   onChange,
 }: SelectProps<T>) {
   const styles = useMemo(() => selectStyles({ invalid }), [invalid]);
@@ -45,7 +48,7 @@ function Select<T = string>({
   }, [value, options]);
 
   return (
-    <div className="select">
+    <div className={cn('select', className)}>
       {label ? (
         <label className="select__label" htmlFor={name}>
           {required ? `${label} *` : label}
@@ -67,7 +70,7 @@ function Select<T = string>({
       />
 
       {!!errorMessage && (
-        <Text as="span" variant="body-s" color="interactionRedBase">
+        <Text as="span" variant="body-s" color="danger">
           {errorMessage}
         </Text>
       )}

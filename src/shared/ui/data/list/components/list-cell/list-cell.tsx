@@ -1,12 +1,12 @@
 import { JSX, memo, useMemo } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 
+import { Column } from '../../types/list.types';
 import ListCellDate from './components/list-cell-date';
 import ListCellEmail from './components/list-cell-email';
 import ListCellPhone from './components/list-cell-phone';
 import ListCellText from './components/list-cell-text';
-import { Column } from '../../types/list.types';
 
 import './list-cell.scss';
 

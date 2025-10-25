@@ -1,5 +1,5 @@
-@use '@/shared/styles/colors.module.scss' as colors;
-@use '@/shared/styles/variables.module.scss' as variables;
+@use '@/styles/exports/colors.module.scss' as colors;
+@use '@/styles/variables.module.scss' as variables;
 
 .grid-card {
   padding: 20px;

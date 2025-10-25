@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
-import cn from 'classnames';
+import cn from 'clsx';
 
 import { Routes } from '@/app/router';
 import LogoSVG from '@/assets/logo.svg';

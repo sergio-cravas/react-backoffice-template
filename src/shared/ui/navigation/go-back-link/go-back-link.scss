@@ -1,5 +1,5 @@
-@use '@/shared/styles/mixins.module.scss' as mixins;
-@use '@/shared/styles/variables.module.scss' as variables;
+@use '@/styles/mixins.module.scss' as mixins;
+@use '@/styles/variables.module.scss' as variables;
 
 .go-back-link {
   color: colors.$dark;

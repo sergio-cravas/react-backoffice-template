@@ -1,7 +1,7 @@
-@use '@/shared/styles/fonts.module.scss' as fonts;
-@use '@/shared/styles/colors.module.scss' as colors;
-@use '@/shared/styles/mixins.module.scss' as mixins;
-@use '@/shared/styles/variables.module.scss' as variables;
+@use '@/styles/fonts.module.scss' as fonts;
+@use '@/styles/exports/colors.module.scss' as colors;
+@use '@/styles/mixins.module.scss' as mixins;
+@use '@/styles/variables.module.scss' as variables;
 
 .modal-overlay {
   width: 100vw;

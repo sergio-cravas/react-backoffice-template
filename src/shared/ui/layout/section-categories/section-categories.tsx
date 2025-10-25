@@ -30,12 +30,10 @@ function SectionCategories({ category, categories, onSelectCategory, onAddCatego
       </div>
 
       {onAddCategory && (
-        <Button
-          variant="tertiary"
-          label={formatMessage({ id: 'app.ui.layout.sectionCategories.addCategory' })}
-          icon={<Icon as={MdAdd} size={16} />}
-          onClick={onAddCategory}
-        />
+        <Button variant="secondary" onClick={onAddCategory}>
+          <Icon as={MdAdd} size={16} />
+          {formatMessage({ id: 'app.ui.layout.sectionCategories.addCategory' })}
+        </Button>
       )}
     </div>
   );

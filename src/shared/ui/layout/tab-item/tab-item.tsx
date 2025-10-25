@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 
 import useScreenSize from '@/shared/hooks/use-screen-size';
 import { Option } from '@/shared/types/form.types';

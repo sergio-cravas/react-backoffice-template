@@ -1,4 +1,4 @@
-@use './colors.module.scss' as colors;
+@use './exports/colors.module.scss' as colors;
 
 @mixin font-common {
   color: colors.$content-dark-primary;

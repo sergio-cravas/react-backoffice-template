@@ -58,14 +58,9 @@ function SetNewPasswordForm({ token, onSuccess }: SetNewPasswordFormProps) {
         }}
       />
 
-      <Button
-        fullWidth
-        size="l"
-        type="submit"
-        variant="primary"
-        className="set-new-password-form__submit"
-        label={formatMessage({ id: 'setNewPassword.form.submit' })}
-      />
+      <Button type="submit" size="lg" className="set-new-password-form__submit">
+        {formatMessage({ id: 'setNewPassword.form.submit' })}
+      </Button>
     </form>
   );
 }

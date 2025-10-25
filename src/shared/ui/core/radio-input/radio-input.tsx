@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import cn from 'classnames';
+import cn from 'clsx';
 
 import { Option } from '@/shared/types/form.types';
 

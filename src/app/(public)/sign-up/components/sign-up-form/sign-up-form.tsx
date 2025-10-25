@@ -110,14 +110,9 @@ function SignUpForm() {
         />
       </div>
 
-      <Button
-        fullWidth
-        size="l"
-        type="submit"
-        variant="primary"
-        className="sign-up-form__submit"
-        label={formatMessage({ id: 'signUp.form.submit' })}
-      />
+      <Button type="submit" size="lg" className="sign-up-form__submit">
+        {formatMessage({ id: 'signUp.form.submit' })}
+      </Button>
 
       <Text className="sign-up-form__sign-up">
         {formatMessage({ id: 'signUp.form.signIn.text' })}{' '}

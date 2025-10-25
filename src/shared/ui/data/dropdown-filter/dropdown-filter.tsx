@@ -1,6 +1,6 @@
 import { Fragment, memo, useCallback, useMemo, useState } from 'react';
 
-import cn from 'classnames';
+import cn from 'clsx';
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
 import { useIntl } from 'react-intl';
@@ -78,12 +78,10 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
   return (
     <div className={cn('dropdown-filter', className)}>
       <div className="dropdown-filter__button-wrapper">
-        <Button
-          variant="outline"
-          label={isGreaterThan('sm') ? label : undefined}
-          icon={<Icon as={icon} size={16} />}
-          onClick={onToggle}
-        />
+        <Button variant="outline" onClick={onToggle}>
+          {icon && <Icon as={icon} size={16} />}
+          {isGreaterThan('sm') ? label : undefined}
+        </Button>
 
         {!!activeFilters && <div className="dropdown-filter__active-filters-dot" />}
       </div>
@@ -99,12 +97,9 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
           <div className="dropdown-filter__dropdown-head">
             <Text variant="body-l">{formatMessage({ id: 'app.ui.data.dropdownFilter.title' })}</Text>
 
-            <Button
-              variant="ghost"
-              className="dropdown-filter__clear-all"
-              label={formatMessage({ id: 'app.ui.data.dropdownFilter.clearAll' })}
-              onClick={onClear}
-            />
+            <Button variant="ghost" className="dropdown-filter__clear-all" onClick={onClear}>
+              {formatMessage({ id: 'app.ui.data.dropdownFilter.clearAll' })}
+            </Button>
           </div>
 
           <div className="dropdown-filter__dropdown-filters">
@@ -114,9 +109,11 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
           </div>
 
           <div className="dropdown-filter__dropdown-footer">
-            <Button fullWidth variant="outline" label={formatMessage({ id: 'common.form.close' })} onClick={onToggle} />
+            <Button variant="outline" onClick={onToggle}>
+              {formatMessage({ id: 'common.form.close' })}
+            </Button>
 
-            <Button type="submit" fullWidth label={formatMessage({ id: 'common.form.apply' })} />
+            <Button type="submit">{formatMessage({ id: 'common.form.apply' })}</Button>
           </div>
         </form>
       </motion.div>

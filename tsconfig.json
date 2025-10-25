@@ -2,10 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@config": [ "./config" ]
+      "@/*": ["./src/*"],
+      "@config": ["./config"]
     },
     "target": "ESNext",
     "module": "ESNext",
@@ -15,9 +13,7 @@
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
-    "jsx": "react-jsx",
+    "jsx": "react-jsx"
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

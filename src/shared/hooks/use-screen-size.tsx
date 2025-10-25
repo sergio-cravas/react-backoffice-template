@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import variables from '@/shared/styles/variables.module.scss';
+import variables from '@/styles/variables.module.scss';
 
 const Breakpoint = {
   sm: 0,

@@ -1,5 +1,5 @@
-@use '@/shared/styles/colors.module.scss' as colors;
-@use '@/shared/styles/mixins.module.scss' as mixins;
+@use '@/styles/exports/colors.module.scss' as colors;
+@use '@/styles/mixins.module.scss' as mixins;
 
 .section-header {
   height: 70px;

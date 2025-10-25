@@ -1,6 +1,6 @@
-@use '@/shared/styles/fonts.module.scss' as fonts;
-@use '@/shared/styles/colors.module.scss' as colors;
-@use '@/shared/styles/variables.module.scss' as variables;
+@use '@/styles/fonts.module.scss' as fonts;
+@use '@/styles/exports/colors.module.scss' as colors;
+@use '@/styles/variables.module.scss' as variables;
 
 .textarea-container {
   display: flex;

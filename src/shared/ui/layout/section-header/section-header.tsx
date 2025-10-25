@@ -72,12 +72,10 @@ function SectionHeader({ title, views, sortBy, filter, add }: SectionHeaderProps
           <>
             <Divider vertical className="section-header__divider" />
 
-            <Button
-              variant="primary"
-              icon={<Icon as={MdAdd} size={16} variant="secondary" />}
-              label={isGreaterThan('sm') ? add.label : undefined}
-              onClick={add.onClick}
-            />
+            <Button onClick={add.onClick}>
+              <Icon as={MdAdd} size={16} variant="secondary" />
+              {isGreaterThan('sm') ? add.label : undefined}
+            </Button>
           </>
         )}
       </div>

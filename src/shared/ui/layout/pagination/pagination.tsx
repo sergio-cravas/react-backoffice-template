@@ -24,32 +24,38 @@ function Pagination({ page, total, limit, onPageChange }: PaginationProps) {
     <div className="pagination">
       <div className="pagination__page-controls">
         <Button
-          size="s"
+          size="icon"
           variant="secondary"
-          onClick={() => onPageChange(page - 1)}
           disabled={isFirstPage}
-          icon={<Icon as={MdChevronLeft} size={14} disabled={isFirstPage} />}
-        />
+          aria-label="Previous page"
+          onClick={() => onPageChange(page - 1)}
+        >
+          <Icon as={MdChevronLeft} size={14} />
+        </Button>
 
         <div className="pagination__page-controls-pages">
           {Array.from({ length: totalPages }, (_, index) => (
             <Button
               key={`page-${index + 1}`}
-              size="s"
-              variant={index + 1 === page ? 'primary' : 'tertiary'}
+              size="sm"
+              aria-label={`Go to page ${index + 1}`}
+              variant={index + 1 === page ? 'default' : 'secondary'}
               onClick={() => onPageChange(index + 1)}
-              label={index + 1 + ''}
-            />
+            >
+              {index + 1 + ''}
+            </Button>
           ))}
         </div>
 
         <Button
-          size="s"
+          size="icon"
           variant="secondary"
-          onClick={() => onPageChange(page + 1)}
+          aria-label="Next page"
           disabled={isLastPage}
-          icon={<Icon as={MdChevronRight} size={14} disabled={isLastPage} />}
-        />
+          onClick={() => onPageChange(page + 1)}
+        >
+          <Icon as={MdChevronRight} size={14} />
+        </Button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { JSX, memo } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 
 import { Column } from '../../types/list.types';
 import { ListCell } from '../list-cell';

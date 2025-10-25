@@ -30,11 +30,9 @@ function Account() {
           title={formatMessage({ id: 'settings.account.security.email.title' })}
           subtitle={<Input name="email" value={me?.email} disabled />}
         >
-          <Button
-            variant="secondary"
-            label={formatMessage({ id: 'settings.account.security.email.button' })}
-            onClick={() => toast.message('This feature is not implemented yet.')}
-          />
+          <Button variant="secondary" onClick={() => toast.message('This feature is not implemented yet.')}>
+            {formatMessage({ id: 'settings.account.security.email.button' })}
+          </Button>
         </SettingsSectionItem>
 
         <SettingsSectionItem
@@ -42,11 +40,9 @@ function Account() {
           title={formatMessage({ id: 'settings.account.security.password.title' })}
           subtitle={<Input name="password" value="*******" type="password" disabled />}
         >
-          <Button
-            variant="secondary"
-            label={formatMessage({ id: 'settings.account.security.password.button' })}
-            onClick={() => toast.message('This feature is not implemented yet.')}
-          />
+          <Button variant="secondary" onClick={() => toast.message('This feature is not implemented yet.')}>
+            {formatMessage({ id: 'settings.account.security.password.button' })}
+          </Button>
         </SettingsSectionItem>
       </SettingsSection>
 
@@ -55,11 +51,9 @@ function Account() {
           title={formatMessage({ id: 'settings.account.support.logout.title' })}
           subtitle={formatMessage({ id: 'settings.account.support.logout.description' })}
         >
-          <Button
-            variant="secondary"
-            label={formatMessage({ id: 'settings.account.support.logout.button' })}
-            onClick={logout}
-          />
+          <Button variant="secondary" onClick={logout}>
+            {formatMessage({ id: 'settings.account.support.logout.button' })}
+          </Button>
         </SettingsSectionItem>
 
         <SettingsSectionItem
@@ -67,11 +61,9 @@ function Account() {
           title={formatMessage({ id: 'settings.account.support.deleteAccount.title' })}
           subtitle={formatMessage({ id: 'settings.account.support.deleteAccount.description' })}
         >
-          <Button
-            variant="secondary"
-            label={formatMessage({ id: 'settings.account.support.deleteAccount.button' })}
-            onClick={() => toast.message('This feature is not implemented yet.')}
-          />
+          <Button variant="secondary" onClick={() => toast.message('This feature is not implemented yet.')}>
+            {formatMessage({ id: 'settings.account.support.deleteAccount.button' })}
+          </Button>
         </SettingsSectionItem>
       </SettingsSection>
     </div>

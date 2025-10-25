@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 
 import { Text } from '@/shared/ui/core/text';
 import { SidebarLink, type SidebarLinkProps } from '@/shared/ui/navigation/sidebar/components/sidebar-link';

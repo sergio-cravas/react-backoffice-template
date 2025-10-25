@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
@@ -18,7 +18,7 @@ function LanguageSelect() {
     label: formatMessage({ id: `common.language.${lang}` }),
   }));
 
-  const selectedOption = options.find((opt) => opt.value === locale);
+  const selectedOption = useMemo(() => options.find((opt) => opt.value === locale), [locale, options]);
 
   return <Select value={selectedOption} options={options} onChange={onSelect} />;
 }

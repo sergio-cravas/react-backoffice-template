@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 import { MdAdd, MdOutlineRemove } from 'react-icons/md';
 
 import { Icon } from '../icon';

@@ -1,9 +1,9 @@
 import { DetailedHTMLProps, JSX, memo } from 'react';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 
-import { GridCard } from './components/grid-card';
 import { Pagination } from '../../layout/pagination';
+import { GridCard } from './components/grid-card';
 
 import './grid.scss';
 
