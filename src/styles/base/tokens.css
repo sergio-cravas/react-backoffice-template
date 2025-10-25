@@ -131,11 +131,11 @@
     --action-destructive-hover: var(--red-60);
     --action-destructive-selected: var(--red-60);
 
-    --action-outline-active: var(--neutral-80);
-    --action-outline-base: var(--neutral-100);
-    --action-outline-disabled: var(--neutral-30);
-    --action-outline-hover: var(--neutral-100);
-    --action-outline-selected: var(--neutral-70);
+    --action-outline-active: var(--neutral-50);
+    --action-outline-base: var(--neutral-0);
+    --action-outline-disabled: var(--neutral-20);
+    --action-outline-hover: var(--neutral-40);
+    --action-outline-selected: var(--neutral-30);
 
     --action-primary-active: var(--neutral-90);
     --action-primary-base: var(--neutral-100);
