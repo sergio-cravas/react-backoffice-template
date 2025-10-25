@@ -2,10 +2,10 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { UserRole } from '@/features/auth/models/user';
-import { useCreateUser } from '@/features/users/hooks/use-create-user';
-import { useEditUser } from '@/features/users/hooks/use-edit-user';
-import { useGetUserById } from '@/features/users/hooks/use-get-user-by-id';
+import { useCreateUser } from '@/api/users/hooks/use-create-user';
+import { useEditUser } from '@/api/users/hooks/use-edit-user';
+import { useGetUserById } from '@/api/users/hooks/use-get-user-by-id';
+import { UserRole } from '@/api/users/models/user';
 import { Button } from '@/shared/ui/core/button';
 import { ImageInputField } from '@/shared/ui/forms/image-input-field';
 import { InputField } from '@/shared/ui/forms/input-field';

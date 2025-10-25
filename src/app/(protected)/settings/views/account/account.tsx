@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 import { toast } from 'sonner';
 
-import { useAuth } from '@/features/auth/hooks/use-auth';
-import { useProfile } from '@/features/auth/hooks/use-profile';
+import { useAuth } from '@/api/auth/hooks/use-auth';
+import { useProfile } from '@/api/auth/hooks/use-profile';
 import { Button } from '@/shared/ui/core/button';
 import { Input } from '@/shared/ui/core/input';
 

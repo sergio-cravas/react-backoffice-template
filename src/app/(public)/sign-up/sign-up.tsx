@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { SuccessMessage } from '@/features/auth/components/success-message';
 import { Logo } from '@/shared/ui/core/logo';
 import { Text } from '@/shared/ui/core/text';
+import { SuccessMessage } from '@/shared/ui/features/auth/success-message';
 
 import { SignUpForm } from './components/sign-up-form';
 

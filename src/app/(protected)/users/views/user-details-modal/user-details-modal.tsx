@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { MdOutlineCases, MdOutlineEdit, MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
-import { useGetUserById } from '@/features/users/hooks/use-get-user-by-id';
+import { useGetUserById } from '@/api/users/hooks/use-get-user-by-id';
 import { Avatar } from '@/shared/ui/core/avatar';
 import { Icon } from '@/shared/ui/core/icon';
 import { IconButton } from '@/shared/ui/core/icon-button';

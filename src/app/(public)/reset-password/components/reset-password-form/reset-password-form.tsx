@@ -3,8 +3,8 @@ import { useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import { toast } from 'sonner';
 
+import { useResetPassword } from '@/api/auth/hooks/use-reset-password';
 import { Routes } from '@/app/router';
-import { useResetPassword } from '@/features/auth/hooks/use-reset-password';
 import { Button } from '@/shared/ui/core/button';
 import { Text } from '@/shared/ui/core/text';
 import { InputField } from '@/shared/ui/forms/input-field';

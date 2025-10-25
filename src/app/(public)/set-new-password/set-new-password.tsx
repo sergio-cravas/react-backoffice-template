@@ -2,10 +2,10 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { AuthHeader } from '@/features/auth/components/auth-header';
-import { SuccessMessage } from '@/features/auth/components/success-message';
 import { Logo } from '@/shared/ui/core/logo';
 import { Text } from '@/shared/ui/core/text';
+import { AuthHeader } from '@/shared/ui/features/auth/auth-header';
+import { SuccessMessage } from '@/shared/ui/features/auth/success-message';
 
 import { SetNewPasswordForm } from './components/set-new-password-form';
 

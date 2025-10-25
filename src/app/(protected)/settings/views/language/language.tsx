@@ -1,6 +1,6 @@
 import { useIntl } from 'react-intl';
 
-import { LanguageSelect } from '@/features/lang/components/language-select';
+import { LanguageSelect } from '@/shared/ui/features/lang/language-select';
 
 import { SettingsSection } from '../../components/settings-section';
 import { SettingsSectionItem } from '../../components/settings-section-item';

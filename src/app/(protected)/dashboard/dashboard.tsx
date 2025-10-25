@@ -1,9 +1,9 @@
 import { MdContactPage } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
+import { useProfile } from '@/api/auth/hooks/use-profile';
+import { useGetUsers } from '@/api/users/hooks/use-get-users';
 import { Routes } from '@/app/router';
-import { useProfile } from '@/features/auth/hooks/use-profile';
-import { useGetUsers } from '@/features/users/hooks/use-get-users';
 import { Text } from '@/shared/ui/core/text';
 import { SectionHeader } from '@/shared/ui/layout/section-header';
 

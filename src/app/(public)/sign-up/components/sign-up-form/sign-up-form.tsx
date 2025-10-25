@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 import { toast } from 'sonner';
 
+import { useSignUp } from '@/api/auth/hooks/use-sign-up';
 import { router, Routes } from '@/app/router';
-import { useSignUp } from '@/features/auth/hooks/use-sign-up';
 import { Button } from '@/shared/ui/core/button';
 import { Text } from '@/shared/ui/core/text';
 import { CheckboxField } from '@/shared/ui/forms/checkbox-field';

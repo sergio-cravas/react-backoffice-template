@@ -1,6 +1,6 @@
 import config from '@config';
 
-import { getAccessToken, resetAccessToken } from '@/features/auth/store';
+import { getAccessToken, resetAccessToken } from '@/shared/store/auth';
 
 type BodyType = Record<string, unknown>;
 type OptionsType = { noAuth?: boolean } & Omit<RequestInit, 'method' | 'body'>;

@@ -3,9 +3,9 @@ import { useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import { toast } from 'sonner';
 
+import { useSignIn } from '@/api/auth/hooks/use-sign-in';
 import { router, Routes } from '@/app/router';
-import { useSignIn } from '@/features/auth/hooks/use-sign-in';
-import { useConfigStore } from '@/features/config/store';
+import { useConfigStore } from '@/shared/store/config';
 import { Button } from '@/shared/ui/core/button';
 import { Text } from '@/shared/ui/core/text';
 import { CheckboxField } from '@/shared/ui/forms/checkbox-field';

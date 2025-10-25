@@ -1,9 +1,10 @@
 @use '@/shared/styles/colors.module.scss' as colors;
+@use '@/shared/styles/variables.module.scss' as variables;
 
 .grid-card {
   padding: 20px;
 
-  border-radius: 4px;
+  border-radius: variables.$border-radius;
   border: 1px solid colors.$border-primary;
   background-color: colors.$background-primary;
 
