@@ -1,0 +1,71 @@
+@layer components {
+  /* PRIMARY */
+  .btn-primary {
+    background-color: var(--action-primary-base);
+    color: var(--content-light-primary);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--action-primary-hover);
+  }
+
+  .btn-primary:active:not(:disabled) {
+    background-color: var(--action-primary-active);
+  }
+
+  .btn-primary:disabled {
+    background-color: var(--action-primary-disabled);
+    color: var(--content-light-disabled);
+  }
+
+  /* DANGER/DESTRUCTIVE */
+  .btn-danger {
+    background-color: var(--action-destructive-base);
+    color: var(--content-light-primary);
+  }
+
+  .btn-danger:hover:not(:disabled) {
+    background-color: var(--action-destructive-hover);
+  }
+
+  .btn-danger:active:not(:disabled) {
+    background-color: var(--action-destructive-active);
+  }
+
+  .btn-danger:disabled {
+    background-color: var(--action-destructive-disabled);
+    color: var(--content-light-disabled);
+  }
+
+  /* OUTLINE */
+  .btn-outline {
+    background-color: var(--action-outline-base);
+    color: var(--content-dark-primary);
+    border: 1px solid var(--border-primary);
+  }
+
+  .btn-outline:hover:not(:disabled) {
+    background-color: var(--action-outline-hover);
+    border-color: var(--border-secondary);
+  }
+
+  /* SECONDARY */
+  .btn-secondary {
+    background-color: var(--action-secondary-base);
+    color: var(--content-dark-primary);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background-color: var(--action-secondary-hover);
+  }
+
+  /* GHOST */
+  .btn-ghost {
+    background-color: transparent;
+    color: var(--content-dark-primary);
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background-color: var(--action-secondary-hover);
+  }
+}

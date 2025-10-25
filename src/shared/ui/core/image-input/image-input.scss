@@ -1,6 +1,6 @@
-@use '@/shared/styles/fonts.module.scss' as fonts;
-@use '@/shared/styles/colors.module.scss' as colors;
-@use '@/shared/styles/mixins.module.scss' as mixins;
+@use '@/styles/fonts.module.scss' as fonts;
+@use '@/styles/exports/colors.module.scss' as colors;
+@use '@/styles/mixins.module.scss' as mixins;
 
 .image-input {
   display: flex;

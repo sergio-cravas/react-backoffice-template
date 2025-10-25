@@ -4,8 +4,8 @@ import classNames from 'clsx';
 import { useIntl } from 'react-intl';
 
 import { UserRole } from '@/api/users/models/user';
-import colors from '@/shared/styles/colors.module.scss';
 import { Text } from '@/shared/ui/core/text';
+import colors from '@/styles/exports/colors.module.scss';
 
 import './user-role-badge.scss';
 

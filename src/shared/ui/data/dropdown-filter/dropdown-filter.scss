@@ -1,6 +1,6 @@
-@use '@/shared/styles/colors.module.scss' as colors;
-@use '@/shared/styles/mixins.module.scss' as mixins;
-@use '@/shared/styles/variables.module.scss' as variables;
+@use '@/styles/exports/colors.module.scss' as colors;
+@use '@/styles/mixins.module.scss' as mixins;
+@use '@/styles/variables.module.scss' as variables;
 
 .dropdown-filter {
   position: relative;

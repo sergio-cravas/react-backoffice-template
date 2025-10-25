@@ -1,6 +1,6 @@
 import { StylesConfig } from 'react-select';
 
-import colors from '@/shared/styles/colors.module.scss';
+import colors from '@/styles/exports/colors.module.scss';
 
 export const selectStyles = ({ invalid = false }: { invalid?: boolean }): StylesConfig => ({
   container: (baseStyles) => ({

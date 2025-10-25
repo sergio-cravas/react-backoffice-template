@@ -1,0 +1,277 @@
+@layer base {
+  :root {
+    /* Variables de Tailwind/shadcn - SIN oklch(), solo los valores */
+    --color-background: 1 0 0;
+    --color-foreground: 0.039 0 0;
+    --color-card: 1 0 0;
+    --color-card-foreground: 0.039 0 0;
+    --color-popover: 1 0 0;
+    --color-popover-foreground: 0.039 0 0;
+    --color-primary: 0.09 0 0;
+    --color-primary-foreground: 0.98 0 0;
+    --color-secondary: 0.961 0 0;
+    --color-secondary-foreground: 0.09 0 0;
+    --color-muted: 0.961 0 0;
+    --color-muted-foreground: 0.451 0 0;
+    --color-accent: 0.961 0 0;
+    --color-accent-foreground: 0.09 0 0;
+    --color-destructive: 0.602 0.191 27.325;
+    --color-destructive-foreground: 0.98 0 0;
+    --color-border: 0.898 0 0;
+    --color-input: 0.898 0 0;
+    --color-ring: 0.639 0 0;
+
+    /*#region GLOBAL COLORS - Base colors */
+
+    /* NEUTRAL */
+    --neutral-100: #000;
+    --neutral-90: #36383b;
+    --neutral-80: #6d7076;
+    --neutral-70: #a3a7b0;
+    --neutral-60: #d9dfeb;
+    --neutral-50: #e1e5ef;
+    --neutral-40: #e8ecf3;
+    --neutral-30: #f2f2f2;
+    --neutral-20: #f9f9f9;
+    --neutral-10: #fcfcfe;
+    --neutral-0: #fff;
+
+    /* BLUE */
+    --blue-10: #edf2fe;
+    --blue-20: #dbe4fd;
+    --blue-30: #b6c8fb;
+    --blue-40: #92adf8;
+    --blue-50: #6d91f6;
+    --blue-60: #4976f4;
+    --blue-70: #3759b7;
+    --blue-80: #253b7a;
+    --blue-90: #121e3d;
+    --blue-100: #070c18;
+
+    /* GREEN */
+    --green-10: #eef5f0;
+    --green-20: #deece1;
+    --green-30: #bcd8c2;
+    --green-40: #9bc5a4;
+    --green-50: #79b185;
+    --green-60: #589e67;
+    --green-70: #467e52;
+    --green-80: #355f3e;
+    --green-90: #233f29;
+    --green-100: #122015;
+
+    /* IRISH */
+    --irish-10: #eeeff5;
+    --irish-20: #dedfec;
+    --irish-30: #bcbfd8;
+    --irish-40: #9b9fc5;
+    --irish-50: #797fb1;
+    --irish-60: #585f9e;
+    --irish-70: #464c7e;
+    --irish-80: #35395f;
+    --irish-90: #23263f;
+    --irish-100: #121320;
+
+    /* LIME YELLOW */
+    --lime-yellow-10: #f7f7e8;
+    --lime-yellow-20: #efeed2;
+    --lime-yellow-30: #e0dda5;
+    --lime-yellow-40: #d0cd77;
+    --lime-yellow-50: #c1bc4a;
+    --lime-yellow-60: #b1ab1d;
+    --lime-yellow-70: #8e8917;
+    --lime-yellow-80: #6a6711;
+    --lime-yellow-90: #47440c;
+    --lime-yellow-100: #232206;
+
+    /* ORANGE */
+    --orange-10: #fbf4ec;
+    --orange-20: #f6e8d8;
+    --orange-30: #edd2b1;
+    --orange-40: #e4bb8b;
+    --orange-50: #dba564;
+    --orange-60: #d28e3d;
+    --orange-70: #a87231;
+    --orange-80: #7e5525;
+    --orange-90: #543918;
+    --orange-100: #2a1c0c;
+
+    /* PURPLE */
+    --purple-10: #f4edf7;
+    --purple-20: #eadbef;
+    --purple-30: #d5b7df;
+    --purple-40: #bf93cf;
+    --purple-50: #aa6fbf;
+    --purple-60: #954baf;
+    --purple-70: #773c8c;
+    --purple-80: #592d69;
+    --purple-90: #3c1e46;
+    --purple-100: #1e0f23;
+
+    /* RED */
+    --red-10: #f7eded;
+    --red-20: #efdbdb;
+    --red-30: #dfb7b7;
+    --red-40: #cf9393;
+    --red-50: #bf6f6f;
+    --red-60: #af4b4b;
+    --red-70: #8c3c3c;
+    --red-80: #692d2d;
+    --red-90: #461e1e;
+    --red-100: #230f0f;
+
+    /*#endregion GLOBAL COLORS */
+
+    /*#region SEMANTIC COLORS */
+
+    /* ACTION - Para botones, dropdowns, selects */
+    --action-destructive-active: var(--red-70);
+    --action-destructive-base: var(--red-50);
+    --action-destructive-disabled: var(--red-20);
+    --action-destructive-hover: var(--red-60);
+    --action-destructive-selected: var(--red-60);
+
+    --action-outline-active: var(--neutral-80);
+    --action-outline-base: var(--neutral-100);
+    --action-outline-disabled: var(--neutral-30);
+    --action-outline-hover: var(--neutral-100);
+    --action-outline-selected: var(--neutral-70);
+
+    --action-primary-active: var(--neutral-90);
+    --action-primary-base: var(--neutral-100);
+    --action-primary-disabled: var(--neutral-20);
+    --action-primary-hover: var(--neutral-80);
+    --action-primary-selected: var(--neutral-90);
+
+    --action-secondary-active: var(--neutral-50);
+    --action-secondary-base: var(--neutral-0);
+    --action-secondary-base2: var(--neutral-30);
+    --action-secondary-disabled: var(--neutral-20);
+    --action-secondary-hover: var(--neutral-40);
+    --action-secondary-selected: var(--neutral-30);
+
+    /* BACKGROUND - Para backgrounds estáticos */
+    --background-blue: var(--blue-10);
+    --background-green: var(--green-10);
+    --background-orange: var(--orange-10);
+    --background-primary: var(--neutral-0);
+    --background-purple: var(--purple-10);
+    --background-red: var(--red-10);
+    --background-secondary: var(--neutral-20);
+    --background-tertiary: var(--neutral-30);
+    --background-yellow: var(--lime-yellow-10);
+
+    /* BORDER - Para bordes estáticos */
+    --border-error: var(--red-30);
+    --border-informative: var(--blue-30);
+    --border-positive: var(--green-30);
+    --border-primary: var(--neutral-50);
+    --border-secondary: var(--neutral-70);
+    --border-tertiary: var(--neutral-100);
+    --border-warning: var(--orange-30);
+
+    /* CONTENT - Para textos e iconos */
+    --content-light-disabled: var(--neutral-60);
+    --content-light-error: var(--red-60);
+    --content-light-informative: var(--blue-60);
+    --content-light-positive: var(--green-60);
+    --content-light-primary: var(--neutral-0);
+    --content-light-secondary: var(--neutral-20);
+    --content-light-tertiary: var(--neutral-30);
+
+    --content-dark-disabled: var(--neutral-60);
+    --content-dark-error: var(--red-60);
+    --content-dark-informative: var(--blue-60);
+    --content-dark-positive: var(--green-60);
+    --content-dark-primary: var(--neutral-100);
+    --content-dark-secondary: var(--neutral-80);
+    --content-dark-tertiary: var(--neutral-70);
+
+    /* INTERACTION - Para elementos de formulario (inputs, checkboxes, etc.) */
+    --interaction-blue-active: var(--blue-80);
+    --interaction-blue-base: var(--blue-60);
+    --interaction-blue-disabled: var(--blue-20);
+    --interaction-blue-hover: var(--blue-70);
+    --interaction-blue-selected: var(--blue-70);
+
+    --interaction-green-active: var(--green-80);
+    --interaction-green-base: var(--green-60);
+    --interaction-green-disabled: var(--green-20);
+    --interaction-green-hover: var(--green-70);
+    --interaction-green-selected: var(--green-70);
+
+    --interaction-orange-active: var(--orange-80);
+    --interaction-orange-base: var(--orange-60);
+    --interaction-orange-disabled: var(--orange-20);
+    --interaction-orange-hover: var(--orange-70);
+    --interaction-orange-selected: var(--orange-70);
+
+    --interaction-outline-active: var(--neutral-100);
+    --interaction-outline-base: var(--neutral-70);
+    --interaction-outline-disabled: var(--neutral-40);
+    --interaction-outline-hover: var(--neutral-80);
+    --interaction-outline-selected: var(--neutral-60);
+
+    --interaction-primary-active: var(--neutral-90);
+    --interaction-primary-base: var(--neutral-100);
+    --interaction-primary-disabled: var(--neutral-20);
+    --interaction-primary-hover: var(--neutral-80);
+    --interaction-primary-selected: var(--neutral-90);
+
+    --interaction-purple-active: var(--purple-80);
+    --interaction-purple-base: var(--purple-60);
+    --interaction-purple-disabled: var(--purple-20);
+    --interaction-purple-hover: var(--purple-70);
+    --interaction-purple-selected: var(--purple-70);
+
+    --interaction-red-active: var(--red-80);
+    --interaction-red-base: var(--red-60);
+    --interaction-red-disabled: var(--red-20);
+    --interaction-red-hover: var(--red-70);
+    --interaction-red-selected: var(--red-70);
+
+    --interaction-secondary-active: var(--neutral-50);
+    --interaction-secondary-base: var(--neutral-0);
+    --interaction-secondary-disabled: var(--neutral-40);
+    --interaction-secondary-hover: var(--neutral-40);
+    --interaction-secondary-selected: var(--neutral-30);
+
+    --interaction-yellow-active: var(--lime-yellow-80);
+    --interaction-yellow-base: var(--lime-yellow-60);
+    --interaction-yellow-disabled: var(--lime-yellow-20);
+    --interaction-yellow-hover: var(--lime-yellow-70);
+    --interaction-yellow-selected: var(--lime-yellow-70);
+
+    /*#endregion SEMANTIC COLORS */
+  }
+
+  .dark {
+    /* Variables de Tailwind/shadcn para dark mode - SIN oklch() */
+    --color-background: 0.039 0 0;
+    --color-foreground: 0.98 0 0;
+    --color-card: 0.039 0 0;
+    --color-card-foreground: 0.98 0 0;
+    --color-popover: 0.039 0 0;
+    --color-popover-foreground: 0.98 0 0;
+    --color-primary: 0.09 0 0;
+    --color-primary-foreground: 0.98 0 0;
+    --color-secondary: 0.149 0 0;
+    --color-secondary-foreground: 0.98 0 0;
+    --color-muted: 0.149 0 0;
+    --color-muted-foreground: 0.639 0 0;
+    --color-accent: 0.149 0 0;
+    --color-accent-foreground: 0.98 0 0;
+    --color-destructive: 0.306 0.191 27.325;
+    --color-destructive-foreground: 0.98 0 0;
+    --color-border: 0.149 0 0;
+    --color-input: 0.149 0 0;
+    --color-ring: 0.831 0 0;
+
+    /* Aquí podrías redefinir tus variables semánticas para dark mode si necesitas */
+    /* Por ejemplo:
+    --background-primary: var(--neutral-100);
+    --content-dark-primary: var(--neutral-0);
+    etc...
+    */
+  }
+}
