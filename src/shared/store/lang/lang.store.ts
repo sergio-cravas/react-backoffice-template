@@ -14,12 +14,12 @@ interface LangState {
 
 interface LangActions {
   updateLocale: (newLocale: LocaleOption) => void;
-  initializeLocale: () => void;
 }
 
 type LangStore = LangState & LangActions;
 
 const getBrowserLocale = (): LocaleOption => {
+  if (typeof navigator === 'undefined') return DEFAULT_LOCALE;
   return navigator.language === 'en' || navigator.language.startsWith('en-') ? 'en' : 'es';
 };
 
@@ -29,11 +29,11 @@ const getMessages = (locale: LocaleOption): Record<string, string> => {
 
 export const useLangStore = create<LangStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       // State
-      locale: DEFAULT_LOCALE,
+      locale: getBrowserLocale(),
       localeOptions,
-      messages: getMessages(DEFAULT_LOCALE),
+      messages: getMessages(getBrowserLocale()),
 
       // Actions
       updateLocale: (newLocale: LocaleOption) => {
@@ -46,24 +46,19 @@ export const useLangStore = create<LangStore>()(
           messages: getMessages(newLocale),
         });
       },
-
-      initializeLocale: () => {
-        const currentLocale = get().locale;
-        const browserLocale = getBrowserLocale();
-
-        // Si el locale actual es el default, usar el del browser
-        if (currentLocale === DEFAULT_LOCALE) {
-          const finalLocale = browserLocale || DEFAULT_LOCALE;
-          set({
-            locale: finalLocale,
-            messages: getMessages(finalLocale),
-          });
-        }
-      },
     }),
     {
       name: 'lang_preference',
-      partialize: (state) => ({ locale: state.locale }), // Solo persistir el locale
+      partialize: (state) => ({ locale: state.locale }),
+      onRehydrateStorage: () => (state) => {
+        if (state) {
+          state.messages = getMessages(state.locale);
+        }
+      },
     }
   )
 );
+
+const localeSelector = (state: LangStore) => state.locale;
+
+export const getLocaleState = () => localeSelector(useLangStore.getState());
