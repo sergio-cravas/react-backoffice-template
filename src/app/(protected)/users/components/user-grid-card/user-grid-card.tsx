@@ -4,7 +4,7 @@ import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
 import { UserRole } from '@/api/users/models/user';
-import { Avatar } from '@/shared/ui/core/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/core/avatar';
 import { Button } from '@/shared/ui/core/button';
 import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
@@ -27,7 +27,10 @@ function UserGridCard({ imageUrl, fullName, email, phone, role }: UserGridCardPr
   return (
     <article className="user-grid-card">
       <section className="user-grid-card__personal-info">
-        <Avatar src={imageUrl} alt={`Avatar ${fullName}`} />
+        <Avatar className="size-24">
+          <AvatarImage src={imageUrl} alt={fullName || 'User'} />
+          <AvatarFallback>{fullName?.substring(0, 2)}</AvatarFallback>
+        </Avatar>
 
         <div className="user-grid-card__personal-info-text">
           <Text variant="body-xl">{fullName}</Text>

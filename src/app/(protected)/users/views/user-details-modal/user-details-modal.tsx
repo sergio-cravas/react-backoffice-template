@@ -5,7 +5,7 @@ import { MdOutlineCases, MdOutlineEdit, MdOutlineEmail, MdOutlinePhone } from 'r
 import { useIntl } from 'react-intl';
 
 import { useGetUserById } from '@/api/users/hooks/use-get-user-by-id';
-import { Avatar } from '@/shared/ui/core/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/core/avatar';
 import { Button } from '@/shared/ui/core/button';
 import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
@@ -41,7 +41,10 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
       <section className="user-details-modal__content">
         <div className="user-details-modal__column">
           <div className="user-details-modal__avatar-container">
-            <Avatar src={user?.imageUrl} alt={user?.firstName || 'User'} size={96} />
+            <Avatar className="size-24">
+              <AvatarImage src={user?.imageUrl} alt={user?.firstName || 'User'} />
+              <AvatarFallback>{user?.firstName?.substring(0, 2)}</AvatarFallback>
+            </Avatar>
 
             <Text variant="body-xl">
               {user?.firstName} {user?.lastName}

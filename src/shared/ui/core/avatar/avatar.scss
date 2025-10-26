@@ -1,7 +1,0 @@
-@use '@/styles/exports/colors.module.scss' as colors;
-
-.avatar {
-  aspect-ratio: 1;
-  border-radius: 100%;
-  background: colors.$background-secondary;
-}
