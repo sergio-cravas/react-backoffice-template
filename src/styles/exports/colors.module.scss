@@ -3,28 +3,53 @@ $action-outline-active: var(--action-outline-active);
 $action-outline-base: var(--action-outline-base);
 $action-outline-disabled: var(--action-outline-disabled);
 $action-outline-hover: var(--action-outline-hover);
+$action-outline-selected: var(--action-outline-selected);
 
+$action-primary-active: var(--action-primary-active);
 $action-primary-base: var(--action-primary-base);
 $action-primary-disabled: var(--action-primary-disabled);
 $action-primary-hover: var(--action-primary-hover);
+$action-primary-selected: var(--action-primary-selected);
 
+$action-secondary-active: var(--action-secondary-active);
 $action-secondary-base: var(--action-secondary-base);
 $action-secondary-base2: var(--action-secondary-base2);
 $action-secondary-disabled: var(--action-secondary-disabled);
 $action-secondary-hover: var(--action-secondary-hover);
 $action-secondary-selected: var(--action-secondary-selected);
 
+$action-destructive-active: var(--action-destructive-active);
+$action-destructive-base: var(--action-destructive-base);
+$action-destructive-disabled: var(--action-destructive-disabled);
+$action-destructive-hover: var(--action-destructive-hover);
+$action-destructive-selected: var(--action-destructive-selected);
+
 /* BACKGROUND */
 $background-primary: var(--background-primary);
 $background-secondary: var(--background-secondary);
 $background-tertiary: var(--background-tertiary);
+$background-red: var(--background-red);
+$background-blue: var(--background-blue);
+$background-green: var(--background-green);
+$background-orange: var(--background-orange);
+$background-purple: var(--background-purple);
+$background-yellow: var(--background-yellow);
 
 /* BORDER */
+$border-error: var(--border-error);
+$border-informative: var(--border-informative);
+$border-positive: var(--border-positive);
 $border-primary: var(--border-primary);
+$border-secondary: var(--border-secondary);
+$border-tertiary: var(--border-tertiary);
+$border-warning: var(--border-warning);
 
 /* CONTENT */
 $content-light-disabled: var(--content-light-disabled);
+$content-light-error: var(--content-light-error);
 $content-light-primary: var(--content-light-primary);
+$content-light-secondary: var(--content-light-secondary);
+$content-light-tertiary: var(--content-light-tertiary);
 
 $content-dark-disabled: var(--content-dark-disabled);
 $content-dark-error: var(--content-dark-error);
@@ -37,37 +62,167 @@ $interaction-outline-active: var(--interaction-outline-active);
 $interaction-outline-base: var(--interaction-outline-base);
 $interaction-outline-disabled: var(--interaction-outline-disabled);
 $interaction-outline-hover: var(--interaction-outline-hover);
+$interaction-outline-selected: var(--interaction-outline-selected);
 
+$interaction-primary-active: var(--interaction-primary-active);
 $interaction-primary-base: var(--interaction-primary-base);
 $interaction-primary-hover: var(--interaction-primary-hover);
-
-$interaction-red-base: var(--interaction-red-base);
-$interaction-red-hover: var(--interaction-red-hover);
+$interaction-primary-disabled: var(--interaction-primary-disabled);
+$interaction-primary-selected: var(--interaction-primary-selected);
 
 $interaction-secondary-base: var(--interaction-secondary-base);
 $interaction-secondary-disabled: var(--interaction-secondary-disabled);
 $interaction-secondary-hover: var(--interaction-secondary-hover);
+$interaction-secondary-selected: var(--interaction-secondary-selected);
+
+$interaction-red-active: var(--interaction-red-active);
+$interaction-red-base: var(--interaction-red-base);
+$interaction-red-hover: var(--interaction-red-hover);
+$interaction-red-disabled: var(--interaction-red-disabled);
+$interaction-red-selected: var(--interaction-red-selected);
+
+$interaction-green-active: var(--interaction-green-active);
+$interaction-green-base: var(--interaction-green-base);
+$interaction-green-hover: var(--interaction-green-hover);
+$interaction-green-disabled: var(--interaction-green-disabled);
+$interaction-green-selected: var(--interaction-green-selected);
+
+$interaction-yellow-active: var(--interaction-yellow-active);
+$interaction-yellow-base: var(--interaction-yellow-base);
+$interaction-yellow-disabled: var(--interaction-yellow-disabled);
+$interaction-yellow-hover: var(--interaction-yellow-hover);
+$interaction-yellow-selected: var(--interaction-yellow-selected);
+
+$interaction-blue-active: var(--interaction-blue-active);
+$interaction-blue-base: var(--interaction-blue-base);
+$interaction-blue-disabled: var(--interaction-blue-disabled);
+$interaction-blue-hover: var(--interaction-blue-hover);
+$interaction-blue-selected: var(--interaction-blue-selected);
+
+$interaction-orange-active: var(--interaction-orange-active);
+$interaction-orange-base: var(--interaction-orange-base);
+$interaction-orange-disabled: var(--interaction-orange-disabled);
+$interaction-orange-hover: var(--interaction-orange-hover);
+$interaction-orange-selected: var(--interaction-orange-selected);
+
+$interaction-purple-active: var(--interaction-purple-active);
+$interaction-purple-base: var(--interaction-purple-base);
+$interaction-purple-disabled: var(--interaction-purple-disabled);
+$interaction-purple-hover: var(--interaction-purple-hover);
+$interaction-purple-selected: var(--interaction-purple-selected);
 
 :export {
   /* ACTION */
-  actionOutlineBase: $action-outline-base;
-  actionOutlineHover: $action-outline-hover;
-  actionSecondaryBase: $action-secondary-base;
-  actionSecondaryHover: $action-secondary-hover;
+  $actionOutlineActive: $action-outline-active;
+  $actionOutlineBase: $action-outline-base;
+  $actionOutlineDisabled: $action-outline-disabled;
+  $actionOutlineHover: $action-outline-hover;
+  $actionOutlineSelected: $action-outline-selected;
+
+  $actionPrimaryActive: $action-primary-active;
+  $actionPrimaryBase: $action-primary-base;
+  $actionPrimaryDisabled: $action-primary-disabled;
+  $actionPrimaryHover: $action-primary-hover;
+  $actionPrimarySelected: $action-primary-selected;
+
+  $actionSecondaryActive: $action-secondary-active;
+  $actionSecondaryBase: $action-secondary-base;
+  $actionSecondaryBase2: $action-secondary-base2;
+  $actionSecondaryDisabled: $action-secondary-disabled;
+  $actionSecondaryHover: $action-secondary-hover;
+  $actionSecondarySelected: $action-secondary-selected;
+
+  $actionDestructiveActive: $action-destructive-active;
+  $actionDestructiveBase: $action-destructive-base;
+  $actionDestructiveDisabled: $action-destructive-disabled;
+  $actionDestructiveHover: $action-destructive-hover;
+  $actionDestructiveSelected: $action-destructive-selected;
 
   /* BACKGROUND */
   backgroundPrimary: $background-primary;
+  backgroundSecondary: $background-secondary;
+  backgroundTertiary: $background-tertiary;
+  backgroundRed: $background-red;
+  backgroundBlue: $background-blue;
+  backgroundGreen: $background-green;
+  backgroundOrange: $background-orange;
+  backgroundPurple: $background-purple;
+  backgroundYellow: $background-yellow;
+
+  /* BORDER */
+  borderError: $border-error;
+  borderInformative: $border-informative;
+  borderPositive: $border-positive;
+  borderPrimary: $border-primary;
+  borderSecondary: $border-secondary;
+  borderTertiary: $border-tertiary;
+  borderWarning: $border-warning;
 
   /* CONTENT */
+  contentDarkDisabled: $content-dark-disabled;
   contentDarkError: $content-dark-error;
   contentDarkPrimary: $content-dark-primary;
   contentDarkSecondary: $content-dark-secondary;
   contentDarkTertiary: $content-dark-tertiary;
 
+  contentLightDisabled: $content-light-disabled;
+  contentLightError: $content-light-error;
+  contentLightPrimary: $content-light-primary;
+  contentLightSecondary: $content-light-secondary;
+  contentLightTertiary: $content-light-tertiary;
+
   /* INTERACTION */
+  interactionOutlineActive: $interaction-outline-active;
   interactionOutlineBase: $interaction-outline-base;
   interactionOutlineHover: $interaction-outline-hover;
-  interactionRedBase: $interaction-red-base;
+  interactionOutlineDisabled: $interaction-outline-disabled;
+  interactionOutlineSelected: $interaction-outline-selected;
+
+  interactionPrimaryActive: $interaction-primary-active;
+  interactionPrimaryBase: $interaction-primary-base;
+  interactionPrimaryHover: $interaction-primary-hover;
+  interactionPrimaryDisabled: $interaction-primary-disabled;
+  interactionPrimarySelected: $interaction-primary-selected;
+
+  interactionSecondaryActive: $interaction-secondary-active;
   interactionSecondaryBase: $interaction-secondary-base;
   interactionSecondaryHover: $interaction-secondary-hover;
+  interactionSecondaryDisabled: $interaction-secondary-disabled;
+  interactionSecondarySelected: $interaction-secondary-selected;
+
+  interactionRedActive: $interaction-red-active;
+  interactionRedBase: $interaction-red-base;
+  interactionRedHover: $interaction-red-hover;
+  interactionRedDisabled: $interaction-red-disabled;
+  interactionRedSelected: $interaction-red-selected;
+
+  interactionGreenActive: $interaction-green-active;
+  interactionGreenBase: $interaction-green-base;
+  interactionGreenHover: $interaction-green-hover;
+  interactionGreenDisabled: $interaction-green-disabled;
+  interactionGreenSelected: $interaction-green-selected;
+
+  interactionPurpleActive: $interaction-purple-active;
+  interactionPurpleBase: $interaction-purple-base;
+  interactionPurpleHover: $interaction-purple-hover;
+  interactionPurpleDisabled: $interaction-purple-disabled;
+  interactionPurpleSelected: $interaction-purple-selected;
+
+  interactionBlueActive: $interaction-blue-active;
+  interactionBlueBase: $interaction-blue-base;
+  interactionBlueHover: $interaction-blue-hover;
+  interactionBlueDisabled: $interaction-blue-disabled;
+  interactionBlueSelected: $interaction-blue-selected;
+
+  interactionOrangeActive: $interaction-orange-active;
+  interactionOrangeBase: $interaction-orange-base;
+  interactionOrangeHover: $interaction-orange-hover;
+  interactionOrangeDisabled: $interaction-orange-disabled;
+  interactionOrangeSelected: $interaction-orange-selected;
+
+  interactionYellowActive: $interaction-yellow-active;
+  interactionYellowBase: $interaction-yellow-base;
+  interactionYellowHover: $interaction-yellow-hover;
+  interactionYellowDisabled: $interaction-yellow-disabled;
+  interactionYellowSelected: $interaction-yellow-selected;
 }
