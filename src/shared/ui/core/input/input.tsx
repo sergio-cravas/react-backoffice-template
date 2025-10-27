@@ -94,7 +94,13 @@ export const Input = forwardRef(
     };
 
     return (
-      <div className={cn('input-container', className)} style={style}>
+      <div
+        className={cn('input-container', className)}
+        style={{
+          ...(props.width !== undefined ? { width: props.width } : {}),
+          ...style,
+        }}
+      >
         {!!label && <Label htmlFor={name}>{required ? `${label} *` : label}</Label>}
 
         <div className="input-container__field">

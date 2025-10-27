@@ -144,8 +144,7 @@
     --action-primary-selected: var(--neutral-90);
 
     --action-secondary-active: var(--neutral-50);
-    --action-secondary-base: var(--neutral-0);
-    --action-secondary-base2: var(--neutral-30);
+    --action-secondary-base: var(--neutral-30);
     --action-secondary-disabled: var(--neutral-20);
     --action-secondary-hover: var(--neutral-40);
     --action-secondary-selected: var(--neutral-30);

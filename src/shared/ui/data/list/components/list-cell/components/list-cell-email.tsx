@@ -16,7 +16,7 @@ function ListCellEmail<T>({ row, column }: ListCellEmailProps<T>) {
 
   return (
     <Link to={`mailto:${data}`} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-      <Icon as={MdEmail} size={16} variant="outline" />
+      <Icon as={MdEmail} size={16} variant="tertiary" />
 
       <Text variant="body-m" color="contentDarkPrimary" style={{ textDecoration: 'underline' }}>
         {data}

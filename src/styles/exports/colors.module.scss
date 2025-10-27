@@ -13,7 +13,6 @@ $action-primary-selected: var(--action-primary-selected);
 
 $action-secondary-active: var(--action-secondary-active);
 $action-secondary-base: var(--action-secondary-base);
-$action-secondary-base2: var(--action-secondary-base2);
 $action-secondary-disabled: var(--action-secondary-disabled);
 $action-secondary-hover: var(--action-secondary-hover);
 $action-secondary-selected: var(--action-secondary-selected);
@@ -47,12 +46,16 @@ $border-warning: var(--border-warning);
 /* CONTENT */
 $content-light-disabled: var(--content-light-disabled);
 $content-light-error: var(--content-light-error);
+$content-light-informative: var(--content-light-informative);
+$content-light-positive: var(--content-light-positive);
 $content-light-primary: var(--content-light-primary);
 $content-light-secondary: var(--content-light-secondary);
 $content-light-tertiary: var(--content-light-tertiary);
 
 $content-dark-disabled: var(--content-dark-disabled);
 $content-dark-error: var(--content-dark-error);
+$content-dark-informative: var(--content-dark-informative);
+$content-dark-positive: var(--content-dark-positive);
 $content-dark-primary: var(--content-dark-primary);
 $content-dark-secondary: var(--content-dark-secondary);
 $content-dark-tertiary: var(--content-dark-tertiary);
@@ -70,6 +73,7 @@ $interaction-primary-hover: var(--interaction-primary-hover);
 $interaction-primary-disabled: var(--interaction-primary-disabled);
 $interaction-primary-selected: var(--interaction-primary-selected);
 
+$interaction-secondary-active: var(--interaction-secondary-active);
 $interaction-secondary-base: var(--interaction-secondary-base);
 $interaction-secondary-disabled: var(--interaction-secondary-disabled);
 $interaction-secondary-hover: var(--interaction-secondary-hover);
@@ -127,7 +131,6 @@ $interaction-purple-selected: var(--interaction-purple-selected);
 
   $actionSecondaryActive: $action-secondary-active;
   $actionSecondaryBase: $action-secondary-base;
-  $actionSecondaryBase2: $action-secondary-base2;
   $actionSecondaryDisabled: $action-secondary-disabled;
   $actionSecondaryHover: $action-secondary-hover;
   $actionSecondarySelected: $action-secondary-selected;
@@ -161,12 +164,16 @@ $interaction-purple-selected: var(--interaction-purple-selected);
   /* CONTENT */
   contentDarkDisabled: $content-dark-disabled;
   contentDarkError: $content-dark-error;
+  contentDarkInformative: $content-dark-informative;
+  contentDarkPositive: $content-dark-positive;
   contentDarkPrimary: $content-dark-primary;
   contentDarkSecondary: $content-dark-secondary;
   contentDarkTertiary: $content-dark-tertiary;
 
   contentLightDisabled: $content-light-disabled;
   contentLightError: $content-light-error;
+  contentLightInformative: $content-light-informative;
+  contentLightPositive: $content-light-positive;
   contentLightPrimary: $content-light-primary;
   contentLightSecondary: $content-light-secondary;
   contentLightTertiary: $content-light-tertiary;

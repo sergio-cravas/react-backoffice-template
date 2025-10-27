@@ -9,7 +9,7 @@
 }
 
 @mixin force-scrollbar {
-  overflow-y: scroll;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     -webkit-appearance: none;

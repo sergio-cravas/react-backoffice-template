@@ -30,7 +30,7 @@ function ListHeaderCell<T>({ column, minWidth, sortBy, onSort }: ListHeaderCellP
             sortBy?.direction === 'asc' ? LuChevronUp : sortBy?.direction === 'desc' ? LuChevronDown : LuChevronsUpDown
           }
           size={16}
-          variant={sortBy ? 'primary' : 'outline'}
+          variant={sortBy ? 'primary' : 'tertiary'}
           onClick={onSort}
         />
       )}

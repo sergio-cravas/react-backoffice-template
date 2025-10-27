@@ -25,7 +25,7 @@ function KpiCard({ label, title, icon, to }: KpiCardProps) {
     <article className="kpi-card">
       <div className="kpi-card__head">
         <div className="kpi-card__icon-wrapper">
-          <Icon as={icon} size={24} variant="outline" />
+          <Icon as={icon} size={24} variant="tertiary" />
         </div>
 
         {!!to && <Icon as={MdChevronRight} size={16} onClick={handleOnNavigate} />}

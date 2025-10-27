@@ -23,7 +23,7 @@ function SidebarLink({ title, to, isCollapsed, icon }: SidebarLinkProps) {
       <NavLink to={to}>
         {({ isActive }) => (
           <div className={classNames('sidebar-link', { 'sidebar-link--active': isActive })}>
-            {!!icon && <Icon as={icon} size={20} variant="outline" />}
+            {!!icon && <Icon as={icon} size={20} variant="tertiary" />}
 
             {!isCollapsed && (
               <Text as="span" variant="body-m" weight="medium" color="contentDarkSecondary">

@@ -72,16 +72,25 @@
       }
     }
 
+    &__left-icon {
+      left: 12px;
+    }
+
+    &__right-icon {
+      right: 12px;
+    }
+
+    &__left-icon,
     &__right-icon {
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 12px;
+
       margin-block: auto;
       z-index: 1;
 
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
 
       color: colors.$content-dark-primary;

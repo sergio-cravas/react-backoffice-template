@@ -5,6 +5,7 @@
   "common.form.cancel": "Cancel",
   "common.form.close": "Close",
   "common.form.save": "Save",
+  "common.filters.search": "Search",
   "common.form.validations.fileTooLarge": "The file is too large. Maximum size is {maxSize}.",
   "common.form.validations.invalid": "This field is invalid.",
   "common.form.validations.invalidEmail": "Enter a valid email address.",

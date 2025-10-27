@@ -16,7 +16,7 @@ function ListCellPhone<T>({ row, column }: ListCellPhoneProps<T>) {
 
   return (
     <Link to={`tel:${data}`} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-      <Icon as={MdPhone} size={16} variant="outline" />
+      <Icon as={MdPhone} size={16} variant="tertiary" />
 
       <Text variant="body-m" color="contentDarkSecondary">
         {data}
