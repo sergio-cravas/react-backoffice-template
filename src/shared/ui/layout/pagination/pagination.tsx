@@ -39,7 +39,7 @@ function Pagination({ page, total, limit, onPageChange }: PaginationProps) {
               key={`page-${index + 1}`}
               size="sm"
               aria-label={`Go to page ${index + 1}`}
-              variant={index + 1 === page ? 'default' : 'secondary'}
+              variant={index + 1 === page ? 'primary' : 'secondary'}
               onClick={() => onPageChange(index + 1)}
             >
               {index + 1 + ''}
