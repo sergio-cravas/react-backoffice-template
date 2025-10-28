@@ -1,4 +1,3 @@
-import { enUS, es as esES } from 'date-fns/locale';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -25,10 +24,6 @@ const getBrowserLocale = (): LocaleOption => {
 
 const getMessages = (locale: LocaleOption): Record<string, string> => {
   return locale === 'en' ? en : es;
-};
-
-export const getDatefnsMessages = (locale: LocaleOption) => {
-  return { en: enUS, es: esES }[locale];
 };
 
 export const useLangStore = create<LangStore>()(
