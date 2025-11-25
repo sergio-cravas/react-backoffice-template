@@ -31,7 +31,7 @@ export function Checkbox({ name, label, className, ...props }: CheckboxProps) {
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
 
-      {!!label && <Label htmlFor={name}>{label}</Label>}
+      {!!label && <Label className="whitespace-nowrap" htmlFor={name}>{label}</Label>}
     </div>
   );
 }

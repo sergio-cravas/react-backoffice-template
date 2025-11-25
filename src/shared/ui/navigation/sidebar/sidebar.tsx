@@ -45,7 +45,7 @@ function Sidebar({
   const filteredLinksByPerm = useMemo(() => {
     let result = [...finalLinks];
 
-    if (!me) return result;
+    if (!me?.permissions) return result;
 
     result = result
       .map((group) => {
@@ -57,7 +57,7 @@ function Sidebar({
       .filter(Boolean) as SidebarNavProps[];
 
     return result;
-  }, [me, finalLinks]);
+  }, [me?.permissions, finalLinks]);
 
   return (
     <motion.div
