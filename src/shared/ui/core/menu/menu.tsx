@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import cn from 'clsx';
 import { motion } from 'framer-motion';
@@ -35,6 +35,8 @@ export type MenuProps = {
 };
 
 function Menu({ icon, label, items, width, className }: MenuProps) {
+  const menuRef = useRef<HTMLDivElement>(null);
+
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const onExpand = useCallback(() => {
@@ -49,10 +51,24 @@ function Menu({ icon, label, items, width, className }: MenuProps) {
     setIsExpanded(false);
   }, []);
 
+  useEffect(() => {
+    if (!isExpanded) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsExpanded(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isExpanded]);
+
   return (
-    <div className={cn('menu', className)}>
+    <div ref={menuRef} className={cn('menu', className)}>
       <Button variant="outline" onClick={onExpand}>
-        {icon && <Icon as={icon} size={16} />}
+        {!!icon && <Icon as={icon} size={16} />}
         {label}
       </Button>
 

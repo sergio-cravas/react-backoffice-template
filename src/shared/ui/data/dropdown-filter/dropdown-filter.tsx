@@ -1,4 +1,4 @@
-import { Fragment, memo, useCallback, useMemo, useState } from 'react';
+import { Fragment, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import cn from 'clsx';
 import { motion } from 'framer-motion';
@@ -46,6 +46,7 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
   const { formatMessage } = useIntl();
   const { isGreaterThan } = useScreenSize();
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const onToggle = useCallback(() => {
@@ -75,12 +76,26 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
     [control]
   );
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+
   return (
-    <div className={cn('dropdown-filter', className)}>
+    <div ref={dropdownRef} className={cn('dropdown-filter', className)}>
       <div className="dropdown-filter__button-wrapper">
         <Button variant="outline" onClick={onToggle}>
-          {icon && <Icon as={icon} size={16} />}
-          {isGreaterThan('sm') ? label : undefined}
+          <Icon as={icon} size={16} />
+          {isGreaterThan('sm') && label}
         </Button>
 
         {!!activeFilters && <div className="dropdown-filter__active-filters-dot" />}
