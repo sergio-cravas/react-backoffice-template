@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Sergio Cerdá Hervás",
+    "email": "sergio.cravas@gmail.com",
+    "url": "https://www.sergiocerdahervas.com/"
+  },
   "scripts": {
     "dev-start": "vite",
     "dev-start:mock": "vite --mode mock",
