@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 
-import classNames from 'clsx';
-
 import useScreenSize from '@/shared/hooks/use-screen-size';
 import { Option } from '@/shared/types/form.types';
+import { cn } from '@/shared/utils/style.utils';
 
 import { Icon } from '../../core/icon';
 import { Text } from '../../core/text';
@@ -22,7 +21,7 @@ function TabItem({ tab, activeTab, onTabChange }: TabItemProps) {
   const { isGreaterThan } = useScreenSize();
 
   return (
-    <div className={classNames('tab-item', { 'tab-item--active': isActive })} onClick={() => onTabChange(tab.value)}>
+    <div className={cn('tab-item', { 'tab-item--active': isActive })} onClick={() => onTabChange(tab.value)}>
       {!!tab.icon && <Icon as={tab.icon} variant={isActive ? 'primary' : 'outline'} />}
 
       {isGreaterThan('sm') && (

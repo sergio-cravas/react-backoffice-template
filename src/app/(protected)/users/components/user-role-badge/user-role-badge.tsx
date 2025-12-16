@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
-import classNames from 'clsx';
 import { useIntl } from 'react-intl';
 
 import { UserRole } from '@/api/users/models/user';
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 import colors from '@/styles/exports/colors.module.scss';
 
 import './user-role-badge.scss';
@@ -28,7 +28,7 @@ function UserRoleBadge({ role, width = 'full' }: UserRoleBadgeProps) {
 
   return (
     <div
-      className={classNames('user-role-badge', `user-role-badge--${width}`)}
+      className={cn('user-role-badge', `user-role-badge--${width}`)}
       style={{ backgroundColor: colors[`background${colorByRole[role]}`] }}
     >
       <Text as="span" variant="body-s" weight="medium" color={`interaction${colorByRole[role]}Base`}>

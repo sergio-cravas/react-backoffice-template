@@ -1,7 +1,6 @@
 import * as RouterDom from 'react-router-dom';
 
-import cn from 'clsx';
-
+import { cn } from '@/shared/utils/style.utils';
 import './link.scss';
 
 type LinkProps = RouterDom.LinkProps & { icon?: React.ReactNode };

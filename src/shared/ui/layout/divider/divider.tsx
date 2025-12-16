@@ -1,4 +1,4 @@
-import classNames from 'clsx';
+import { cn } from '@/shared/utils/style.utils';
 
 import './divider.scss';
 
@@ -8,7 +8,7 @@ type DividerProps = {
 };
 
 function Divider({ vertical = false, className }: DividerProps) {
-  return <div className={classNames('divider', { 'divider--vertical': vertical }, className)} />;
+  return <div className={cn('divider', { 'divider--vertical': vertical }, className)} />;
 }
 
 export default Divider;

@@ -1,8 +1,8 @@
-import classNames from 'clsx';
 import { LuChevronsLeftRight, LuChevronsRightLeft } from 'react-icons/lu';
 
 import { Button } from '@/shared/ui/core/button';
 import { Icon } from '@/shared/ui/core/icon';
+import { cn } from '@/shared/utils/style.utils';
 
 import './sidebar-toggle-button.scss';
 
@@ -19,7 +19,7 @@ function SidebarToggleButton({ disabled, isCollapsed, onClick }: Props) {
       variant="secondary"
       disabled={disabled}
       aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-      className={classNames('sidebar-toggle-button', { 'sidebar-toggle-button--collapsed': isCollapsed })}
+      className={cn('sidebar-toggle-button', { 'sidebar-toggle-button--collapsed': isCollapsed })}
       onClick={onClick}
     >
       <Icon as={isCollapsed ? LuChevronsRightLeft : LuChevronsLeftRight} size={20} variant="tertiary" />

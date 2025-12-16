@@ -1,9 +1,9 @@
 import { DetailedHTMLProps, JSX, memo } from 'react';
 
-import classNames from 'clsx';
+import { cn } from '@/shared/utils/style.utils';
 
-import { Pagination } from '../../layout/pagination';
 import { GridCard } from './components/grid-card';
+import { Pagination } from '../../layout/pagination';
 
 import './grid.scss';
 
@@ -37,7 +37,7 @@ function Grid<T = Record<string, any>>({
   ...props
 }: GridProps<T>) {
   return (
-    <div className={classNames('grid', className)} {...props}>
+    <div className={cn('grid', className)} {...props}>
       <div
         className="grid__content"
         style={{

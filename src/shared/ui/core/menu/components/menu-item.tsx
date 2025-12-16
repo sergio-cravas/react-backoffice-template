@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import cn from 'clsx';
 import { motion } from 'framer-motion';
 import { MdExpandLess, MdExpandMore } from 'react-icons/md';
 
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 
 import { Item } from '../menu.types';
 

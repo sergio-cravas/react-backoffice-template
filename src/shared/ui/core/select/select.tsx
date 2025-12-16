@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import cn from 'clsx';
 import ReactSelect, { Options } from 'react-select';
 
 import { Option } from '@/shared/types/form.types';
+import { cn } from '@/shared/utils/style.utils';
 
 import { Text } from '../text';
 import { selectStyles } from './select.styles';

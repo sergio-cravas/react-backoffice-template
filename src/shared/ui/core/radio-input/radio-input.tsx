@@ -1,8 +1,7 @@
 import { useCallback } from 'react';
 
-import cn from 'clsx';
-
 import { Option } from '@/shared/types/form.types';
+import { cn } from '@/shared/utils/style.utils';
 
 import { Text } from '../text';
 

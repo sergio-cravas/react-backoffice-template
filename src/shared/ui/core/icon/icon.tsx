@@ -1,7 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
 
-import cn from 'clsx';
 import { IconBaseProps, IconType } from 'react-icons';
+
+import { cn } from '@/shared/utils/style.utils';
 
 import './icon.scss';
 

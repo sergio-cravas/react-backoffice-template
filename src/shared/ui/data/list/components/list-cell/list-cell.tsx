@@ -1,12 +1,12 @@
 import { JSX, memo, useMemo } from 'react';
 
-import classNames from 'clsx';
+import { cn } from '@/shared/utils/style.utils';
 
-import { Column } from '../../types/list.types';
 import ListCellDate from './components/list-cell-date';
 import ListCellEmail from './components/list-cell-email';
 import ListCellPhone from './components/list-cell-phone';
 import ListCellText from './components/list-cell-text';
+import { Column } from '../../types/list.types';
 
 import './list-cell.scss';
 
@@ -30,7 +30,7 @@ function ListCell<T>({ row, column, className, style }: ListCellProps<T>) {
   );
 
   return (
-    <div className={classNames('list-cell', className)} style={style}>
+    <div className={cn('list-cell', className)} style={style}>
       {cellContentByType[column.type]}
     </div>
   );

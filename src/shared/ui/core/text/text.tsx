@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-import cn from 'clsx';
-
+import { cn } from '@/shared/utils/style.utils';
 import colors from '@/styles/exports/colors.module.scss';
 
 import './text.scss';

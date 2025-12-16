@@ -1,11 +1,11 @@
 import { PropsWithChildren, useEffect } from 'react';
 
-import cn from 'clsx';
 import { AnimatePresence, motion } from 'motion/react';
 import { MdClose } from 'react-icons/md';
 
 import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 
 import './modal.scss';
 

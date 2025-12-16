@@ -1,11 +1,10 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
-import cn from 'clsx';
-
 import { Routes } from '@/app/router';
 import LogoSVG from '@/assets/logo.svg';
 import { useAuthStore } from '@/shared/store/auth';
+import { cn } from '@/shared/utils/style.utils';
 
 import './logo.scss';
 

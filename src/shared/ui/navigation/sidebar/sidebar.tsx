@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 
-import classNames from 'clsx';
 import { motion } from 'framer-motion';
 
 import { useProfile } from '@/api/auth/hooks/use-profile';
 import useScreenSize from '@/shared/hooks/use-screen-size';
 import { Logo } from '@/shared/ui/core/logo';
 import { hasPerm } from '@/shared/utils/auth.utils';
+import { cn } from '@/shared/utils/style.utils';
 
 import { SidebarNav, type SidebarNavProps } from './components/sidebar-nav';
 import { SidebarToggleButton } from './components/sidebar-toggle-button';
@@ -61,7 +61,7 @@ function Sidebar({
 
   return (
     <motion.div
-      className={classNames(
+      className={cn(
         'sidebar',
         { 'sidebar--collapsed': collapsed, 'sidebar--horizontal': orientation === 'horizontal' },
         className

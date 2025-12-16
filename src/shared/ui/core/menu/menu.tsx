@@ -1,8 +1,9 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
-import cn from 'clsx';
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
+
+import { cn } from '@/shared/utils/style.utils';
 
 import { Button } from '../button';
 import { Icon } from '../icon';

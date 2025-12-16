@@ -1,6 +1,6 @@
 import { JSX, memo } from 'react';
 
-import classNames from 'clsx';
+import { cn } from '@/shared/utils/style.utils';
 
 import { Column } from '../../types/list.types';
 import { ListCell } from '../list-cell';
@@ -16,7 +16,7 @@ type ListRowProps<T> = {
 
 function ListRow<T>({ row, columns = [], minWidth, onClick }: ListRowProps<T>) {
   return (
-    <div className={classNames(`list-row`, { 'list-row--clickable': !!onClick })} onClick={onClick}>
+    <div className={cn(`list-row`, { 'list-row--clickable': !!onClick })} onClick={onClick}>
       {columns?.map((column, index) => (
         <ListCell<T>
           key={`row-${index}`}

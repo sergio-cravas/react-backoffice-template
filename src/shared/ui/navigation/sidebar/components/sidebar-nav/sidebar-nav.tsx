@@ -1,9 +1,8 @@
 import { PropsWithChildren } from 'react';
 
-import classNames from 'clsx';
-
 import { Text } from '@/shared/ui/core/text';
 import { SidebarLink, type SidebarLinkProps } from '@/shared/ui/navigation/sidebar/components/sidebar-link';
+import { cn } from '@/shared/utils/style.utils';
 
 import './sidebar-nav.scss';
 
@@ -27,7 +26,7 @@ function SidebarNav({
 }: SidebarNavProps) {
   return (
     <nav
-      className={classNames('sidebar-nav', {
+      className={cn('sidebar-nav', {
         'sidebar-nav--full-height': fullHeight,
         'sidebar-nav--with-top-border': withTopBorder,
         'sidebar-nav--horizontal': orientation === 'horizontal',

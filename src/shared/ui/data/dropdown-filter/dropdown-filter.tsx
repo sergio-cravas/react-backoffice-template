@@ -1,6 +1,5 @@
 import { Fragment, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import cn from 'clsx';
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
 import { useIntl } from 'react-intl';
@@ -9,6 +8,7 @@ import useScreenSize from '@/shared/hooks/use-screen-size';
 import { Button } from '@/shared/ui/core/button';
 import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 
 import CheckboxDropdownFilterItem from './components/checkbox-dropdown-filter-item';
 import InputDropdownFilterItem from './components/input-dropdown-filter-item';
