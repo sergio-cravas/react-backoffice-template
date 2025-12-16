@@ -48,6 +48,15 @@
   background-color: colors.$background-secondary;
 }
 
+@mixin layout__protected-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+}
+
 @mixin layout__protected-page__content {
   flex: 1;
   min-width: 100%;

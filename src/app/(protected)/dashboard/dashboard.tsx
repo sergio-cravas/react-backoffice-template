@@ -4,7 +4,6 @@ import { useIntl } from 'react-intl';
 import { useProfile } from '@/api/auth/hooks/use-profile';
 import { useGetUsers } from '@/api/users/hooks/use-get-users';
 import { Routes } from '@/app/router';
-import { Text } from '@/shared/ui/core/text';
 import { SectionHeader } from '@/shared/ui/layout/section-header';
 
 import { KpiCard } from './components/kpi-card';
@@ -19,13 +18,9 @@ function Dashboard() {
 
   return (
     <div className="dashboard-page">
-      <SectionHeader title={formatMessage({ id: 'dashboard.title' })} />
+      <SectionHeader title={formatMessage({ id: 'dashboard.title' }, { name: me?.firstName })} />
 
       <div className="dashboard-page__content">
-        <Text as="h2" variant="h6">
-          {formatMessage({ id: 'dashboard.welcome' }, { name: me?.firstName })}
-        </Text>
-
         <div className="dashboard-page__kpi-cards">
           <KpiCard
             to={Routes.USERS}

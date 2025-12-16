@@ -1,6 +1,5 @@
-import classNames from 'clsx';
-
 import { Option } from '@/shared/types/form.types';
+import { cn } from '@/shared/utils/style.utils';
 
 import { TabItem } from '../tab-item';
 
@@ -15,7 +14,7 @@ type TabsProps = {
 
 function Tabs({ tabs = [], activeTab, className, onTabChange }: TabsProps) {
   return (
-    <div className={classNames('tabs', className)}>
+    <div className={cn('tabs', className)}>
       {tabs.map((tab) => (
         <TabItem key={tab.value} tab={tab} activeTab={activeTab} onTabChange={onTabChange} />
       ))}

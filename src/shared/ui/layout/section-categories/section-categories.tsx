@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { MdAdd } from 'react-icons/md';
+import { Plus } from 'lucide-react';
 import { useIntl } from 'react-intl';
 
 import { Option } from '@/shared/types/form.types';
@@ -31,7 +31,7 @@ function SectionCategories({ category, categories, onSelectCategory, onAddCatego
 
       {onAddCategory && (
         <Button variant="secondary" onClick={onAddCategory}>
-          <Icon as={MdAdd} size={16} />
+          <Icon as={Plus} size={16} />
           {formatMessage({ id: 'app.ui.layout.sectionCategories.addCategory' })}
         </Button>
       )}

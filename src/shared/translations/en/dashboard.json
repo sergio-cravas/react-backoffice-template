@@ -1,6 +1,5 @@
 {
-  "dashboard.title": "Dashboard",
-  "dashboard.welcome": "Welcome, {name}",
+  "dashboard.title": "Welcome, {name} 👋",
   "dashboard.kpis.users.label": "Total users",
   "dashboard.kpis.users.title": "{num} Users"
 }

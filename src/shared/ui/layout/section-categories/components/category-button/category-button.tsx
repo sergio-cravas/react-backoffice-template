@@ -1,9 +1,8 @@
 import { memo } from 'react';
 
-import cn from 'clsx';
-
 import { Option } from '@/shared/types/form.types';
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 
 import './category-button.scss';
 

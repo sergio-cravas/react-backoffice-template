@@ -17,80 +17,35 @@
 
     display: flex;
 
-    &__content {
-      @include fonts.font-body-m;
-
-      width: 100%;
-      height: 41px;
-      padding: 10px 12px;
-      color: colors.$content-dark-primary;
-      border: 1px solid colors.$interaction-outline-base;
-      background-color: colors.$interaction-secondary-base;
-      border-radius: variables.$border-radius;
-
-      &::placeholder {
-        color: colors.$content-dark-tertiary;
-      }
-
-      &:hover,
-      &:focus {
-        border-color: colors.$interaction-outline-hover;
-      }
-
-      &:active {
-        border-color: colors.$interaction-outline-active;
-      }
-
-      &--invalid {
-        border-color: colors.$interaction-red-base;
-      }
-
-      &--disabled {
-        pointer-events: none;
-
-        color: colors.$content-dark-disabled;
-        border-color: colors.$interaction-outline-disabled;
-        background-color: colors.$interaction-secondary-disabled;
-
-        &::placeholder {
-          color: colors.$content-dark-disabled;
-        }
-      }
-
-      &--number-input {
-        &[type='number'] {
-          -moz-appearance: textfield;
-          appearance: textfield;
-        }
-
-        /* Chrome, Safari, Edge, Opera */
-        &[type='number']::-webkit-outer-spin-button,
-        &[type='number']::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-      }
-    }
-
     &__left-icon {
-      left: 12px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      left: 10px;
+      margin-block: auto;
+      z-index: 1;
+
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+
+      color: colors.$content-dark-primary;
     }
 
-    &__right-icon {
-      right: 12px;
-    }
-
-    &__left-icon,
     &__right-icon {
       position: absolute;
       top: 0;
       bottom: 0;
-
+      display: flex;
+      align-items: center;
+      right: 10px;
       margin-block: auto;
       z-index: 1;
 
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       cursor: pointer;
 
       color: colors.$content-dark-primary;

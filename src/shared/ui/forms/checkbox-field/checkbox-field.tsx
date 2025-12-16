@@ -26,9 +26,9 @@ function CheckboxField<FormValues extends FieldValues>({
       {...props}
       name={name}
       control={control}
-      render={({ field: { onChange, ...renderProps }, fieldState: { error } }) => (
+      render={({ field: { value, onChange, ...renderProps }, fieldState: { error } }) => (
         <FieldContainer error={errorMessage || error?.message} style={style}>
-          <Checkbox {...renderProps} onChange={onChange} {...inputProps} />
+          <Checkbox {...renderProps} checked={value} onCheckedChange={onChange} {...inputProps} />
         </FieldContainer>
       )}
     />

@@ -1,7 +1,8 @@
 import { useCallback, useState } from 'react';
 
-import classNames from 'clsx';
 import { MdAdd, MdOutlineRemove } from 'react-icons/md';
+
+import { cn } from '@/shared/utils/style.utils';
 
 import { Icon } from '../icon';
 
@@ -35,7 +36,7 @@ export function QuantityInput({ name, label, className, min, max, step, defaultV
   );
 
   return (
-    <div className={classNames('quantity-input', className)}>
+    <div className={cn('quantity-input', className)}>
       {label && <label className="quantity-input__label">{label}</label>}
 
       <div className="quantity-input__field">

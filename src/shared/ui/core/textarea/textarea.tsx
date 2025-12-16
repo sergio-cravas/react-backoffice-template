@@ -1,7 +1,8 @@
 import React, { forwardRef, Ref, useCallback, useEffect, useState } from 'react';
 
-import cn from 'clsx';
 import { MdErrorOutline } from 'react-icons/md';
+
+import { cn } from '@/shared/utils/style.utils';
 
 import { Text } from '../text';
 

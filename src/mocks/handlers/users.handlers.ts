@@ -1,6 +1,7 @@
 import { HttpResponse, http } from 'msw';
 
 import { usersListMock } from '../database/users.mock';
+import { withDelay } from '../utils/with-delay';
 
 const getUsersMock = async ({ request }) => {
   const url = new URL(request.url);
@@ -97,7 +98,7 @@ const createUserMock = async ({ request }) => {
  * Mock handlers for authentication-related endpoints.
  */
 export const usersHandlers = [
-  http.get('/users', getUsersMock),
+  http.get('/users', (e) => withDelay(getUsersMock(e), 2000)),
   http.post('/users', createUserMock),
   http.get('/users/:id', getUserByIdMock),
   http.put('/users/:id', updateUserMock),

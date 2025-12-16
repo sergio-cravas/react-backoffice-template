@@ -1,7 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
 
-import cn from 'clsx';
 import { IconBaseProps, IconType } from 'react-icons';
+
+import { cn } from '@/shared/utils/style.utils';
 
 import './icon.scss';
 
@@ -57,7 +58,6 @@ function Icon({ as, className, variant = 'primary', spin, disabled, onClick, sty
         className={cn('icon', {
           'icon--disabled': !!disabled,
           'icon--spin': spin,
-
           [`icon--${variant}`]: !!variant,
         })}
         style={iconStyle}

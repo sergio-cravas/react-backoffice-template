@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import classNames from 'clsx';
 import { MdAdd } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
 import NoImageSVG from '@/assets/no-image.png';
 import { UploadFileObject } from '@/shared/types/form.types';
 import { normalizeString, toBase64 } from '@/shared/utils/form.utils';
+import { cn } from '@/shared/utils/style.utils';
 
 import { Button } from '../button';
 import { Icon } from '../icon';
@@ -86,7 +86,7 @@ function ImageInput({
   }, [value, file]);
 
   return (
-    <div className={classNames('image-input', className)} style={style}>
+    <div className={cn('image-input', className)} style={style}>
       {!!label && (
         <label className="image-input__label" htmlFor={name}>
           {required ? `${label} *` : label}

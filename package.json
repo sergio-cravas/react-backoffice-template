@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Sergio Cerdá Hervás",
+    "email": "sergio.cravas@gmail.com",
+    "url": "https://www.sergiocerdahervas.com/"
+  },
   "scripts": {
     "dev-start": "vite",
     "dev-start:mock": "vite --mode mock",
     "build": "tsc -b && vite build",
-    "build:mock": "tsc -b && vite build --mode mock",
     "build:prod": "tsc -b && vite build --mode production",
-    "build:mock-prod": "tsc -b && vite build --mode mock-prod",
+    "build:mock": "tsc -b && vite build --mode production-mock",
     "lint": "eslint .",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",

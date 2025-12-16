@@ -11,7 +11,7 @@ function ProtectedPagesLayout() {
       <Sidebar withLogo allowsCollapse />
 
       <div className="protected-page__content">
-        <LayoutHeader onClick={console.log} />
+        <LayoutHeader onSearch={console.log} />
 
         <Outlet />
       </div>

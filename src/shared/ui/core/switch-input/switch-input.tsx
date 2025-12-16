@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import cn from 'clsx';
-
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 
 import './switch-input.scss';
 

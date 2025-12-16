@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { MdContactPage, MdPieChartOutline, MdSettings } from 'react-icons/md';
+import { Contact2, PieChart, Settings } from 'lucide-react';
 import { useIntl } from 'react-intl';
 
 import { Routes } from '@/app/router';
@@ -14,7 +14,11 @@ export const useSidebarLinks = () => {
       {
         withTopBorder: true,
         links: [
-          { to: Routes.DASHBOARD, title: formatMessage({ id: 'app.sidebar.dashboard' }), icon: MdPieChartOutline },
+          {
+            to: Routes.DASHBOARD,
+            title: formatMessage({ id: 'app.sidebar.dashboard' }),
+            icon: PieChart,
+          },
         ],
       },
       {
@@ -25,7 +29,7 @@ export const useSidebarLinks = () => {
             to: Routes.USERS,
             perm: 'users',
             title: formatMessage({ id: 'app.sidebar.database.users' }),
-            icon: MdContactPage,
+            icon: Contact2,
           },
         ],
       },
@@ -33,7 +37,11 @@ export const useSidebarLinks = () => {
         withTopBorder: true,
         fullHeight: true,
         links: [
-          { to: Routes.SETTINGS_ACCOUNT, title: formatMessage({ id: 'app.sidebar.settings' }), icon: MdSettings },
+          {
+            to: Routes.SETTINGS_ACCOUNT,
+            title: formatMessage({ id: 'app.sidebar.settings' }),
+            icon: Settings,
+          },
         ],
       },
     ],

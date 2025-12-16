@@ -1,8 +1,7 @@
 import { PropsWithChildren } from 'react';
 
-import classNames from 'clsx';
-
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 
 import './settings-section-item.scss';
 
@@ -16,7 +15,7 @@ type SettingsSectionItemProps = PropsWithChildren<{
 function SettingsSectionItem({ title, subtitle, titleColor, align = 'center', children }: SettingsSectionItemProps) {
   return (
     <div
-      className={classNames('settings-section-item', `settings-section-item--align-${align}`, {
+      className={cn('settings-section-item', `settings-section-item--align-${align}`, {
         'settings-section-item--has-node-subtitle': typeof subtitle !== 'string',
       })}
     >

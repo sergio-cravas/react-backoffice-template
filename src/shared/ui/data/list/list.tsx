@@ -1,9 +1,8 @@
 import { DetailedHTMLProps, JSX, memo } from 'react';
 
-import classNames from 'clsx';
-
 import { SortBy } from '@/shared/types/common.types';
 import { Pagination } from '@/shared/ui/layout/pagination';
+import { cn } from '@/shared/utils/style.utils';
 
 import { ListHeader } from './components/list-header';
 import { ListRow } from './components/list-row';
@@ -39,7 +38,7 @@ function List<T = Record<string, any>>({
   const minWidth = 200;
 
   return (
-    <div className={classNames('list', className)} {...props}>
+    <div className={cn('list', className)} {...props}>
       <div className="list__body">
         <ListHeader<T> columns={columns} minWidth={minWidth} onSort={onColumnSort} />
 

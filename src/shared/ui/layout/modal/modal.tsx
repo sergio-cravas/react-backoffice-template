@@ -1,11 +1,11 @@
 import { PropsWithChildren, useEffect } from 'react';
 
-import cn from 'clsx';
+import { X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import { MdClose } from 'react-icons/md';
 
 import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 
 import './modal.scss';
 
@@ -70,7 +70,7 @@ export const Modal = ({
               {title}
             </Text>
 
-            {hideCloseButton ? null : <Icon as={MdClose} size={20} onClick={onClose} />}
+            {hideCloseButton ? null : <Icon as={X} size={20} onClick={onClose} />}
           </div>
 
           <div className="modal__body">{children}</div>

@@ -16,10 +16,10 @@ import { Text } from '../../core/text';
 import './layout-header.scss';
 
 type LayoutHeaderProps = {
-  onClick: any;
+  onSearch?: (value: string) => void;
 };
 
-function LayoutHeader({ onClick = console.log }: LayoutHeaderProps) {
+function LayoutHeader({ onSearch }: LayoutHeaderProps) {
   const { formatMessage } = useIntl();
 
   const { me } = useProfile();
@@ -27,13 +27,16 @@ function LayoutHeader({ onClick = console.log }: LayoutHeaderProps) {
   return (
     <div className="layout-header">
       <div className="layout-header__title">
-        <Input
-          name="global-search"
-          width={360}
-          placeholder={formatMessage({ id: 'common.filters.search' })}
-          leftElement={<Icon as={MdSearch} size={20} variant="tertiary" />}
-          rightElement={<Icon as={MdKeyboardCommandKey} size={20} variant="tertiary" />}
-        />
+        {onSearch && (
+          <Input
+            name="global-search"
+            width={360}
+            placeholder={formatMessage({ id: 'common.filters.search' })}
+            leftElement={<Icon as={MdSearch} size={20} variant="tertiary" />}
+            rightElement={<Icon as={MdKeyboardCommandKey} size={20} variant="tertiary" />}
+            onChange={(event) => onSearch(event.target.value)}
+          />
+        )}
       </div>
 
       <div className="layout-header__tabs" />

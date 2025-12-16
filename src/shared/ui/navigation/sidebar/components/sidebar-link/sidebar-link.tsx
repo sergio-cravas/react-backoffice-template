@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
-import classNames from 'clsx';
 import { IconType } from 'react-icons';
 
 import { RoutePath } from '@/app/router';
 import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
+import { cn } from '@/shared/utils/style.utils';
 
 import './sidebar-link.scss';
 
@@ -22,7 +22,7 @@ function SidebarLink({ title, to, isCollapsed, icon }: SidebarLinkProps) {
     <li className="sidebar-link-wrapper">
       <NavLink to={to}>
         {({ isActive }) => (
-          <div className={classNames('sidebar-link', { 'sidebar-link--active': isActive })}>
+          <div className={cn('sidebar-link', { 'sidebar-link--active': isActive })}>
             {!!icon && <Icon as={icon} size={20} variant="tertiary" />}
 
             {!isCollapsed && (

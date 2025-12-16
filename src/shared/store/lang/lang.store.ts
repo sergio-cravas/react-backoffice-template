@@ -1,4 +1,3 @@
-// stores/langStore.ts
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -30,12 +29,10 @@ const getMessages = (locale: LocaleOption): Record<string, string> => {
 export const useLangStore = create<LangStore>()(
   persist(
     (set) => ({
-      // State
       locale: getBrowserLocale(),
       localeOptions,
       messages: getMessages(getBrowserLocale()),
 
-      // Actions
       updateLocale: (newLocale: LocaleOption) => {
         if (!localeOptions.includes(newLocale)) {
           throw new Error(`¡Locale ${newLocale} not defined!`);

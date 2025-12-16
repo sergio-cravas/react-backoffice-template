@@ -30,11 +30,11 @@ function Pagination({ page, total, limit, onPageChange }: PaginationProps) {
           aria-label="Previous page"
           onClick={() => onPageChange(page - 1)}
         >
-          <Icon as={MdChevronLeft} size={14} />
+          <Icon as={MdChevronLeft} size={14} disabled={isFirstPage} />
         </Button>
 
         <div className="pagination__page-controls-pages">
-          {Array.from({ length: totalPages }, (_, index) => (
+          {Array.from({ length: totalPages || 1 }, (_, index) => (
             <Button
               key={`page-${index + 1}`}
               size="sm"
@@ -54,7 +54,7 @@ function Pagination({ page, total, limit, onPageChange }: PaginationProps) {
           disabled={isLastPage}
           onClick={() => onPageChange(page + 1)}
         >
-          <Icon as={MdChevronRight} size={14} />
+          <Icon as={MdChevronRight} size={14} disabled={isLastPage} />
         </Button>
       </div>
     </div>

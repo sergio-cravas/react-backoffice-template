@@ -7,8 +7,6 @@
   display: flex;
   flex-direction: column;
 
-  width: 100%;
-
   &__button-wrapper {
     position: relative;
   }
@@ -43,8 +41,8 @@
     padding: variables.$spacing1 variables.$spacing2 variables.$spacing2;
 
     border-radius: 8px;
-    border: 1px solid #e4e4e4;
-    background-color: colors.$action-secondary-base;
+    border: 1px solid colors.$border-primary;
+    background-color: colors.$background-primary;
     box-shadow: 23px 0px 36px rgba(150, 150, 150, 0.16);
 
     transform-origin: 50% -30px;
@@ -62,7 +60,7 @@
     }
   }
 
-  &__dropdown > form {
+  &__dropdown>form {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -89,13 +87,13 @@
 
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
   }
 
   &__dropdown-footer {
     display: flex;
     align-items: center;
 
-    gap: 4px;
+    gap: 12px;
   }
 }
