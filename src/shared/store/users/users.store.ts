@@ -1,17 +1,16 @@
 import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
 
 import { UserPageView, UserRole } from '@/api/users/models/user';
-import { SortBy } from '@/shared/types/common.types';
+import { Pagination, SortBy } from '@/shared/types/common.types';
 
 export type UserFilters = { name?: string; role?: UserRole; isDeleted?: boolean };
 
 type UsersStore = {
   view: UserPageView;
-  category?: UserRole;
-  pagination: { page: number; limit: number };
+  pagination: Pagination;
   sortBy?: SortBy;
   filter?: UserFilters;
+  category?: UserRole;
   changeView: (view: UserPageView) => void;
   changeCategory: (category: UserRole) => void;
   changePage: (page: number) => void;
@@ -22,38 +21,23 @@ type UsersStore = {
 
 const defaultPagination = { page: 1, limit: 10 };
 
-export const useUsersStore = create<UsersStore>()(
-  persist(
-    (set) => ({
-      view: UserPageView.LIST,
-      category: UserRole.ADMIN,
+export const useUsersStore = create<UsersStore>((set) => ({
+  view: UserPageView.LIST,
+  category: UserRole.ADMIN,
+  pagination: defaultPagination,
+  sortBy: undefined,
+  filter: undefined,
+  changeView: (view) => set({ view, pagination: defaultPagination }),
+  changeCategory: (category) =>
+    set((state) => ({
+      category: state.category === category ? undefined : category,
       pagination: defaultPagination,
-      sortBy: undefined,
-      filter: undefined,
-      changeView: (view) => set({ view, pagination: defaultPagination }),
-      changeCategory: (category) =>
-        set((state) => ({
-          category: state.category === category ? undefined : category,
-          pagination: defaultPagination,
-        })),
-      changePage: (page) => set((state) => ({ pagination: { ...state.pagination, page } })),
-      changeLimit: (limit) => set((state) => ({ pagination: { ...state.pagination, limit } })),
-      changeSortBy: (sortBy: SortBy | undefined) => set({ sortBy }),
-      changeFilters: (filters) => {
-        if (!filters || !Object.keys(filters)?.length) set({ filter: undefined });
-        else set((state) => ({ filter: { ...state.filter, ...filters } }));
-      },
-    }),
-    {
-      name: 'rbt-users',
-      storage: createJSONStorage(() => sessionStorage),
-      partialize: (state) => ({
-        view: state.view,
-        category: state.category,
-        pagination: state.pagination,
-        sortBy: state.sortBy,
-        filter: state.filter,
-      }),
-    }
-  )
-);
+    })),
+  changePage: (page) => set((state) => ({ pagination: { ...state.pagination, page } })),
+  changeLimit: (limit) => set((state) => ({ pagination: { ...state.pagination, limit } })),
+  changeSortBy: (sortBy: SortBy | undefined) => set({ sortBy }),
+  changeFilters: (filters) => {
+    if (!filters || !Object.keys(filters)?.length) set({ filter: undefined });
+    else set((state) => ({ filter: { ...state.filter, ...filters } }));
+  },
+}));
