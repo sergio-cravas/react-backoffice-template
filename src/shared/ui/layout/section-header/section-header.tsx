@@ -40,13 +40,15 @@ function SectionHeader({ title, views, sortBy, filter, add }: SectionHeaderProps
         </Text>
       </div>
 
-      {!!views && (
+      {views ? (
         <Tabs
           className="section-header__tabs"
           tabs={views.options}
           activeTab={views.view}
           onTabChange={views.onChange}
         />
+      ) : (
+        <div className="section-header__tabs" />
       )}
 
       <div className="section-header__actions">
