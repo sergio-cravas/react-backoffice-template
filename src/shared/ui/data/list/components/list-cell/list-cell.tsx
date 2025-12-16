@@ -5,6 +5,7 @@ import { cn } from '@/shared/utils/style.utils';
 import ListCellDate from './components/list-cell-date';
 import ListCellEmail from './components/list-cell-email';
 import ListCellPhone from './components/list-cell-phone';
+import ListCellSelect from './components/list-cell-select';
 import ListCellText from './components/list-cell-text';
 import { Column } from '../../types/list.types';
 
@@ -24,6 +25,12 @@ function ListCell<T>({ row, column, className, style }: ListCellProps<T>) {
       ['date']: <ListCellDate row={row} column={column} />,
       ['email']: <ListCellEmail row={row} column={column} />,
       ['phone']: <ListCellPhone row={row} column={column} />,
+      ['select']: (
+        <ListCellSelect
+          row={row}
+          column={column as Column<T> & { type: 'select'; options: { value: string; label: string }[] }}
+        />
+      ),
       ['custom']: column.render ? column.render(row) : null,
     }),
     [row, column]

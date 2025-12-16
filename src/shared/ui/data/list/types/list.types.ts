@@ -1,12 +1,24 @@
-type ColumnType = 'text' | 'date' | 'email' | 'phone' | 'custom';
+type ColumnType = 'text' | 'date' | 'email' | 'phone' | 'select' | 'custom';
+
+type SelectOption = {
+  value: string;
+  label: string;
+};
 
 type BaseColumn<T = Record<string, any>> = {
   key: string;
   label: string;
-  type: Exclude<ColumnType, 'custom'>;
+  type: Exclude<ColumnType, 'custom' | 'select'>;
   width?: number;
   sortable?: boolean;
+  editable?: boolean;
+  onSave?: (item: T, key: string, value: any) => void;
   render?: (item: T) => React.ReactNode;
+};
+
+type SelectColumn<T = Record<string, any>> = Omit<BaseColumn<T>, 'type'> & {
+  type: 'select';
+  options: SelectOption[];
 };
 
 type CustomColumn<T = Record<string, any>> = Omit<BaseColumn<T>, 'type' | 'render'> & {
@@ -14,6 +26,6 @@ type CustomColumn<T = Record<string, any>> = Omit<BaseColumn<T>, 'type' | 'rende
   render: (item: T) => React.ReactNode;
 };
 
-type Column<T = Record<string, any>> = BaseColumn<T> | CustomColumn<T>;
+type Column<T = Record<string, any>> = BaseColumn<T> | SelectColumn<T> | CustomColumn<T>;
 
-export type { Column, ColumnType };
+export type { Column, ColumnType, SelectOption };

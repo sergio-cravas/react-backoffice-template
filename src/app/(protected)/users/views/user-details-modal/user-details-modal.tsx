@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { MdOutlineCases, MdOutlineEdit, MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
+import { BriefcaseBusiness, Mail, Pencil, Phone } from 'lucide-react';
 import { useIntl } from 'react-intl';
 
 import { useGetUserById } from '@/api/users/hooks/use-get-user-by-id';
@@ -55,7 +55,7 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
             <div className="user-details-modal__action-item">
               <Button asChild size="icon-lg" variant="outline" aria-label="Open user phone" disabled={!user?.phone}>
                 <Link to={`tel:${user?.phone}`}>
-                  <Icon as={MdOutlinePhone} size={20} variant="outline" />
+                  <Icon as={Phone} size={20} variant="outline" />
                 </Link>
               </Button>
 
@@ -65,7 +65,7 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
             <div className="user-details-modal__action-item">
               <Button asChild size="icon-lg" variant="outline" aria-label="Open user email" disabled={!user?.email}>
                 <Link to={`mailto:${user?.email}`}>
-                  <Icon as={MdOutlineEmail} size={20} variant="outline" />
+                  <Icon as={Mail} size={20} variant="outline" />
                 </Link>
               </Button>
 
@@ -74,7 +74,7 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
 
             <div className="user-details-modal__action-item">
               <Button size="icon-lg" variant="outline" onClick={handleOnEdit}>
-                <Icon as={MdOutlineEdit} size={20} variant="outline" />
+                <Icon as={Pencil} size={20} variant="outline" />
               </Button>
 
               <Text color="contentDarkSecondary">{formatMessage({ id: 'users.detailModal.edit' })}</Text>
@@ -89,19 +89,19 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
             </Text>
 
             <div className="user-details-modal__account-information__row">
-              <Icon as={MdOutlineEmail} size={20} variant="outline" />
+              <Icon as={Mail} size={20} variant="outline" />
 
               <Text color="contentDarkSecondary">{user?.email}</Text>
             </div>
 
             <div className="user-details-modal__account-information__row">
-              <Icon as={MdOutlinePhone} size={20} variant="outline" />
+              <Icon as={Phone} size={20} variant="outline" />
 
               <Text color="contentDarkSecondary">{user?.phone}</Text>
             </div>
 
             <div className="user-details-modal__account-information__row">
-              <Icon as={MdOutlineCases} size={20} variant="outline" />
+              <Icon as={BriefcaseBusiness} size={20} variant="outline" />
 
               <Text color="contentDarkSecondary">{user?.role}</Text>
             </div>
