@@ -16,7 +16,7 @@ function AuthHeader() {
   const { formatMessage } = useIntl();
 
   const handleRedirect = useCallback(() => {
-    navigate('/sign-up');
+    navigate(Routes.SIGN_UP);
   }, [navigate]);
 
   return (

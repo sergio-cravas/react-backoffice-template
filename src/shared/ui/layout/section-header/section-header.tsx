@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
-import { MdAdd, MdFilterList, MdOutlineFilterAlt } from 'react-icons/md';
+import { Plus } from 'lucide-react';
+import { MdFilterList, MdOutlineFilterAlt } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
 import useScreenSize from '@/shared/hooks/use-screen-size';
@@ -75,7 +76,7 @@ function SectionHeader({ title, views, sortBy, filter, add }: SectionHeaderProps
             <Divider vertical className="section-header__divider" />
 
             <Button variant="outline" onClick={add.onClick}>
-              <Icon as={MdAdd} size={16} />
+              <Icon as={Plus} size={16} />
               {isGreaterThan('sm') ? add.label : undefined}
             </Button>
           </>

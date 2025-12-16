@@ -66,15 +66,14 @@ export const Input = forwardRef(
         if (max && newInputValue > max) newInputValue = max + '';
 
         setInputValue(newInputValue);
+
         onChange?.(newInputValue);
       },
       [min, max, onChange]
     );
 
     const renderLeftElement = () => {
-      if (!leftElement) return null;
-
-      return <div className="input-container__field__left-icon">{leftElement}</div>;
+      return leftElement && <div className="input-container__field__left-icon">{leftElement}</div>;
     };
 
     const renderRightElement = () => {
@@ -94,13 +93,7 @@ export const Input = forwardRef(
     };
 
     return (
-      <div
-        className={cn('input-container', className)}
-        style={{
-          ...(props.width !== undefined ? { width: props.width } : {}),
-          ...style,
-        }}
-      >
+      <div className={cn('input-container', className)} style={style}>
         {!!label && <Label htmlFor={name}>{required ? `${label} *` : label}</Label>}
 
         <div className="input-container__field">
@@ -114,11 +107,10 @@ export const Input = forwardRef(
               'file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
               'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
               'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
-              leftElement && 'pl-10',
+              { 'pl-8': !!leftElement },
               className
             )}
             name={name}
-            type={isPasswordVisible ? 'text' : type}
             min={min}
             max={max}
             step={step}
@@ -126,6 +118,7 @@ export const Input = forwardRef(
             disabled={disabled}
             required={required}
             value={inputValue}
+            type={isPasswordVisible ? 'text' : type}
             onChange={handleOnChange}
           />
 
@@ -133,7 +126,7 @@ export const Input = forwardRef(
         </div>
 
         {!!errorMessage && (
-          <Text as="span" variant="body-s" color="interactionRedBase">
+          <Text as="span" variant="body-s" color="danger">
             {errorMessage}
           </Text>
         )}
