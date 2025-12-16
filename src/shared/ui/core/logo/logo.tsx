@@ -1,8 +1,11 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useIntl } from 'react-intl';
+
 import { Routes } from '@/app/router';
-import LogoSVG from '@/assets/logo.svg';
+import Isotype from '@/assets/icons/isotype.svg';
+import Logotype from '@/assets/icons/logotype.svg';
 import { useAuthStore } from '@/shared/store/auth';
 import { cn } from '@/shared/utils/style.utils';
 
@@ -16,6 +19,9 @@ type LogoProps = {
 
 function Logo({ size, className, style }: LogoProps) {
   const { isAuth } = useAuthStore();
+  const { formatMessage } = useIntl();
+
+  const src = size === 'small' ? Isotype : Logotype;
 
   return (
     <Link
@@ -23,7 +29,7 @@ function Logo({ size, className, style }: LogoProps) {
       className={cn('logo', { [`logo--size-${size}`]: !!size }, className)}
       style={style}
     >
-      <img src={LogoSVG} alt="Company logo" />
+      <img src={src} alt={formatMessage({ id: 'app.name' })} />
     </Link>
   );
 }

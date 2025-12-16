@@ -27,12 +27,16 @@
 
     padding: 4px;
 
+    border-radius: 2px;
     background-color: colors.$background-tertiary;
   }
 
   &__body {
+    flex: 1;
     display: flex;
     flex-direction: column;
+
+    justify-content: space-between;
 
     gap: 4px;
   }

@@ -1,28 +1,14 @@
-@use '@/styles/mixins.module.scss' as mixins;
-
 .logo {
-  & img {
-    height: 30px;
-    max-height: 30px;
+  height: 20px;
+  max-height: 20px;
 
-    @include mixins.responsive('md') {
-      height: 50px;
-      max-height: 50px;
-    }
-  }
-
-  &--size-small img {
+  &--size-medium img {
     height: 24px;
     max-height: 24px;
   }
 
-  &--size-medium img {
-    height: 30px;
-    max-height: 30px;
-  }
-
   &--size-large img {
-    height: 50px;
-    max-height: 50px;
+    height: 28px;
+    max-height: 28px;
   }
 }

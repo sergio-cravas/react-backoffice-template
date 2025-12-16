@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { ChevronRight } from 'lucide-react';
 import { IconType } from 'react-icons';
-import { MdChevronRight } from 'react-icons/md';
 
 import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
@@ -28,7 +28,7 @@ function KpiCard({ label, title, icon, to }: KpiCardProps) {
           <Icon as={icon} size={24} variant="tertiary" />
         </div>
 
-        {!!to && <Icon as={MdChevronRight} size={16} onClick={handleOnNavigate} />}
+        {!!to && <Icon as={ChevronRight} size={16} onClick={handleOnNavigate} />}
       </div>
 
       <div className="kpi-card__body">
