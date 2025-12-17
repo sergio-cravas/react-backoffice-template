@@ -94,7 +94,7 @@ function DropdownFilter({ icon, label, items, width, className, onApply }: Dropd
     <div ref={dropdownRef} className={cn('dropdown-filter', className)}>
       <div className="dropdown-filter__button-wrapper">
         <Button variant="outline" onClick={onToggle}>
-          <Icon as={icon} size={16} />
+          <Icon as={icon} size={16} variant="tertiary" />
           {isGreaterThan('sm') && label}
         </Button>
 

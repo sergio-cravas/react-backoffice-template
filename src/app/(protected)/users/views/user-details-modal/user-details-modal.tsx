@@ -11,6 +11,8 @@ import { Icon } from '@/shared/ui/core/icon';
 import { Text } from '@/shared/ui/core/text';
 import { Modal } from '@/shared/ui/layout/modal';
 
+import { UserRoleBadge } from '../../components/user-role-badge';
+
 import './user-details-modal.scss';
 
 type UserDetailsModalProps = {
@@ -103,7 +105,7 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
             <div className="user-details-modal__account-information__row">
               <Icon as={BriefcaseBusiness} size={20} variant="outline" />
 
-              <Text color="contentDarkSecondary">{user?.role}</Text>
+              <UserRoleBadge role={user?.role} />
             </div>
           </div>
         </div>

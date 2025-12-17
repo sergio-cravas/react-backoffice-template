@@ -22,7 +22,7 @@ function TabItem({ tab, activeTab, onTabChange }: TabItemProps) {
 
   return (
     <div className={cn('tab-item', { 'tab-item--active': isActive })} onClick={() => onTabChange(tab.value)}>
-      {!!tab.icon && <Icon as={tab.icon} variant={isActive ? 'primary' : 'outline'} />}
+      {!!tab.icon && <Icon as={tab.icon} variant={isActive ? 'primary' : 'tertiary'} />}
 
       {isGreaterThan('sm') && (
         <Text variant="body-m" weight="medium" color={isActive ? 'contentDarkPrimary' : 'contentDarkSecondary'}>
