@@ -17,6 +17,7 @@ type ListProps<T> = {
   limit: number;
   columns: Column<T>[];
   getRowKey: (item: T) => string | number;
+  getRowStyle?: (item: T) => React.CSSProperties;
   onPageChange: (page: number) => void;
   onRowClick?: (item: T) => void;
   onColumnSort?: (value: SortBy) => void;
@@ -30,6 +31,7 @@ function List<T = Record<string, any>>({
   columns = [],
   className,
   getRowKey,
+  getRowStyle,
   onPageChange,
   onRowClick,
   onColumnSort,
@@ -49,6 +51,7 @@ function List<T = Record<string, any>>({
             columns={columns}
             minWidth={minWidth}
             onClick={() => onRowClick?.(item)}
+            style={getRowStyle ? getRowStyle(item) : undefined}
           />
         ))}
       </div>

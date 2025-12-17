@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md';
+import { Mail, Phone } from 'lucide-react';
 import { useIntl } from 'react-intl';
 
 import { UserRole } from '@/api/users/models/user';
@@ -29,6 +29,7 @@ function UserGridCard({ imageUrl, fullName, email, phone, role }: UserGridCardPr
       <section className="user-grid-card__personal-info">
         <Avatar className="size-24">
           <AvatarImage src={imageUrl} alt={fullName || 'User'} />
+
           <AvatarFallback>{fullName?.substring(0, 2)}</AvatarFallback>
         </Avatar>
 
@@ -41,14 +42,16 @@ function UserGridCard({ imageUrl, fullName, email, phone, role }: UserGridCardPr
 
       <section className="user-grid-card__contact-info">
         <div className="user-grid-card__contact-info-row">
-          <Icon as={MdOutlineMail} size={20} variant="outline" />
+          <Icon as={Mail} size={20} variant="tertiary" />
+
           <Text as="span" style={{ textDecoration: 'underline' }}>
             {email}
           </Text>
         </div>
 
         <div className="user-grid-card__contact-info-row">
-          <Icon as={MdOutlinePhone} size={20} variant="outline" />
+          <Icon as={Phone} size={20} variant="tertiary" />
+
           <Text as="span" color="contentDarkSecondary">
             {phone}
           </Text>
@@ -58,14 +61,16 @@ function UserGridCard({ imageUrl, fullName, email, phone, role }: UserGridCardPr
       <section className="user-grid-card__actions">
         <Button asChild variant="outline">
           <Link to={'tel:' + phone}>
-            <Icon as={MdOutlinePhone} size={16} />
+            <Icon as={Phone} size={16} />
+
             {formatMessage({ id: 'users.grid.card.actions.call' })}
           </Link>
         </Button>
 
         <Button asChild variant="outline">
           <Link to={'mailto:' + email}>
-            <Icon as={MdOutlineMail} size={16} />
+            <Icon as={Mail} size={16} />
+
             {formatMessage({ id: 'users.grid.card.actions.mail' })}
           </Link>
         </Button>

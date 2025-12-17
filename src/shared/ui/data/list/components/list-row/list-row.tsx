@@ -11,10 +11,11 @@ type ListRowProps<T> = {
   row: T;
   columns: Column<T>[];
   minWidth: number;
+  style?: React.CSSProperties;
   onClick?: () => void;
 };
 
-function ListRow<T>({ row, columns = [], minWidth, onClick }: ListRowProps<T>) {
+function ListRow<T>({ row, columns = [], minWidth, style, onClick }: ListRowProps<T>) {
   return (
     <div className={cn(`list-row`, { 'list-row--clickable': !!onClick })} onClick={onClick}>
       {columns?.map((column, index) => (
@@ -23,7 +24,12 @@ function ListRow<T>({ row, columns = [], minWidth, onClick }: ListRowProps<T>) {
           row={row}
           column={column}
           className="list-row__cell"
-          style={{ minWidth: column.width || minWidth }}
+          style={{
+            width: column.width,
+            maxWidth: column.width,
+            minWidth: column.width || minWidth,
+            ...style,
+          }}
         />
       ))}
     </div>

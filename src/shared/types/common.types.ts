@@ -21,3 +21,5 @@ export type HookMutateQueryConfig<Response = any> = {
 };
 
 export type SortBy = { key: string; direction: 'asc' | 'desc' };
+
+export type Pagination = { page: number; limit: number };

@@ -11,6 +11,10 @@
   border: 1px solid colors.$border-primary;
   background-color: colors.$interaction-secondary-base;
 
+  &:nth-child(odd) {
+    background-color: colors.$background-secondary;
+  }
+
   &--clickable {
     cursor: pointer;
     transition: all 0.125s ease-in-out;
@@ -22,5 +26,9 @@
 
   &__cell {
     flex: 1;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
