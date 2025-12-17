@@ -1,7 +1,7 @@
 {
+  "signUp.form.confirmPassword.error": "Las contraseñas no coinciden",
   "signUp.form.confirmPassword.label": "Confirmar Contraseña",
   "signUp.form.confirmPassword.placeholder": "Contraseña",
-  "signUp.form.confirmPassword.error": "Las contraseñas no coinciden",
   "signUp.form.email.label": "Correo electrónico",
   "signUp.form.email.placeholder": "Ingresa tu correo electrónico aquí",
   "signUp.form.firstName.label": "Nombre",
@@ -14,8 +14,8 @@
   "signUp.form.signIn.text": "¿Ya tienes una cuenta?",
   "signUp.form.submit": "Registrarse",
   "signUp.form.termsAndConditions.label": "Acepto los {terms} y la {privacy}",
-  "signUp.form.termsAndConditions.terms": "Términos y condiciones",
   "signUp.form.termsAndConditions.privacy": "Política de privacidad",
+  "signUp.form.termsAndConditions.terms": "Términos y condiciones",
   "signUp.subtitle": "Por favor, crea una cuenta para continuar",
   "signUp.title": "Crear tu cuenta"
 }

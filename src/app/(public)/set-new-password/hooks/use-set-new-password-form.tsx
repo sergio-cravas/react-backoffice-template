@@ -24,7 +24,7 @@ export const useSetNewPasswordForm = ({ onSubmit }: Props) => {
       password: yup.string().required(formatMessage({ id: 'common.form.validations.required' })),
       confirmPassword: yup
         .string()
-        .oneOf([yup.ref('password')], formatMessage({ id: 'signUp.form.confirmPassword.error' }))
+        .oneOf([yup.ref('password')], formatMessage({ id: 'setNewPassword.form.confirmPassword.error' }))
         .required(formatMessage({ id: 'common.form.validations.required' })),
     })
   );
