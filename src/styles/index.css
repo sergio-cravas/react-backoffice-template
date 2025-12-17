@@ -3,7 +3,12 @@
 
 /* Tokens */
 @import './base/tokens.css';
+@import './fonts.module.scss';
 
 /* Components */
 @import './components/button.css';
 /* ... */
+
+body {
+    font-family: 'Satoshi', sans-serif;
+}

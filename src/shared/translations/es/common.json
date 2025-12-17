@@ -5,6 +5,7 @@
   "common.form.apply": "Aplicar",
   "common.form.cancel": "Cancelar",
   "common.form.close": "Cerrar",
+  "common.form.edit": "Editar",
   "common.form.save": "Guardar",
   "common.form.validations.fileTooLarge": "El archivo es demasiado grande. El tamaño máximo es {maxSize}.",
   "common.form.validations.invalid": "Este campo es inválido.",

@@ -33,6 +33,42 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
     navigate({ search: `?${params.toString()}` }, { replace: true });
   }, [navigate]);
 
+  const DetailRow = useCallback(
+    ({ icon, label }) => (
+      <div className="user-details-modal__account-information__row">
+        <Icon as={icon} size={20} variant="outline" />
+
+        {typeof label === 'string' ? (
+          <Text color="contentDarkSecondary" className="whitespace-nowrap">
+            {label}
+          </Text>
+        ) : (
+          label
+        )}
+      </div>
+    ),
+    []
+  );
+
+  const DetailAction = useCallback(
+    ({ icon, label, onClick }) => (
+      <div className="user-details-modal__action-item">
+        <Button size="icon-lg" variant="outline" onClick={onClick}>
+          <Icon as={icon} size={20} variant="tertiary" />
+        </Button>
+
+        {typeof label === 'string' ? (
+          <Text color="contentDarkSecondary" className="whitespace-nowrap">
+            {label}
+          </Text>
+        ) : (
+          label
+        )}
+      </div>
+    ),
+    []
+  );
+
   return (
     <Modal
       className="user-details-modal"
@@ -74,13 +110,7 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
               <Text color="contentDarkSecondary">{formatMessage({ id: 'users.detailModal.email' })}</Text>
             </div>
 
-            <div className="user-details-modal__action-item">
-              <Button size="icon-lg" variant="outline" onClick={handleOnEdit}>
-                <Icon as={Pencil} size={20} variant="outline" />
-              </Button>
-
-              <Text color="contentDarkSecondary">{formatMessage({ id: 'users.detailModal.edit' })}</Text>
-            </div>
+            <DetailAction icon={Pencil} label={formatMessage({ id: 'common.form.edit' })} onClick={handleOnEdit} />
           </div>
         </div>
 
@@ -90,23 +120,9 @@ function UserDetailsModal({ userId, onClose }: UserDetailsModalProps) {
               {formatMessage({ id: 'users.detailModal.accountInformation' })}
             </Text>
 
-            <div className="user-details-modal__account-information__row">
-              <Icon as={Mail} size={20} variant="outline" />
-
-              <Text color="contentDarkSecondary">{user?.email}</Text>
-            </div>
-
-            <div className="user-details-modal__account-information__row">
-              <Icon as={Phone} size={20} variant="outline" />
-
-              <Text color="contentDarkSecondary">{user?.phone}</Text>
-            </div>
-
-            <div className="user-details-modal__account-information__row">
-              <Icon as={BriefcaseBusiness} size={20} variant="outline" />
-
-              <UserRoleBadge role={user?.role} />
-            </div>
+            <DetailRow icon={Mail} label={user?.email || '-'} />
+            <DetailRow icon={Phone} label={user?.phone || '-'} />
+            <DetailRow icon={BriefcaseBusiness} label={<UserRoleBadge role={user?.role} />} />
           </div>
         </div>
       </section>

@@ -1,85 +1,90 @@
 @use './exports/colors.module.scss' as colors;
 
+$satoshi-weights: (
+  'Light': 300,
+  'Regular': 400,
+  'Medium': 500,
+  'Bold': 700,
+  'Black': 900,
+);
+
+@each $name, $weight in $satoshi-weights {
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('@/assets/fonts/Satoshi-#{$name}.otf') format('opentype');
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('@/assets/fonts/Satoshi-#{$name}Italic.otf') format('opentype');
+    font-weight: $weight;
+    font-style: italic;
+    font-display: swap;
+  }
+}
+
+// Base mixin
 @mixin font-common {
   color: colors.$content-dark-primary;
-
-  font-family: 'Inter', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
 
-@mixin font-h1 {
+// Headings
+@mixin font-heading($size) {
   @include font-common;
-
-  font-size: 4rem;
+  font-size: $size;
   font-weight: 500;
   line-height: 120%;
+}
+
+@mixin font-h1 {
+  @include font-heading(4rem);
 }
 
 @mixin font-h2 {
-  @include font-common;
-
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 120%;
+  @include font-heading(3rem);
 }
 
 @mixin font-h3 {
-  @include font-common;
-
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 120%;
+  @include font-heading(2rem);
 }
 
 @mixin font-h4 {
-  @include font-common;
-
-  font-size: 1.75rem;
-  font-weight: 500;
-  line-height: 120%;
+  @include font-heading(1.75rem);
 }
 
 @mixin font-h5 {
-  @include font-common;
-
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 120%;
+  @include font-heading(1.5rem);
 }
 
 @mixin font-h6 {
-  @include font-common;
+  @include font-heading(1.25rem);
+}
 
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 120%;
+// Body
+@mixin font-body($size, $line-height: 150%) {
+  @include font-common;
+  font-size: $size;
+  line-height: $line-height;
 }
 
 @mixin font-body-xl {
-  @include font-common;
-
-  font-size: 1.125rem;
-  line-height: 150%;
+  @include font-body(1.125rem);
 }
 
 @mixin font-body-l {
-  @include font-common;
-
-  font-size: 1rem;
-  line-height: 150%;
+  @include font-body(1rem);
 }
 
 @mixin font-body-m {
-  @include font-common;
-
-  font-size: 0.875rem;
-  line-height: 140%;
+  @include font-body(0.875rem, 140%);
 }
 
 @mixin font-body-s {
-  @include font-common;
-
-  font-size: 0.75rem;
-  line-height: 140%;
+  @include font-body(0.75rem, 140%);
 }

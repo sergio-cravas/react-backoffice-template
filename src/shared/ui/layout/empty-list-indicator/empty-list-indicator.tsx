@@ -1,6 +1,6 @@
 import { MdAdd } from 'react-icons/md';
 
-import Image from '@/assets/empty-list-indicator-image.png';
+import Image from '@/assets/images/empty-list-indicator-image.png';
 
 import { Button } from '../../core/button';
 import { Icon } from '../../core/icon';

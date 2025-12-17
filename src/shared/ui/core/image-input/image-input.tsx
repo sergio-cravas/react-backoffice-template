@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { MdAdd } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 
-import NoImageSVG from '@/assets/no-image.png';
+import NoImageSVG from '@/assets/images/no-image.png';
 import { UploadFileObject } from '@/shared/types/form.types';
 import { normalizeString, toBase64 } from '@/shared/utils/form.utils';
 import { cn } from '@/shared/utils/style.utils';
