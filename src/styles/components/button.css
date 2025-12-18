@@ -1,4 +1,5 @@
 @layer components {
+
   /* PRIMARY */
   .btn-primary {
     background-color: var(--action-primary-base);
@@ -47,6 +48,18 @@
   .btn-outline:hover:not(:disabled) {
     background-color: var(--action-outline-hover);
     border-color: var(--border-secondary);
+  }
+
+  /* DANGER OUTLINE */
+  .btn-danger-outline {
+    background-color: var(--action-outline-base);
+    color: var(--content-dark-primary);
+    border: 1px solid var(--border-error);
+  }
+
+  .btn-danger-outline:hover:not(:disabled) {
+    background-color: var(--interaction-red-hover);
+    border-color: var(--border-error);
   }
 
   /* SECONDARY */
