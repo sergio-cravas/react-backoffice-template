@@ -7,7 +7,7 @@ type OptionsType = { noAuth?: boolean } & Omit<RequestInit, 'method' | 'body'>;
 
 const API_ENDPOINT = config.API_URL;
 
-const handleResponse = async (response: Response) => {
+const handleResponse = async <T>(response: Response): Promise<T> => {
   if (!response.ok) {
     if (response.status === 401) {
       resetAccessToken();
@@ -20,7 +20,7 @@ const handleResponse = async (response: Response) => {
   return response.json();
 };
 
-export const get = async (url: string, { noAuth, ...options }: OptionsType = {}) => {
+export const get = async <T>(url: string, { noAuth, ...options }: OptionsType = {}): Promise<T> => {
   const BEARER_TOKEN = getAccessToken();
 
   const response = await fetch(API_ENDPOINT + url, {
@@ -32,10 +32,10 @@ export const get = async (url: string, { noAuth, ...options }: OptionsType = {})
     ...options,
   });
 
-  return handleResponse(response);
+  return handleResponse<T>(response);
 };
 
-export const post = async (url: string, body?: BodyType, { noAuth, ...options }: OptionsType = {}) => {
+export const post = async <T>(url: string, body?: BodyType, { noAuth, ...options }: OptionsType = {}): Promise<T> => {
   const BEARER_TOKEN = getAccessToken();
   const parsedBody = JSON.stringify(body);
 
@@ -50,10 +50,10 @@ export const post = async (url: string, body?: BodyType, { noAuth, ...options }:
     ...options,
   });
 
-  return handleResponse(response);
+  return handleResponse<T>(response);
 };
 
-export const put = async (url: string, body?: BodyType, { noAuth, ...options }: OptionsType = {}) => {
+export const put = async <T>(url: string, body?: BodyType, { noAuth, ...options }: OptionsType = {}): Promise<T> => {
   const BEARER_TOKEN = getAccessToken();
   const parsedBody = JSON.stringify(body);
 
@@ -68,10 +68,10 @@ export const put = async (url: string, body?: BodyType, { noAuth, ...options }: 
     ...options,
   });
 
-  return handleResponse(response);
+  return handleResponse<T>(response);
 };
 
-export const del = async (url: string, { noAuth, ...options }: OptionsType = {}) => {
+export const del = async <T>(url: string, { noAuth, ...options }: OptionsType = {}): Promise<T> => {
   const BEARER_TOKEN = getAccessToken();
 
   const response = await fetch(API_ENDPOINT + url, {
@@ -84,11 +84,12 @@ export const del = async (url: string, { noAuth, ...options }: OptionsType = {})
     ...options,
   });
 
-  return handleResponse(response);
+  return handleResponse<T>(response);
 };
 
-export const patch = async (url: string, { noAuth, ...options }: OptionsType = {}) => {
+export const patch = async <T>(url: string, body?: BodyType, { noAuth, ...options }: OptionsType = {}): Promise<T> => {
   const BEARER_TOKEN = getAccessToken();
+  const parsedBody = JSON.stringify(body);
 
   const response = await fetch(API_ENDPOINT + url, {
     method: 'PATCH',
@@ -97,8 +98,9 @@ export const patch = async (url: string, { noAuth, ...options }: OptionsType = {
       'content-type': 'application/json; charset=UTF-8',
       ...(noAuth || !BEARER_TOKEN ? {} : { Authorization: `Bearer ${BEARER_TOKEN}` }),
     },
+    body: parsedBody,
     ...options,
   });
 
-  return handleResponse(response);
+  return handleResponse<T>(response);
 };
